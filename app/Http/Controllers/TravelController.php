@@ -8,6 +8,6 @@ class TravelController extends Controller
 {
     public function add()
     {
-        return view('user.travel.home');
+        return view('user.travel.planning');
     }
 }
