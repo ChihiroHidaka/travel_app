@@ -5,7 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>@yield('title')</title>
-        <link rel = "stylesheet" href="resources/css/home.css">
+        
+        {{-- Laravel標準で用意されているCSSを読み込みます --}}
+        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        {{-- この章の後半で作成するCSSを読み込みます --}}
+        <link href="{{ secure_asset('css/home.css') }}" rel="stylesheet">
     </head>
 
     <body>
@@ -13,9 +17,12 @@
             <div>
                 <h1 class = "page-title">My trip</h1>
                 <h2>さあ旅の準備をしよう</h2>
-               
             </div>  
+           
+         
         </header>
+           
+
 
         <main class="display">
             <nav>
