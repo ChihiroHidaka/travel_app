@@ -18,7 +18,6 @@
                 <h1 class = "page-title">My trip</h1>
                 <h2>さあ旅の準備をしよう</h2>
             </div>  
-           
          
         </header>
            

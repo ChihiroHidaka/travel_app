@@ -23,7 +23,7 @@ Route::controller(TravelController::class)->prefix('user')->group(function() {
 });
 
 Route::controller(TravelController::class)->prefix('user')->group(function() {
-    Route::get('travel/home', 'add')->middleware('auth/register');
+    Route::get('travel/home', 'add')->middleware('auth');
 });
 
 

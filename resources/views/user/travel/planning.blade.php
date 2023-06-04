@@ -10,7 +10,6 @@
 <h1>旅行１</h1>
  <ul>
     <li>日程:</li>
-    <li>メンバーリスト:</li>
 </ul>
 
  <div class = planning>
