@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Mytrip新規登録')
+@section('title','Mytrip新規登録')
 
 
 

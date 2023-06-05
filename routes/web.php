@@ -23,11 +23,11 @@ Route::controller(TravelController::class)->prefix('user')->group(function() {
 });
 
 Route::controller(TravelController::class)->prefix('user')->group(function() {
-    Route::get('travel/home', 'add')->middleware('auth');
+    Route::get('travel/home', 'add')->middleware('auth/register');
 });
 
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\TravelController::class, 'add'])->name('home');
