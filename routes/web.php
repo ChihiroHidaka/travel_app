@@ -15,16 +15,28 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-use App\Http\Controllers\TravelController;
-Route::controller(TravelController::class)->prefix('user')->group(function() {
-    Route::get('travel/home', 'add');
+    
 });
 
 Route::controller(TravelController::class)->prefix('user')->group(function() {
     Route::get('travel/home', 'add')->middleware('auth/register');
 });
+
+
+
+use App\Http\Controllers\TravelController;
+Route::controller(TravelController::class)->prefix('user')->group(function() {
+    Route::get('travel/home', 'add');
+    Route::post('travel/create', 'create')->name('travel.create');
+    
+});
+
+
+   
+
+
+
+
 
 
 

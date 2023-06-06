@@ -11,3 +11,5 @@ class TravelController extends Controller
         return view('user.travel.planning');
     }
 }
+
+
