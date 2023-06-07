@@ -31,11 +31,8 @@
                     <li><a href="#">旅行一覧</a></li>
                        <ul>
                         <li><a href="#">旅行１</a></li>
-                        <li><a href="#">行程表</a></li>
                         <li><a href="#">旅行２</a></li>
-                        <li><a href="#">行程表</a></li>
                         <li><a href="#">旅行3</a></li>
-                        <li><a href="#">行程表</a></li>
                         <li><a href="#">旅行を追加する</a></li>
                        </ul>
                       
