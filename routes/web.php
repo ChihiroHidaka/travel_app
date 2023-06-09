@@ -19,24 +19,18 @@ Route::get('/', function () {
 });
 
 Route::controller(TravelController::class)->prefix('user')->group(function() {
-    Route::get('travel/home', 'add')->middleware('auth/register');
+    Route::get('travel/home', 'index')->middleware('auth/register');
 });
 
 
 
 use App\Http\Controllers\TravelController;
 Route::controller(TravelController::class)->prefix('user')->group(function() {
-    Route::get('travel/home', 'add');
-    Route::post('travel/create', 'create')->name('travel.create');
+    Route::get('travel/home', 'index');
+    Route::get('travel/create', 'create');
+    
     
 });
-
-
-   
-
-
-
-
 
 
 
