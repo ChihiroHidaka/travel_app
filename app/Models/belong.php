@@ -11,11 +11,7 @@ class Plan extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'plan_date' => 'required',
-        'from_time' => 'required',
-        'end_time' => 'required',
-        'plan'=>'required',
-        
+        'belongs_name' => 'required',
         
     );
     

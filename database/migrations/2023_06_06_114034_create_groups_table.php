@@ -14,11 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('groups', function (Blueprint $table) {
-            $table->id();
-            $table->user_id();
-            $table->group_name();
-            $table->created_at();
-            $table->updateed_at();
+            $table->id('id');
+            $table->foreignid('user_id');
+            $table->text('group_name');
+            $table->date('created_at');
+            $table->date('updated_at');
+            $table->foreign('user_id')->references('id')->on('users');
+           
         });
     }
 

@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::get('/home', [TravelController::class, 'add'])->name('home');
+Route::get('/home', [TravelController::class, 'add'])->name('home');//書き方が違うのはなぜだろう
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 

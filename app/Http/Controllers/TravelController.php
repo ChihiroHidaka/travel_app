@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Travel;
+
+
+
 class TravelController extends Controller
 {
     public function add()
@@ -16,13 +20,13 @@ class TravelController extends Controller
         return redirect('user/travel/create');//user/travel/create'に飛ぶ
     }
 
-    public function store()
+    public function store(equest $request)
     {
         return redirect('user/travel/create');
         
     }
     
-    public function delete()
+    public function delete(equest $request)
     {
         return redirect('user/travel/create');
     }

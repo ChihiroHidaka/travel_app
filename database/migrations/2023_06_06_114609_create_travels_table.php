@@ -14,16 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('travels', function (Blueprint $table) {
-            $table->id();
-            $table->title();
-            $table->user_id();
-            $table->group_id();
-            $table->description();
-            $table->start_date();
-            $table->end_date();
-            $table->image();
-            $table->created_at();
-            $table->updated_at();
+            $table->id('id');
+            $table->text('title');
+            $table->foreignid('user_id');
+            $table->foreignid('group_id');
+            $table->text('description')->nullable();
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('image_path')->nullable();
+            $table->date('created_at');
+            $table->date('updated_at');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('group_id')->references('id')->on('groups');
         });
     }
 

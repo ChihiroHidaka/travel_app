@@ -42,7 +42,7 @@ class LoginController extends Controller
     
     public function logout(Request $request)
 {
-    \Auth::logout();
+    \Auth::logout();//全てのクラスでauthはバックスラッシュを使う
     $request->session()->invalidate();
     $request->session()->regenerateToken();
     return redirect('/');
