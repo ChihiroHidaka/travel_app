@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TravelController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,25 +16,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-    
-});
-
-Route::controller(TravelController::class)->prefix('user')->group(function() {
-    Route::get('travel/home', 'index')->middleware('auth/register');
-});
-
-
-
-use App\Http\Controllers\TravelController;
-Route::controller(TravelController::class)->prefix('user')->group(function() {
-    Route::get('travel/home', 'index');
-    Route::get('travel/create', 'create');
-    
-    
 });
 
 
 
 Auth::routes();
+Route::get('/home', [TravelController::class, 'add'])->name('home');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/home', [App\Http\Controllers\TravelController::class, 'add'])->name('home');
+
+Route::controller(TravelController::class)->prefix('user')->group(function() {
+    Route::get('travel/home', 'add')->middleware('auth');
+});
+
+
+Route::controller(TravelController::class)->prefix('user')->group(function() {
+    Route::get('travel/create', 'create');
+    
+});
+
+
+
+

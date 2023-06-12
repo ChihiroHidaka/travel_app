@@ -1,5 +1,5 @@
 {{-- layouts/home.blade.phpを読み込む --}}
-@extends('layouts.menu')
+@extends('layouts.home')
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
@@ -7,7 +7,7 @@
 
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
-<form method="post" action="/user/travels/">
+<form method="post" action=/user/travels/</form>
     @csrf
     <label for="planname">旅行名</label>
     <input id="planname" name="planname" type="text">
@@ -17,10 +17,6 @@
     
     <label for="start_date">終了日</label>
     <input id="end_date" name="end_date" type="date"></br>
-    
-     <button type="submit">予定を保存する</button>
-</form>
-    
     
     
 

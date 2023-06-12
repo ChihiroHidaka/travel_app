@@ -17,7 +17,12 @@
             <div>
                 <h1 class = "page-title">My trip</h1>
                 <h2>さあ旅の準備をしよう</h2>
-            </div>  
+            </div>
+            
+            <form action="{{ route('logout') }}" method="POST">
+    　　　　　　@csrf
+    　　　　　　<button type="submit">ログアウト</button>
+　　　　　　</form>
          
         </header>
            

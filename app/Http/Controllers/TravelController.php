@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 class TravelController extends Controller
 {
-    public function create()
+    public function add()
     {
         return view('user.travel.planning');
     }
     
-   public function add(Request $request)
+   public function create(Request $request)
     {
         return redirect('user/travel/create');//user/travel/create'に飛ぶ
     }

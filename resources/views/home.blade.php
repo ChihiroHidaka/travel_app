@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!--@extends('layouts.app')ログイン後の画面表示-->
 
 @section('content')
 <div class="container">
