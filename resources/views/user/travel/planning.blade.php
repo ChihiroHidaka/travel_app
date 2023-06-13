@@ -23,7 +23,7 @@
 
     
 <!--下記からユーザーによるデータ入力-->
-<form method="POST" action="{{ route('user.travel.create') }}"id="travelForm">
+<form method="POST" action="{{ route('plan.store') }}" id="travelForm">
     @csrf
    <input id="day" name="plan_date" type="date"></input>
    

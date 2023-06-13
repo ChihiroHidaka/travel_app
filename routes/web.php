@@ -25,15 +25,12 @@ Route::get('/home', [TravelController::class, 'add'])->name('home');//書き方�
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
-Route::controller(TravelController::class)->prefix('user')->group(function() {
-    Route::get('travel/home', 'add')->middleware('auth');
-});
-
-
-Route::controller(TravelController::class)->prefix('user')->group(function() {
+Route::controller(TravelController::class)->prefix('user')->middleware('auth')->group(function() {
+    Route::get('travel/home', 'add');
     Route::get('travel/create', 'create');
-    
+    Route::post('travel/store','store')->name('plan.store');
 });
+
 
 
 

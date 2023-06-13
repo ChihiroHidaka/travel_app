@@ -22,7 +22,7 @@ class TravelController extends Controller
 
     public function store(Request $request)
     {
-        // dd('storeが呼ばれた');//動作の確認用
+        dd('storeが呼ばれた');
         return redirect('user/travel/create');
         
     }
