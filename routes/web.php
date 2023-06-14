@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TravelController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,12 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::controller(TravelController::class)->prefix('user')->middleware('auth')->group(function() {
     Route::get('travel/home', 'add');
     Route::get('travel/create', 'create');
+});
+
+
+
+
+Route::controller(PlanController::class)->prefix('user')->middleware('auth')->group(function() {
     Route::post('travel/store','store')->name('plan.store');
 });
 
