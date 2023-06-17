@@ -10,37 +10,28 @@ use App\Models\Plan;
 
 class PlanController extends Controller
 {
+    public function create()
+   {
+    return view('user.travel.plan_edit');
+   }
+   
    public function store(Request $request)
     {
-        
+        dd('plan_storeが呼ばれた');//動作の確認用
         $this->validate($request, Plan::$rules);
         $plan = new Plan;
         $form = $request->all();//まだ理解できていない
-        
-        if(isset($form['image'])){
-            $path = $request->file('image')->store('public/image');
-            $plan->image_path = basename($path);
-        }else{
-            $plan->imagae_path = null;
-        }
+       
         unset($form['_token']);
-        unset($form['image']);
         
         $plan->fill($store);
         $plan->save();
         
-        
-        // dd('storeが呼ばれた');//動作の確認用
-        return redirect('user/travel/create');
+       
+        return redirect('user/travel/home');
     }
         
-        
-        
-    public function delete(Request $request)
-    {
-        return redirect('user/travel/create');
-    }
-    
+   
     
 }
 

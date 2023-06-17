@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\PlanController;
-use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,20 +22,23 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::get('/home', [TravelController::class, 'add'])->name('home');//書き方が違うのはなぜだろう
+Route::get('/home', [TravelController::class, 'add'])->name('home');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
+
 Route::controller(TravelController::class)->prefix('user')->middleware('auth')->group(function() {
-    Route::get('travel/home', 'add');
-    Route::get('travel/create', 'create');
+    Route::get('travel/home', 'show');
+    Route::get('travel/create','create')->name('travel.create');//aタグ
+    Route::post('travel/store', 'store')->name('travel.store');
 });
 
 
 
 
 Route::controller(PlanController::class)->prefix('user')->middleware('auth')->group(function() {
-    Route::post('travel/store','store')->name('plan.store');
+    Route::get('plan/create','create')->name('plan.create');
+    Route::post('plan/store','store')->name('plan.store');
 });
 
 

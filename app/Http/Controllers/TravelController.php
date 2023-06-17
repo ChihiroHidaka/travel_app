@@ -12,12 +12,40 @@ class TravelController extends Controller
 {
     public function add()
     {
-        return view('user.travel.planning');
+        return view('user.travel.app_home');
     }
     
-   public function create(Request $request)
+    public function create()
     {
-        return redirect('user/travel/create');//user/travel/create'に飛ぶ
+        return view('user.travel.travel_edit');
+    }
+    
+    public function show()
+    {
+        return view('user.travel.travel');
+    }
+    
+    public function store(Request $request)
+    {
+        // dd('plan_storeが呼ばれた');//動作の確認用
+        $this->validate($request, Travel::$rules);
+        $travel = new Travel;
+        $form = $request->all();//まだ理解できていない
+        
+        if(isset($form['image'])){
+            $path = $request->file('image')->store('public/image');
+            $travel->image_path = basename($path);
+        }else{
+            $travel->imagae_path = null;
+        }
+        unset($form['_token']);
+        unset($form['image']);
+        
+        $travel->fill($store);
+        $travel->save();
+        
+        
+        return redirect('user/travel/home');//user/travel/home'に飛ぶ
     }
 
     

@@ -3,16 +3,11 @@
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
-@section('title', 'plan_home')
+@section('title', 'travel_home')
 
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
-<h1>旅行１</h1>
- <ul>
-    <li>日程:</li>
-    <li>メンバーリスト:</li>
-    <li>メンバーを招待:</li>
-</ul>
-    
+<!--ログイン後の表示画面-->
+<h1>こちらはログイン後の表示画面</h1>
 
 @endsection
