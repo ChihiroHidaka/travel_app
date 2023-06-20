@@ -36,19 +36,27 @@ class TravelController extends Controller
             $path = $request->file('image')->store('public/image');
             $travel->image_path = basename($path);
         }else{
-            $travel->imagae_path = null;
+            $travel->image_path = null;
         }
         unset($form['_token']);
         unset($form['image']);
         
-        $travel->fill($store);
+        $travel->fill($form);
         $travel->save();
         
         
         return redirect('user/travel/home');//user/travel/home'に飛ぶ
     }
-
     
+    
+    public function edit()
+    {
+        return view('user.travel.travel_edit');
+    }
+    
+    public function update()
+    {
+        
+    }
+
 }
-
-

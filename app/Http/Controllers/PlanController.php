@@ -30,6 +30,17 @@ class PlanController extends Controller
        
         return redirect('user/travel/home');
     }
+    
+     public function edit()
+    {
+        return view('user.travel.travel_edit');
+    }
+    
+    
+    public function update()
+    {
+        
+    }
         
    
     

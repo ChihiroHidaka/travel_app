@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('image_path')->nullable();
             $table->date('created_at');
             $table->date('updated_at');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->nullable();
             $table->foreign('group_id')->references('id')->on('groups');
         });
     }
