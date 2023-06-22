@@ -41,7 +41,10 @@ class TravelController extends Controller
         unset($form['_token']);
         unset($form['image']);
         
+    
         $travel->fill($form);
+        $travel->user_id = \Auth::id();
+        $travel->group_id = 1;
         $travel->save();
         
         
@@ -58,5 +61,11 @@ class TravelController extends Controller
     {
         
     }
+    
+    public function index(Request $request)
+    {
+        
+    }
+    
 
 }

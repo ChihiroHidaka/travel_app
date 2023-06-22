@@ -13,7 +13,7 @@
     @csrf
    <input id="day" name="plan_date" type="date"></input>
    
-    <table id="travelplan">
+　　<table id="travelplan">
         <thead>
             <tr>
                 <th>日付</th>

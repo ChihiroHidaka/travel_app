@@ -36,13 +36,16 @@ class PlanController extends Controller
         return view('user.travel.travel_edit');
     }
     
-    
     public function update()
     {
         
     }
         
-   
+   public function index(Request $request)
+    {
+        
+    }
+    
     
 }
 
