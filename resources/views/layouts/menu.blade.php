@@ -38,7 +38,7 @@
                        <p><a href="user/travel/{{$travel->id}}">{{ $travel->title }}</a></p>
                        @endforeach
                       
-                    <li><a href="#">持ち物を確認する</a></li>
+                    <li><a href="#">持ち物チェック</a></li>
                     <li><a href="#">天気を確認する</a></li>
                     <li><a href="#">観光地・経路を調べる</a></li>
                     <li><a href="#">設定</a></li>

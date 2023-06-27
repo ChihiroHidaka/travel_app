@@ -1,6 +1,6 @@
 @charset "UTF-8";/*これは、自身で作ったCSSファイル*/
 #trip{
-    background-image:url(/public/image/header_sea.jpeg);
+    background-image:url(public/image/header_sea.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 250px;
@@ -29,7 +29,7 @@ header h3{
 
 section{
     width: 80%;
-    background-image:url(/public/image/wallpaper_plan_belongs.jpg);
+    background-image:url(public/image/wallpaper_plan_belongs.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }

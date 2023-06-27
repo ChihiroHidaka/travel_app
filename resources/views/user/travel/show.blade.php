@@ -12,8 +12,8 @@
 <div>
      <h1>{{$travel->title}}</h1> 
      <ul>
-         <li>開始日：{{$travel->start_date}}</li>
-         <li>終了日：{{$travel->end_date}}</li>
+         <li>旅行開始日：{{$travel->start_date}}</li>
+         <li>旅行終了日：{{$travel->end_date}}</li>
          <li> 詳細： {{$travel->description}}</li>
      </ul>
      
