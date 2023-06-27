@@ -34,6 +34,9 @@
                        <ul>
                         <li><a href="{{ route('travel.create') }}" id="create_travel">➕旅行を追加する</a></li>
                        </ul>
+                       @foreach($travelList as $travel)　
+                       <p><a href="user/travel/{{$travel->id}}">{{ $travel->title }}</a></p>
+                       @endforeach
                       
                     <li><a href="#">持ち物を確認する</a></li>
                     <li><a href="#">天気を確認する</a></li>

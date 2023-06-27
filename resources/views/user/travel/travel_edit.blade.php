@@ -1,5 +1,5 @@
 {{-- layouts/home.blade.phpを読み込む --}}
-@extends('layouts.menu')
+@extends('layouts.app')
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
@@ -20,7 +20,7 @@
 
     @csrf
     <label for="travel_title">旅行のタイトル</label>
-    <input type="text" name="title" id="travel_title"　value="{{ old('travel_title') }}"></br>
+    <input type="text" name="title" id="travel_title"　value="{{ old('stravel_title') }}"></br>
     <label for="start_date">出発日</label>
     <input type="date" name="start_date" id="start_date"　value="{{ old('start_date') }}"></br>
     <label for="start_date">終了日</label>

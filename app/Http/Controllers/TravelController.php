@@ -10,9 +10,11 @@ use App\Models\Travel;
 
 class TravelController extends Controller
 {
-    public function add()
+    public function index()
     {
-        return view('user.travel.app_home');
+        $travelList = Travel::where('user_id', \Auth::id())->get();
+        // dd($travels);
+        return view('user.travel.travel', ['travelList' => $travelList]);//連想配列　左がわは文字列で名前、右側は実データ
     }
     
     public function create()
@@ -20,10 +22,13 @@ class TravelController extends Controller
         return view('user.travel.travel_edit');
     }
     
-    public function show()
+    public function show($id)
     {
-        return view('user.travel.travel');
+        $travelList = Travel::where('user_id', \Auth::id())->get();
+        $travel = Travel::find($id);
+        return view('user.travel.show',['travelList' => $travelList,'travel' =>$travel]);
     }
+    
     
     public function store(Request $request)
     {
@@ -48,7 +53,7 @@ class TravelController extends Controller
         $travel->save();
         
         
-        return redirect('user/travel/home');//user/travel/home'に飛ぶ
+        return redirect('/home');//user/travel/home'に飛ぶ
     }
     
     
@@ -57,15 +62,19 @@ class TravelController extends Controller
         return view('user.travel.travel_edit');
     }
     
+    
     public function update()
     {
         
     }
     
-    public function index(Request $request)
-    {
+    
+    // public function index(Request $request)
+    // {
+    //   $traveldata = Travel::all();
+    //   return view('user.travel.travel',['traveldata' => $traveldata]);
         
-    }
+    // }
     
 
 }
