@@ -1,0 +1,81 @@
+@charset "UTF-8";
+/*これは、自身で作ったCSSファイル*/
+#trip {
+  background-image: url("../../../public/image/header_sea.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+header h1 {
+  text-align: left;
+  color: #ddd;
+  font-size: 50px;
+}
+
+header h2 {
+  text-align: center;
+  padding: 5px;
+  color: #432;
+  font-size: 50px;
+  font-weight: 100;
+}
+
+header p {
+  text-align: right;
+  color: #ddd;
+  font-size: 15px;
+}
+
+header button {
+  text-align: right;
+  font-size: 15px;
+}
+
+section {
+  width: 80%;
+  background-image: url("../../../public/image/wallpaper_plan_belongs.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.display {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav h1 {
+  color: #432;
+  text-align: left;
+  border-bottom: 1px #ddd solid;
+}
+
+nav h2 {
+  color: #432;
+  text-align: left;
+}
+
+.main_menu p {
+  color: #432;
+  margin-bottom: 10px;
+  list-style: none;
+  padding: 10px;
+  display: block;
+}
+
+.main_menu a {
+  color: #432;
+}
+
+.contents h1 {
+  font-size: 50px;
+}
+
+.contents li {
+  font-size: 30px;
+  list-style: none;
+  line-height: 1.9;
+  font-weight: bold;
+  padding: 10px;
+  display: block;
+}

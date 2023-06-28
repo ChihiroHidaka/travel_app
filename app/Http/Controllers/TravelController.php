@@ -26,7 +26,7 @@ class TravelController extends Controller
     {
         $travelList = Travel::where('user_id', \Auth::id())->get();
         $travel = Travel::find($id);
-        return view('user.travel.show',['travelList' => $travelList,'travel' =>$travel]);
+        return view('user.travel.show',['travelList' => $travelList],['travel' =>$travel]);
     }
     
     
