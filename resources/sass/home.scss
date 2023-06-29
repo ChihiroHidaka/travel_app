@@ -1,6 +1,6 @@
 @charset "UTF-8";/*これは、自身で作ったCSSファイル*/
 #trip{
-    background-image: url("../../../public/image/header_sea.jpeg");
+    background-image: url("/image/header_sea.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 300px;
@@ -35,7 +35,7 @@ header button{
 
 section{
     width: 80%;
-    background-image: url("../../../public/image/wallpaper_plan_belongs.jpg");
+    background-image: url("/image/wallpaper_plan_belongs.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -44,8 +44,16 @@ section{
 .display{
     display: flex;
     justify-content: space-between;
-    
 }
+
+nav{
+    width: 30%;
+}
+
+section{
+    width: 70%;
+}
+
 nav h1 {
     color: #432;
     text-align: left;

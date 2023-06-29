@@ -57,14 +57,25 @@ class TravelController extends Controller
     }
     
     
-    public function edit()
+    public function edit(Requet $request)
     {
-        return view('user.travel.travel_edit');
+        $travel = Travel::find($rewuest->id);
+        if(empty($travel)){
+            abort(404);
+        }
+        return view('user.travel.travel_edit', ['travel_edit'=>$travel]);
     }
     
     
-    public function update()
+    public function update(Request $request)
     {
+        $this->validate($request,Travel::$rules);
+        $travel = Travel::find($request->id);
+        $travel_edit = $request->all();
+        unset($travel_form)['_token']);
+        $travel->fill(&travel_edit['_token']);
+        $travel->fill($travel_edit)->
+        return redirect('travel/{id}');
         
     }
     

@@ -38,7 +38,7 @@
             <section class="contents">
                 @yield('content')
                
-                </ul>
+            
             </section>      
         </main>
     </body>
