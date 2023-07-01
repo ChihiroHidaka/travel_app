@@ -17,10 +17,7 @@ class TravelController extends Controller
         return view('user.travel.travel', ['travelList' => $travelList]);//連想配列　左がわは文字列で名前、右側は実データ
     }
     
-    public function create()
-    {
-        return view('user.travel.travel_edit');
-    }
+  
     
     public function show($id)
     {
@@ -57,9 +54,16 @@ class TravelController extends Controller
     }
     
     
+      public function create()
+    {
+        return view('user.travel.travel_edit');
+    }
+    
+    
+    //旅行概要hの編集画面に飛ぶアクション
     public function edit(Requet $request)
     {
-        $travel = Travel::find($rewuest->id);
+        $travel = Travel::find($request->id);
         if(empty($travel)){
             abort(404);
         }
@@ -67,15 +71,20 @@ class TravelController extends Controller
     }
     
     
+    //旅行概要の編集・更新アクション
     public function update(Request $request)
     {
+        //validation
         $this->validate($request,Travel::$rules);
+        //Travelモデルからデータを取得する
         $travel = Travel::find($request->id);
-        $travel_edit = $request->all();
-        unset($travel_form)['_token']);
-        $travel->fill(&travel_edit['_token']);
-        $travel->fill($travel_edit)->
-        return redirect('travel/{id}');
+        //送信されたデータを格納
+        $travel_list = $request->all();
+        unset($travel_list['_token']);
+        
+        $travel->fill($travel_edit)->save();
+        
+        return view('user.travel.show',['travelList' => $travelList],['travel' =>$travel]);
         
     }
     
