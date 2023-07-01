@@ -28,11 +28,12 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 Route::controller(TravelController::class)->prefix('user')->middleware('auth')->group(function() {
-    Route::get('travel/{id}', 'show')->name('travel.show');//aダグ
     Route::get('travel/create','create')->name('travel.create');//aタグ
     Route::post('travel/store', 'store')->name('travel.store');
-    Route::post('travrl/edit,')
+    Route::get('travel/{id}', 'show')->name('travel.show');//aダグ
+    Route::get('travel/edit','edit')->name('travel.edit');
 });
+
 
 
 

@@ -21,7 +21,7 @@
                 <h2>旅行一覧</h2>
                 <a href="{{ route('travel.create') }}" id="create_travel">➕旅行を追加する</a>
                 <ul>
-                    @foreach($travelList as $travel)
+                   @foreach($travelList as $travel)
                     <li><a href="user/travel/{{$travel->id}}">{{ $travel->title }}</a></li>
                     @endforeach
                 </ul>

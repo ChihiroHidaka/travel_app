@@ -16,7 +16,7 @@
          <li>旅行開始日：{{$travel->start_date}}</li>
          <li>旅行終了日：{{$travel->end_date}}</li>
          <li> 詳細： {{$travel->description}}</li>
-         <li><a href="{{ route('travel.create') }}" >旅行概要を編集する</a></li>
+         <li><a href="{{ route('travel.edit') }}" >旅行概要を編集する</a></li>
      </ul>
 </div>
 

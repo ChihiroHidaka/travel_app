@@ -10,6 +10,12 @@ use App\Models\Travel;
 
 class TravelController extends Controller
 {
+     public function create()
+    {
+        return view('user.travel.travel');
+    }
+    
+    
     public function index()
     {
         $travelList = Travel::where('user_id', \Auth::id())->get();
@@ -18,15 +24,7 @@ class TravelController extends Controller
     }
     
   
-    
-    public function show($id)
-    {
-        $travelList = Travel::where('user_id', \Auth::id())->get();
-        $travel = Travel::find($id);
-        return view('user.travel.show',['travelList' => $travelList],['travel' =>$travel]);
-    }
-    
-    
+  
     public function store(Request $request)
     {
         // dd('plan_storeが呼ばれた');//動作の確認用
@@ -54,21 +52,34 @@ class TravelController extends Controller
     }
     
     
-      public function create()
+      
+    public function show(Request $request)
     {
-        return view('user.travel.travel_edit');
+        // dd('ok');
+        $travelList = Travel::where('user_id', \Auth::id())->get();
+        $travel = Travel::find($request->id);
+        
+        return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel]);
     }
     
     
-    //旅行概要hの編集画面に飛ぶアクション
-    public function edit(Requet $request)
+    
+    
+    
+    
+    //旅行概要の編集画面に飛ぶアクション
+    public function edit(Request $request)
     {
-        $travel = Travel::find($request->id);
+        // dd('plan_editが呼ばれた');//動作の確認用
+        $travelList = Travel::where('user_id', \Auth::id())->get();
+        $travel_edit = Travel::find($request->id);
+       
         if(empty($travel)){
             abort(404);
         }
-        return view('user.travel.travel_edit', ['travel_edit'=>$travel]);
+        return view('user.travel.travel_edit', ['travel_edit'=>$travel_edit, 'travelList'=>$travelList]);
     }
+    
     
     
     //旅行概要の編集・更新アクション
@@ -78,6 +89,7 @@ class TravelController extends Controller
         $this->validate($request,Travel::$rules);
         //Travelモデルからデータを取得する
         $travel = Travel::find($request->id);
+        // dd('plan_storeが呼ばれた');//動作の確認用
         //送信されたデータを格納
         $travel_list = $request->all();
         unset($travel_list['_token']);
