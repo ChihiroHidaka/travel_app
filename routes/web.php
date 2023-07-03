@@ -31,7 +31,8 @@ Route::controller(TravelController::class)->prefix('user')->middleware('auth')->
     Route::get('travel/create','create')->name('travel.create');//aタグ
     Route::post('travel/store', 'store')->name('travel.store');
     Route::get('travel/{id}', 'show')->name('travel.show');//aダグ
-    Route::get('travel/edit','edit')->name('travel.edit');
+    Route::get('travel/{id}/edit','edit')->name('travel.edit');
+    Route::post('travel/update','update')->name('travel.update');
 });
 
 

@@ -3,7 +3,7 @@
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
-@section('title', '旅行表示')
+@section('title', '各旅行概要表示')
 
 
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
@@ -13,10 +13,11 @@
 <div>
      <h1>{{$travel->title}}</h1> 
      <ul>
-         <li>旅行開始日：{{$travel->start_date}}</li>
-         <li>旅行終了日：{{$travel->end_date}}</li>
-         <li> 詳細： {{$travel->description}}</li>
-         <li><a href="{{ route('travel.edit') }}" >旅行概要を編集する</a></li>
+         <!--<li></li>-->
+         <li>開始日：{{$travel->start_date}}</li>
+         <li>終了日：{{$travel->end_date}}</li>
+         <li> 詳  細 ： {{$travel->description}}</li>
+         <li><a href="/user/travel/{{$travel->id}}/edit">旅行概要を編集する</a></li>
      </ul>
 </div>
 

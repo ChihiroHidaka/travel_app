@@ -10,22 +10,24 @@ use App\Models\Travel;
 
 class TravelController extends Controller
 {
-     public function create()
-    {
-        return view('user.travel.travel');
-    }
     
-    
-    public function index()
+     public function index()//ホーム画面表示
     {
         $travelList = Travel::where('user_id', \Auth::id())->get();
         // dd($travels);
-        return view('user.travel.travel', ['travelList' => $travelList]);//連想配列　左がわは文字列で名前、右側は実データ
+        return view('user.travel.travelhome', ['travelList' => $travelList]);//連想配列　左がわは文字列で名前、右側は実データ
     }
     
-  
-  
-    public function store(Request $request)
+    
+     public function create()//旅行概要の新規作成画面へ
+    {
+        $travelList = Travel::where('user_id', \Auth::id())->get();
+        return view('user.travel.travel',['travelList' => $travelList]);
+    }
+    
+
+
+    public function store(Request $request)//旅行の保存
     {
         // dd('plan_storeが呼ばれた');//動作の確認用
         $this->validate($request, Travel::$rules);
@@ -53,9 +55,8 @@ class TravelController extends Controller
     
     
       
-    public function show(Request $request)
+    public function show(Request $request)//各旅行の概要表示
     {
-        // dd('ok');
         $travelList = Travel::where('user_id', \Auth::id())->get();
         $travel = Travel::find($request->id);
         
@@ -64,26 +65,19 @@ class TravelController extends Controller
     
     
     
-    
-    
-    
-    //旅行概要の編集画面に飛ぶアクション
-    public function edit(Request $request)
+
+    public function edit(Request $request)//旅行概要の編集画面に飛ぶアクション
     {
-        // dd('plan_editが呼ばれた');//動作の確認用
-        $travelList = Travel::where('user_id', \Auth::id())->get();
-        $travel_edit = Travel::find($request->id);
-       
-        if(empty($travel)){
-            abort(404);
-        }
-        return view('user.travel.travel_edit', ['travel_edit'=>$travel_edit, 'travelList'=>$travelList]);
+        
+        $travel = Travel::find($request->id);
+        return view('user.travel.travel_edit',['travel' => $travel]);
+        
+        // if(empty($travel)){
+        //     abort(404);
     }
     
     
-    
-    //旅行概要の編集・更新アクション
-    public function update(Request $request)
+    public function update(Request $request)//旅行概要編集画面からの更新（保存）
     {
         //validation
         $this->validate($request,Travel::$rules);
@@ -101,12 +95,6 @@ class TravelController extends Controller
     }
     
     
-    // public function index(Request $request)
-    // {
-    //   $traveldata = Travel::all();
-    //   return view('user.travel.travel',['traveldata' => $traveldata]);
-        
-    // }
     
 
 }

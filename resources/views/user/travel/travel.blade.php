@@ -5,7 +5,7 @@
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
-@section('title', '旅行表示')
+@section('title', '新規旅行作成')
 
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
@@ -19,7 +19,6 @@
             @endforeach
         </ul>
     @endif
-
     @csrf
     <label for="travel_title">旅行のタイトル</label>
     <input type="text" name="title" id="travel_title"　value="{{ old('travel_title') }}"></br>
@@ -32,11 +31,11 @@
     <label for="image">画像</label>
     <input type="file" name="image" id="image"></br>
     
-                        
 
     <button type="submit">旅行を作成する</button></br>
     
 </form>
 
+@endsection
 
     
