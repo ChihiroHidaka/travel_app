@@ -64,8 +64,6 @@ class TravelController extends Controller
     }
     
     
-    
-
     public function edit(Request $request)//旅行概要の編集画面に飛ぶアクション
     {
         
@@ -79,19 +77,40 @@ class TravelController extends Controller
     
     public function update(Request $request)//旅行概要編集画面からの更新（保存）
     {
-        //validation
-        $this->validate($request,Travel::$rules);
-        //Travelモデルからデータを取得する
+        
+        $this->validate($request,Travel::$rules);//validationで検証
+        
+        $travel = Travel::find($request->id);//Travelモデルから元データを取得する
+
+        $form = $request->all();//送信された新しいデータを全て＄formに格納
+        
+        if($request->remove =='trure'){
+            $form['imgae_path'] = null;
+        } elseif ($request->file('imgae')){
+            $path = $request->file('imgae')->store('public/image');
+            $form['image_path'] = basename($path);
+        } else{
+            $form['image_path'] = $travel->imgae_path;
+        }
+        unset($form['imgae']);
+        unset($form['remove']);
+        unset($form['_token']);
+        
+        $travel->fill($form)->save();//＄travelを＄formのデータで上書き保存
+        
+        $travelList = Travel::where('user_id', \Auth::id())->get();//ログイン中のユーザ-が所有している旅行のリストをデータベースから取得
+        
+        return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel]);
+        
+    }
+    
+    
+    public function delete(Request $request)//旅行概要の削除
+    {
+        // dd('OK');//動作の確認用
         $travel = Travel::find($request->id);
-        // dd('plan_storeが呼ばれた');//動作の確認用
-        //送信されたデータを格納
-        $travel_list = $request->all();
-        unset($travel_list['_token']);
-        
-        $travel->fill($travel_edit)->save();
-        
-        return view('user.travel.show',['travelList' => $travelList],['travel' =>$travel]);
-        
+        $travel->delete();
+        return redirect('/home');
     }
     
     

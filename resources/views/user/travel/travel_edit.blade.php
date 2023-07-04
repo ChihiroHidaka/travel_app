@@ -9,7 +9,7 @@
 @section('content')
 
 <h1>旅行概要を編集する</h1>
-<form method="POST" action="{{ route('travel.update') }}" id="travel_update">
+<form method="POST" action="{{ route('travel.update',['id' =>$travel->id])}}" id="travel_update">
      @if (count($errors) > 0)
         <ul>
             @foreach($errors->all() as $e)
@@ -35,4 +35,7 @@
 
     <button type="submit">旅行概要を更新する</button></br>
 </form>
+
+<a href="{{route('travel.delete',['id' => $travel->id])}}">「{{$travel->title}}」を削除する</a>
+
 @endsection

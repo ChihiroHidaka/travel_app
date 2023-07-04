@@ -32,11 +32,9 @@ Route::controller(TravelController::class)->prefix('user')->middleware('auth')->
     Route::post('travel/store', 'store')->name('travel.store');
     Route::get('travel/{id}', 'show')->name('travel.show');//aダグ
     Route::get('travel/{id}/edit','edit')->name('travel.edit');
-    Route::post('travel/update','update')->name('travel.update');
+    Route::post('travel/{id}/update','update')->name('travel.update');
+    Route::get('travel/{id}/delete','delete')->name('travel.delete');
 });
-
-
-
 
 
 Route::controller(PlanController::class)->prefix('user')->middleware('auth')->group(function() {
