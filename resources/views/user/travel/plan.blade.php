@@ -1,9 +1,9 @@
 {{-- layouts/home.blade.phpを読み込む --}}
-@extends('layouts.menu')
+@extends('layouts.app')
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
-@section('title', '行程表作成')
+@section('title', '行程表の作成')
 
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
@@ -11,6 +11,9 @@
 <!--下記からユーザーによるデータ入力-->
 <form method="POST" action="{{ route('plan.store') }}" id="travelForm">
     @csrf
+    <!--保存するときにtravel_idと＄traveldを紐づける-->
+   <input type="hidden" name="travel_id" value="{{$travelId}}" />
+   
    <input id="day" name="plan_date" type="date"></input>
    
 　　<table id="travelplan">
@@ -32,11 +35,14 @@
             </tr>
         </tbody>
     </table>
-    <button type="button" id="addPlan">次の予定を追加する</button></br>
+    
+    
+<!--    <button type="button" id="addPlan">次の予定を追加する</button></br>-->
 
-<button type="button" id="addday">次の日</button></br>
+<!--<button type="button" id="addday">次の日</button></br>-->
 <button type="submit">全ての予定を保存する</button></br>
 </form>
+@endsection
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -85,4 +91,3 @@
 </script>
 
  
-@endsection

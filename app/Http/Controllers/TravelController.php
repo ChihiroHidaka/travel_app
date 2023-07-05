@@ -113,7 +113,4 @@ class TravelController extends Controller
         return redirect('/home');
     }
     
-    
-    
-
 }

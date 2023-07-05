@@ -10,26 +10,32 @@ use App\Models\Plan;
 
 class PlanController extends Controller
 {
-    public function create()
+    public function create($travelId)
    {
-    return view('user.travel.plan_edit');
+    return view('user.travel.plan',['travelId' => $travelId]);
    }
+   
+   
    
    public function store(Request $request)
     {
         dd('plan_storeが呼ばれた');//動作の確認用
         $this->validate($request, Plan::$rules);
         $plan = new Plan;
-        $form = $request->all();//まだ理解できていない
+        $form = $request->all();
        
         unset($form['_token']);
         
-        $plan->fill($store);
+        $plan->fill($form);
+        $plan->user_id = \Auth::id();
+        $plan->group_id = 1;
         $plan->save();
         
        
-        return redirect('user/travel/home');
+        return redirect('/home');
     }
+    
+    
     
      public function edit()
     {
