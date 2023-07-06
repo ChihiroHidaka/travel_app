@@ -19,7 +19,7 @@ class PlanController extends Controller
    
    public function store(Request $request)
     {
-        dd('plan_storeが呼ばれた');//動作の確認用
+        // dd('plan_storeが呼ばれた');//動作の確認用
         $this->validate($request, Plan::$rules);
         $plan = new Plan;
         $form = $request->all();
@@ -31,8 +31,10 @@ class PlanController extends Controller
         $plan->group_id = 1;
         $plan->save();
         
-       
-        return redirect('/home');
+        $travelPlan = Plan::where('id', $plan->id)->get(); 
+        $request ->session()->flash('travelPlan',$travelPlan);
+    
+        return redirect()->back();
     }
     
     
