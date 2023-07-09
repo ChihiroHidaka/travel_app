@@ -9,10 +9,10 @@
 @section('content')
     
 <!--下記からユーザーによるデータ入力-->
-<form method="POST" action="{{ route('plan.store') }}" id="planForm">
+<form method="POST" action="{{ route('plan.store',['travelId' => $travel->id]) }}" id="planForm">
     @csrf
     <!--保存するときにtravel_idと＄traveldを紐づける-->
-   <input type="hidden" name="travel_id" value="{{$travelId}}" />
+   <input type="hidden" name="travelId" value="{{$travel->id}}" />
    
    <label>日付</label>
    <input id="day" name="plan_date" type="date"></input>
@@ -41,7 +41,7 @@
 </form>
 
 <div>
-    @foreach(session('$travelPlan') as $plan)
+    @foreach($Plan as $plan)
     <p>{{$plan->plan_date}}</p>
       　<table id="travelPlan">
             <thead>

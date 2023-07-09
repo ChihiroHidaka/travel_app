@@ -32,19 +32,19 @@ class TravelController extends Controller
         // dd('plan_storeが呼ばれた');//動作の確認用
         $this->validate($request, Travel::$rules);
         $travel = new Travel;
-        $form = $request->all();//まだ理解できていない
+        $form = $request->all();
         
-        if(isset($form['image'])){
+        if(isset($form['image'])){//投稿画面で画像を選択していれば$form[’image’]にデータが入り、選択していなければnull
             $path = $request->file('image')->store('public/image');
-            $travel->image_path = basename($path);
+            $travel->image_path = basename($path);//$pathの中は「public/image/ハッシュ化されたファイル名」
         }else{
             $travel->image_path = null;
         }
-        unset($form['_token']);
-        unset($form['image']);
+        unset($form['_token']);//不要なtokenを削除
+        unset($form['image']);//不要なimageを削除
         
     
-        $travel->fill($form);
+        $travel->fill($form);//$travelオブジェクトのfiillメソッドを呼び出す
         $travel->user_id = \Auth::id();
         $travel->group_id = 1;
         $travel->save();

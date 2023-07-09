@@ -5,36 +5,49 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Plan;
+use App\Models\Travel;
 
 
 
 class PlanController extends Controller
 {
+    
     public function create($travelId)
    {
-    return view('user.travel.plan',['travelId' => $travelId]);
+       
+    $travel = Travel::where('user_id', \Auth::id())->get();
+    
+    return view('user.travel.plan',['travel' => $travel]);
+    
    }
    
    
    
    public function store(Request $request)
-    {
+   {
         // dd('plan_storeが呼ばれた');//動作の確認用
         $this->validate($request, Plan::$rules);
         $plan = new Plan;
-        $form = $request->all();
+        $plan_form = $request->all();
        
-        unset($form['_token']);
+        unset($plan_form['_token']);
         
-        $plan->fill($form);
+        $plan->fill($plan_form);
         $plan->user_id = \Auth::id();
         $plan->group_id = 1;
         $plan->save();
         
-        $travelPlan = Plan::where('id', $plan->id)->get(); 
-        $request ->session()->flash('travelPlan',$travelPlan);
+        $travel = Travel::where('user_id', \Auth::id())->get();
+        
     
-        return redirect()->back();
+        return redirect('/travel/' . $travel->id . '/plan');
+    }
+    
+    
+    public function show()
+    {
+        $plan = Plan::find($request->id);
+        return view('travel.user.plan',['plan' => $plan]);
     }
     
     
