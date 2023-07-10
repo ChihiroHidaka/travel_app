@@ -15,8 +15,8 @@ class PlanController extends Controller
     public function create($travelId)
    {
        
-    $travel = Travel::where('user_id', \Auth::id())->get();
-    
+    $travel = Travel::find($travelId);
+    //dd($travel);
     return view('user.travel.plan',['travel' => $travel]);
     
    }
@@ -37,7 +37,7 @@ class PlanController extends Controller
         $plan->group_id = 1;
         $plan->save();
         
-        $travel = Travel::where('user_id', \Auth::id())->get();
+        $travel = Travel::find($travelId);
         
     
         return redirect('/travel/' . $travel->id . '/plan');
