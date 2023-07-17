@@ -21,7 +21,7 @@
      </ul>
 </div>
 
-<p><a href="/user/travel/{{$travel->id}}/plan/create">行程表を作成/編集する</a></p>
+<p><a href="/user/travel/{{$travel->id}}/plan/create">行程表を作成する</a></p>
 <!--下記に行程表を追加すること-->
 <div>
     <p>行程表</p>

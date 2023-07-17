@@ -16,7 +16,6 @@ class Plan extends Model
         'end_time' => 'required',
         'plan'=>'required',
         
-        
     );
     
 }

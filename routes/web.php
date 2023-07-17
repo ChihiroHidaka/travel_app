@@ -38,9 +38,10 @@ Route::controller(TravelController::class)->prefix('user')->middleware('auth')->
 
 
 Route::controller(PlanController::class)->prefix('user')->middleware('auth')->group(function() {
-    Route::get('travel/{travelId}/plan/create','create')->name('plan.create');
-    Route::post('travel/{travelId}/plan','store')->name('plan.store');
-    Route::get('travel/{travelId}/plan','show')->name('plan.show');
+    Route::get('travel/{travel_id}/plan/create','create')->name('plan.create');
+    Route::post('travel/{travel_id}/plan','store')->name('plan.store');
+    Route::get('travel/{travel_id}/plan/edit','edit')->name('plan.edit');
+    
 });
 
 

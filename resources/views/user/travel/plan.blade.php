@@ -9,10 +9,20 @@
 @section('content')
     
 <!--下記からユーザーによるデータ入力-->
-<form method="POST" action="{{ route('plan.store',['travelId' => $travel->id]) }}" id="planForm">
+<form method="POST" action="{{ route('plan.store',['travel_id' => $travel_id]) }}" id="planForm">
     @csrf
     <!--保存するときにtravel_idと＄traveldを紐づける-->
-   <input type="hidden" name="travelId" value="{{$travel->id}}" />
+   <input type="hidden" name="travel_id" value="{{$travel_id}}" />
+   
+   @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
    
    <label>日付</label>
    <input id="day" name="plan_date" type="date"></input>
@@ -29,10 +39,10 @@
         </thead>
         <tbody>
             <tr class="PlanCreate">
-                <td><input id="fromtime" name="details[0][from_time]" type="time" value="{{ old('from_time') }}"></td>
-                <td><input id="endtime" name="details[0][end_time]" type="time" value="{{ old('end_time') }}"></td>
-                <td><input id="plan" name="details[0][plan]" type="text" value="{{ old('plan') }}"></td>
-                <td><input id="remarks" name=datails[0][remarks] type="text" value="{{ old('remarks') }}"></td>
+                <td><input id="fromtime" name="from_time" type="time" value="{{ old('from_time') }}"></td>
+                <td><input id="endtime" name="end_time" type="time" value="{{ old('end_time') }}"></td>
+                <td><input id="plan" name="plan" type="text" value="{{ old('plan') }}"></td>
+                <td><input id="remarks" name="remarks" type="text" value="{{ old('remarks') }}"></td>
             </tr>
         </tbody>
     </table>
@@ -41,7 +51,7 @@
 </form>
 
 <div>
-    @foreach($Plan as $plan)
+    @foreach($plans as $plan)
     <p>{{$plan->plan_date}}</p>
       　<table id="travelPlan">
             <thead>
@@ -55,10 +65,11 @@
             </thead>
             <tbody>
                 <tr class="PlanCreate">
-                    <td><input id="fromtime" name="details[0][from_time]" type="time" value="{{$plan->from_time }}"></td>
-                    <td><input id="endtime" name="details[0][end_time]" type="time" value="{{$plan->end_time}}"></td>
-                    <td><input id="plan" name="details[0][plan]" type="text" value="{{ $plan->plan}}"></td>
-                    <td><input id="remarks" name=datails[0][remarks] type="text" value="{{$plan->remarks}}"></td>
+                    <td><input id="fromtime" name="from_time" type="time" value="{{$plan->from_time }}"></td>
+                    <td><input id="endtime" name="end_time" type="time" value="{{$plan->end_time}}"></td>
+                    <td><input id="plan" name="[plan" type="text" value="{{ $plan->plan}}"></td>
+                    <td><input id="remarks" name="remarks" type="text" value="{{$plan->remarks}}"></td>
+                    <td><a　>編集</a></td>
                 </tr>
             </tbody>
             </table>
