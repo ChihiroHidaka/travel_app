@@ -8,11 +8,9 @@
 @section('content')
 <h1>行程表を編集する</h1>
 
-<form method="POST" action="{{ route('plan.update',['travel_id' => $travel_id]) }}" id="planForm">
+<form method="POST" action="{{ route('plan.update'}}" id="planForm">
     @csrf
-    <!--保存するときにtravel_idと＄traveldを紐づける-->
-   <input type="hidden" name="travel_id" value="{{$travel_id}}" />
-   
+    
    @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -24,7 +22,7 @@
     @endif
    
    <label>日付</label>
-   <input id="day" name="plan_date" type="date" value-"{{$plan->plan_date }}"></input>
+   <input id="day" name="plan_date" type="date" value="{{$plan->plan_date }}"></input>
    
 　　<table id="travelPlan">
         <thead>

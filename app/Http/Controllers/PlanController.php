@@ -45,28 +45,30 @@ class PlanController extends Controller
     }
     
     
-     public function edit(Request $request)
+    public function update(Request $request)//行程表の編集画面からの更新（保存）
     {
-        $plan = Plan::find($request ->id);
-        return redirect('user.travel.edit');
+        
+        $this->validate($request,Plan::$rules);//validationで検証
+        
+        $plan = Plan::find($request->id);//Planモデルから元データを取得する
+
+        $plan_form = $request->all();//送信された新しいデータを全て＄plan_formに格納
+        
+        unset($form['_token']);
+        
+        $plan->fill($plan_form)->save();//＄planを＄plan_formのデータで上書き保存
+        
+        return redirect()->route('plan.create', ['travel_id'=>$request->travel_id]);
     }
     
     
-    
-    public function update()
+    public function delete(Request $request)//各工程の削除
     {
-        
-        
-        
+        // dd('OK');//動作の確認用
+        $plan = Plan::find($request->id);
+        $plan->delete();
+        return redirect()->route('plan.create');
     }
-        
-        
-        
-   public function index(Request $request)
-    {
-        
-    }
-    
     
 }
 
