@@ -69,8 +69,8 @@
                     <td><input id="endtime" name="end_time" type="time" value="{{$plan->end_time}}"></td>
                     <td><input id="plan" name="[plan" type="text" value="{{ $plan->plan}}"></td>
                     <td><input id="remarks" name="remarks" type="text" value="{{$plan->remarks}}"></td>
-                    <td><a href="{{route('plan.edit')}}">編集</a></td>
-                    <td><a href="{{route('plan.delete')}}">削除</a></td>
+                    <td><a href="/user/plan/{{$plan->id}}/edit">編集</a></td>
+                    <td><a href="{{route('plan.delete',['travel_id' => $travel_id])}}">削除</a></td>
                 </tr>
             </tbody>
             </table>

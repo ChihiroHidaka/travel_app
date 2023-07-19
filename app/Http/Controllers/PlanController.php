@@ -21,8 +21,7 @@ class PlanController extends Controller
     return view('user.travel.plan',['plans' => $plans,'travel_id' =>$travel_id]);
     
    }
-   
-   
+  
   
    public function store(Request $request)
    {
@@ -44,6 +43,12 @@ class PlanController extends Controller
         return redirect()->route('plan.create', ['travel_id'=>$request->travel_id]);
     }
     
+    public function edit($plan_id)//受け取りたい変数をルーティングのパラメーターで定義
+    {
+        $plan = Plan::find($plan_id);
+        return view('user.travel.plan_edit',['plan'=>$plan]);
+    }
+    
     
     public function update(Request $request)//行程表の編集画面からの更新（保存）
     {
@@ -51,14 +56,17 @@ class PlanController extends Controller
         $this->validate($request,Plan::$rules);//validationで検証
         
         $plan = Plan::find($request->id);//Planモデルから元データを取得する
+        dd($plan->id);
+       
 
         $plan_form = $request->all();//送信された新しいデータを全て＄plan_formに格納
-        
-        unset($form['_token']);
+         dd($plan_form);
+         
+        unset($plan_form['_token']);
         
         $plan->fill($plan_form)->save();//＄planを＄plan_formのデータで上書き保存
         
-        return redirect()->route('plan.create', ['travel_id'=>$request->travel_id]);
+        return redirect()->route('plan.create');
     }
     
     

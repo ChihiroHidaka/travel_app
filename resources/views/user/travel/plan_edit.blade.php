@@ -8,9 +8,11 @@
 @section('content')
 <h1>行程表を編集する</h1>
 
-<form method="POST" action="{{ route('plan.update'}}" id="planForm">
+<form method="POST" action="{{ route('plan.update',['plan_id'=>$plan->id])}}" id="planForm">
+<input type="hidden" name="plan_id" value="{{$plan->id}}"/>
     @csrf
     
+
    @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

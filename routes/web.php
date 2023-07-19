@@ -40,9 +40,9 @@ Route::controller(TravelController::class)->prefix('user')->middleware('auth')->
 Route::controller(PlanController::class)->prefix('user')->middleware('auth')->group(function() {
     Route::get('travel/{travel_id}/plan/create','create')->name('plan.create');
     Route::post('travel/{travel_id}/plan','store')->name('plan.store');
-    Route::get('travel/{travel_id}/plan/edit','edit')->name('plan.edit');
+    Route::get('plan/{plan_id}/edit','edit')->name('plan.edit');
+    Route::post('plan/{plan_id}/update','update')->name('plan.update');
     Route::get('travel/{travel_id}/plan/delete','delete')->name('plan.delete');
-    
 });
 
 
