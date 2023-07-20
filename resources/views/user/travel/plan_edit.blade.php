@@ -8,7 +8,7 @@
 @section('content')
 <h1>行程表を編集する</h1>
 
-<form method="POST" action="{{ route('plan.update',['plan_id'=>$plan->id])}}" id="planForm">
+<form method="POST" action="{{ route('plan.update',['plan_id'=>$plan->id,'travel_id' => $travel_id])}}" id="planForm">
 <input type="hidden" name="plan_id" value="{{$plan->id}}"/>
     @csrf
     
@@ -48,10 +48,6 @@
 
 <button type="submit">行程を更新する</button></br>
 </form>
-
-
-
-
 
 
 @endsection

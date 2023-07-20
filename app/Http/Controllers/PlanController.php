@@ -46,27 +46,24 @@ class PlanController extends Controller
     public function edit($plan_id)//受け取りたい変数をルーティングのパラメーターで定義
     {
         $plan = Plan::find($plan_id);
+        // dd($plan);
         return view('user.travel.plan_edit',['plan'=>$plan]);
     }
     
     
-    public function update(Request $request)//行程表の編集画面からの更新（保存）
+    public function update(Request $request )//行程表の編集画面からの更新（保存）
     {
         
         $this->validate($request,Plan::$rules);//validationで検証
-        
-        $plan = Plan::find($request->id);//Planモデルから元データを取得する
-        dd($plan->id);
-       
-
+        $plan = Plan::find($request->plan_id);//Planモデルから元データを取得する
+        // dd($plan->id);
         $plan_form = $request->all();//送信された新しいデータを全て＄plan_formに格納
-         dd($plan_form);
-         
+        //  dd($plan_form);
         unset($plan_form['_token']);
-        
+        $plan->timestamps = false;
         $plan->fill($plan_form)->save();//＄planを＄plan_formのデータで上書き保存
         
-        return redirect()->route('plan.create');
+        return redirect()->route('plan.create',['travel_id'=>$request->travel_id]);
     }
     
     
