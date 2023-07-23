@@ -11,7 +11,6 @@ use App\Models\Travel;
 
 class PlanController extends Controller
 {
-    
     public function create($travel_id)
    {
        
@@ -63,18 +62,29 @@ class PlanController extends Controller
         $plan->timestamps = false;
         $plan->fill($plan_form)->save();//＄planを＄plan_formのデータで上書き保存
         
-        return redirect()->route('plan.create',['travel_id'=>$request->travel_id]);
+        return redirect()->route('plan.create',['travel_id'=>$plan->travel_id]);
     }
     
     
     public function delete(Request $request)//各工程の削除
     {
-        // dd('OK');//動作の確認用
-        $plan = Plan::find($request->id);
+        // dd($request->all());
+        $plan = Plan::find($request->plan_id);
+        // dd($plan);
         $plan->delete();
-        return redirect()->route('plan.create');
+        return redirect()->route('plan.create',['travel_id'=>$plan->travel_id]);
     }
     
+    public function show($travel_id,$plan_id)
+    {
+        $travel = Travel::find($travel_id);
+        $travelList = Travel::where('user_id', \Auth::id())->get();
+        $plans = Plan::find($plan_id);
+        
+        
+        return view('travel.show',['travelList' => $travelList, 'travel' => $travel,'plans' => $plans]);
+        
+    }
 }
 
 

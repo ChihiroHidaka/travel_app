@@ -25,24 +25,32 @@
 <!--下記に行程表を追加すること-->
 <div>
     <p>行程表</p>
-    　　<table id="travelplan">
-        　　<thead>
-                <tr>
-                    <th>開始時間</th>
-                    <th>終了時間</th>
-                    <th>目的地もしくは移動手段</th>
-                    <th>備考</th>
-                </tr>
-       　　 </thead>
-        　 <tbody>
-                <tr class="travel-detail">
-                    <td><input id="fromtime" name="details[0][from_time]" type="time" value="{{ old('from_time') }}"></td>
-                    <td><input id="endtime" name="details[0][end_time]" type="time" value="{{ old('end_time') }}"></td>
-                    <td><input id="plan" name="details[0][plan]" type="text" value="{{ old('plan') }}"></td>
-                    <td><input id="remarks" name=datails[0][remarks] type="text" value="{{ old('remarks') }}"></td>
-                </tr>
-           </tbody>
-    　　</table>
+    　<table id="travelPlan">
+        <thead>
+            <tr>
+                <th>開始時間</th>
+                <th>終了時間</th>
+                <th>目的地もしくは移動手段</th>
+                <th>備考</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        @foreach($plans as $plan)
+        <p>{{$plan->plan_date}}</p>
+        
+          <tr class="PlanCreate">
+                <td id="fromtime" name="from_time" type="time" value="{{$plan->from_time }}">{{$plan->from_time }}</td>
+                <td id="endtime" name="end_time" type="time" value="{{$plan->end_time}}">{{$plan->end_time}}</td>
+                <td id="plan" name="[plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</td>
+                <td id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">{{$plan->remarks}}</td>
+                <td><a href="/user/plan/{{$plan->id}}/edit">編集</a></td>
+                <td><a href="/user/plan/{{$plan->id}}/delete">削除</a></td>
+            </tr>
 
+        </tbody>
+        </table>
+        @endforeach
+        
 </div>
 @endsection

@@ -51,37 +51,35 @@
 </form>
 
 <div>
-    @foreach($plans as $plan)
-    <p>{{$plan->plan_date}}</p>
-      　<table id="travelPlan">
-            <thead>
-                <tr>
-                    <th>開始時間</th>
-                    <th>終了時間</th>
-                    <th>目的地もしくは移動手段</th>
-                    <th>備考</th>
-                    
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="PlanCreate">
-                    <td><input id="fromtime" name="from_time" type="time" value="{{$plan->from_time }}"></td>
-                    <td><input id="endtime" name="end_time" type="time" value="{{$plan->end_time}}"></td>
-                    <td><input id="plan" name="[plan" type="text" value="{{ $plan->plan}}"></td>
-                    <td><input id="remarks" name="remarks" type="text" value="{{$plan->remarks}}"></td>
-                    <td><a href="/user/plan/{{$plan->id}}/edit">編集</a></td>
-                    <td><a href="{{route('plan.delete',['travel_id' => $travel_id])}}">削除</a></td>
-                </tr>
-            </tbody>
-            </table>
-    @endforeach
+  　<table id="travelPlan">
+        <thead>
+            <tr>
+                <th>開始時間</th>
+                <th>終了時間</th>
+                <th>目的地もしくは移動手段</th>
+                <th>備考</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+        @foreach($plans as $plan)
+        <p>{{$plan->plan_date}}</p>
+        
+          <tr class="PlanCreate">
+                <td id="fromtime" name="from_time" type="time" value="{{$plan->from_time }}">{{$plan->from_time }}</td>
+                <td id="endtime" name="end_time" type="time" value="{{$plan->end_time}}">{{$plan->end_time}}</td>
+                <td id="plan" name="[plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</td>
+                <td id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">{{$plan->remarks}}</td>
+                <td><a href="/user/plan/{{$plan->id}}/edit">編集</a></td>
+                <td><a href="/user/plan/{{$plan->id}}/delete">削除</a></td>
+            </tr>
+
+        </tbody>
+        </table>
+        @endforeach
 </div>
-
-
-
-
-
-
+<div><a href="/user/plan/{{$travel->id}}/{{$plan->id}}/plan/show">ホーム画面に戻る</a></div>
+<!--書き方がわからん-->
 
 @endsection
 
