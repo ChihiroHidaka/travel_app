@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Travel;
+use App\Models\Plan;
 
 
 
@@ -59,8 +60,9 @@ class TravelController extends Controller
     {
         $travelList = Travel::where('user_id', \Auth::id())->get();
         $travel = Travel::find($request->id);
+        $plans = Plan::where('travel_id', $request->id)->get();
         
-        return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel]);
+        return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel,'plans' => $plans]);
     }
     
     

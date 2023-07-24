@@ -78,7 +78,7 @@
         </table>
         @endforeach
 </div>
-<div><a href="/user/plan/{{$travel->id}}/{{$plan->id}}/plan/show">ホーム画面に戻る</a></div>
+<div><a href="/user/travel/{{$travel_id}}">ホーム画面に戻る</a></div>
 <!--書き方がわからん-->
 
 @endsection
