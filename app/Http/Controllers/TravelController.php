@@ -14,8 +14,9 @@ class TravelController extends Controller
     
      public function index()//ホーム画面表示
     {
+        //travelistは常時必要なデータのためテンプレートできないか
+        // travelモデルの中からuser_idに紐づくAuthのidと一致するデータを持ってくる。navバーの旅行タイトル用なので
         $travelList = Travel::where('user_id', \Auth::id())->get();
-        // dd($travels);
         return view('user.travel.travelhome', ['travelList' => $travelList]);//連想配列　左がわは文字列で名前、右側は実データ
     }
     
@@ -60,7 +61,7 @@ class TravelController extends Controller
     {
         $travelList = Travel::where('user_id', \Auth::id())->get();
         $travel = Travel::find($request->id);
-        $plans = Plan::where('travel_id', $request->id)->get();
+        $plans = Plan::where('travel_id', $request->id)->get();// Planモデルのデータから、travel_idがリクエストで送られてきたid（$request->id）と一致するレコードを全て取得
         
         return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel,'plans' => $plans]);
     }

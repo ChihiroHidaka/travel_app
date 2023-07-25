@@ -43,7 +43,7 @@ Route::controller(PlanController::class)->prefix('user')->middleware('auth')->gr
     Route::get('plan/{plan_id}/edit','edit')->name('plan.edit');
     Route::post('plan/{plan_id}/update','update')->name('plan.update');
     Route::get('plan/{plan_id}/delete','delete')->name('plan.delete');
-    Route::get('plan/{travel_id}/plan_id}/show','show')->name('travel.plan.show');
+    // Route::get('plan/{travel_id}/plan_id}/show','show')->name('travel.plan.show');
 });
 
 

@@ -75,16 +75,17 @@ class PlanController extends Controller
         return redirect()->route('plan.create',['travel_id'=>$plan->travel_id]);
     }
     
-    public function show($travel_id,$plan_id)
-    {
-        $travel = Travel::find($travel_id);
-        $travelList = Travel::where('user_id', \Auth::id())->get();
-        $plans = Plan::find($plan_id);
+    
+    // public function show($travel_id,$plan_id)
+    // {
+    //     $travel = Travel::find($travel_id);
+    //     $travelList = Travel::where('user_id', \Auth::id())->get();
+    //     $plans = Plan::find($plan_id);
         
         
-        return view('travel.show',['travelList' => $travelList, 'travel' => $travel,'plans' => $plans]);
+    //     return view('travel.show',['travelList' => $travelList, 'travel' => $travel,'plans' => $plans]);
         
-    }
+    // }
 }
 
 
