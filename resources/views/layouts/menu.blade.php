@@ -25,7 +25,7 @@
                     <li><a href="/user/travel/{{$travel->id}}">{{ $travel->title }}</a></li>
                     @endforeach
                 </ul>
-                <p><a href="#">持ち物チェック</a></p>
+                <p><a href="{{ route('belongings.create')}}">持ち物チェック</a></p>
                 <p><a href="#">天気を確認する</a></p>
                 <p><a href="#">観光地を調べる</a></p>
                 <p><a href="#">設定</a></p>

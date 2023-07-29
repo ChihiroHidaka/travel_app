@@ -80,6 +80,7 @@
 </div>
 <div><a href="/user/travel/{{$travel_id}}">ホーム画面に戻る</a></div>
 
+
 @endsection
 
 
