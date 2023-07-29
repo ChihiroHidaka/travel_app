@@ -5,7 +5,7 @@
 
 @section('content')
 
-<form method="POST" action="{{ route('belongings.store'}}" id="belongingsForm">
+<form method="POST" action="{{route('belongings.store')}}" id="belongingsForm">
     @csrf
  
    @if ($errors->any())
@@ -39,13 +39,12 @@
         </thead>
         
         <tbody>
-        @foreach($belonings as $belonging)
+        @foreach($belongings as $belongings)
           <tr class="PlanCreate">
-               <td><input type="checkbox" name="checked[]" value="{{$belonging->belongs_name }}"></td>
-               <td>{{$beloning->belongs_name}}</td>.
-               
-                <!--<td><a href="/user/plan//edit">編集</a></td>-->
-                <!--<td><a href="/user/plan//delete">削除</a></td>-->
+               <td><input type="checkbox" name="checked[]" value="{{$belongings->belongs_name }}"></td>
+               <td>{{$belonings->belongs_name}}</td>.
+                <td><a href="/user/belongings/edit">編集</a></td>
+                <td><a href="/user/belongings/delete">削除</a></td>
             </tr>
         @endforeach    
         </tbody>

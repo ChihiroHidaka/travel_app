@@ -15,7 +15,7 @@ class Travel extends Model
         'title' =>'required',
         'start_date'=>'required',
         'end_date' =>'required',
-          
+        
      );
 }
 

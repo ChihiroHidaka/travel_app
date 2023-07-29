@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\PlanController;
-use App\http\Comtrollers\BelongingsController;
+use App\Http\Controllers\BelongingsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,9 +48,9 @@ Route::controller(PlanController::class)->prefix('user')->middleware('auth')->gr
 });
 
 
-Route::controller(BelongingsController::class)->prefix('user')->middleware('auth')->group(function(){
+Route::controller(BelongingsController::class)->prefix('user')->middleware('auth')->group(function() {
     Route::get('travel/belongings/create','create')->name('belongings.create');
-    Route::get('travel/belongings/store','store')->name('belongings.store');
+    Route::post('travel/belongings/store','store')->name('belongings.store');
     
 });
 
