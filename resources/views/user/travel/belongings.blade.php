@@ -30,6 +30,7 @@
 
 
 <div>
+    <form method="POST" action="{{route('belongings.check')}}" id="belongingsForm">
   　<table id="belongings_list">
         <thead>
             <tr>
@@ -39,16 +40,21 @@
         </thead>
         
         <tbody>
+        
+                
         @foreach($belongings as $belongings)
           <tr class="PlanCreate">
-               <td><input type="checkbox" name="checked[]" value="{{$belongings->belongs_name }}"></td>
-               <td>{{$belonings->belongs_name}}</td>.
-                <td><a href="/user/belongings/edit">編集</a></td>
-                <td><a href="/user/belongings/delete">削除</a></td>
+              <td><input type="checkbox" name="belongings[]" @if($belongings->checked) checked @endif value="{{$belongings->id }}">
+               <td>{{$belongings->belongs_name}}</td>.
+               <td><a href="/user/belongings/edit">編集</a></td>
+               <td><a href="/user/belongings/delete">削除</a></td>
             </tr>
         @endforeach    
+        
         </tbody>
     </table>
+    <button  type="submit">持ち物チェックを完了する</button>
+    </form>
         
 </div>
 <!--<div><a href="/user/travel">ホーム画面に戻る</a></div>-->
