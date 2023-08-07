@@ -31,14 +31,37 @@ class BelongingsController extends Controller
 
         $belongings->fill($belongings_form);
         $belongings->user_id = \Auth::id();
-        // 
         $belongings->checked = 0;
+
         $belongings->save();
         
          $travelList = Travel::where('user_id', \Auth::id())->get();
         
         return redirect()->route('belongings.create');
     }
+    
+    
+    public function check(Request $request)
+    {
+        $belongings = new Belongs;
+        $belongings_form = $request->all();
+        
+        unset($belongings['_token']);
+        
+        $belongings->fill($belongings_form);
+        $belongings->user_id = \Auth::id();
+        
+        $belongings->checked = $request->has('belongings')? 1:0;
+        //  dd($belongings);
+        $belongings->fill($belongings_form)->save();
+        
+        $travelList = Travel::where('user_id', \Auth::id())->get();
+        
+        return redirect()->route('belongings.create');
+        
+    }
 }
+
+
 
 // ,['belongings'=>$belongings,'travelList'=>$travelList]);

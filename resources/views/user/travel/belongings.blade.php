@@ -31,6 +31,7 @@
 
 <div>
     <form method="POST" action="{{route('belongings.check')}}" id="belongingsForm">
+    @csrf
   　<table id="belongings_list">
         <thead>
             <tr>
@@ -38,13 +39,10 @@
                 <th>持ち物名</th>
             </tr>
         </thead>
-        
         <tbody>
-        
-                
         @foreach($belongings as $belongings)
-          <tr class="PlanCreate">
-              <td><input type="checkbox" name="belongings[]" @if($belongings->checked) checked @endif value="{{$belongings->id }}">
+           <tr class="BlongingsCreate">
+               <td><input type="checkbox" name="belongings[]" @if($belongings->checked) checked @endif value="{{$belongings->id }}" {{ old('checkbox') ? 'checked' : '' }}>
                <td>{{$belongings->belongs_name}}</td>.
                <td><a href="/user/belongings/edit">編集</a></td>
                <td><a href="/user/belongings/delete">削除</a></td>
