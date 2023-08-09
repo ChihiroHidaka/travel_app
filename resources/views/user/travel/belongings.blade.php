@@ -39,6 +39,7 @@
                 <th>持ち物名</th>
             </tr>
         </thead>
+        
         <tbody>
         @foreach($belongings as $belongings)
            <tr class="BlongingsCreate">

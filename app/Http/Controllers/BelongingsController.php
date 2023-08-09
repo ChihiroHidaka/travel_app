@@ -43,22 +43,35 @@ class BelongingsController extends Controller
     
     public function check(Request $request)
     {
-        $belongings = new Belongs;
-        $belongings_form = $request->all();
+        $belongings_form = $request->all(); //checkedのデータだけを送る
         
-        unset($belongings['_token']);
+        $belongings = Belongs::where('user_id',\Auth::id())->get();//ユーザーIDに紐づく持ち物を全て取り出す
         
-        $belongings->fill($belongings_form);
-        $belongings->user_id = \Auth::id();
+        foreach($belongings as $value){//＄valueはどの変数名でも可能。$belongingsの値をくりかえしvalueに代入
+              $belongs = Belongs::find($value->id);//$valueから各持ち物IDを代入
+            // var_dump($value);
+            if(in_array($value->id, $belongings_form['belongings'])){ //配列に存在するデータか確認
+               
+                $belongs->checked = true;
+            }
+            else{
+                $belongs->checked = false;
+            }
+            
+        $belongs->save();
         
-        $belongings->checked = $request->has('belongings')? 1:0;
-        //  dd($belongings);
-        $belongings->fill($belongings_form)->save();
+        }
+        // $belongings->fill($belongings_form);
+        // $belongings->user_id = \Auth::id();
+        // $belongings->belongs_name = Belongs::find($request->id);
         
-        $travelList = Travel::where('user_id', \Auth::id())->get();
+        // $belongings->checked = $request->has('belongings[]')? 1:0;
+        // // dd($belongings);
+        // $belongings->fill($belongings_form)->save();
+        
+        // $travelList = Travel::where('user_id', \Auth::id())->get();
         
         return redirect()->route('belongings.create');
-        
     }
 }
 
