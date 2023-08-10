@@ -46,21 +46,23 @@ class BelongingsController extends Controller
         $belongings_form = $request->all(); //checkedのデータだけを送る
         
         $belongings = Belongs::where('user_id',\Auth::id())->get();//ユーザーIDに紐づく持ち物を全て取り出す
-        
+        //  dd($belongings);
         foreach($belongings as $value){//＄valueはどの変数名でも可能。$belongingsの値をくりかえしvalueに代入
-              $belongs = Belongs::find($value->id);//$valueから各持ち物IDを代入
-            // var_dump($value);
+            $belongs = Belongs::find($value->id);//$valueから各持ち物IDを代入
+           
             if(in_array($value->id, $belongings_form['belongings'])){ //配列に存在するデータか確認
-               
+                //取り出したIDとチェックボックスと同じなら
                 $belongs->checked = true;
             }
             else{
                 $belongs->checked = false;
             }
+             dd($belongs);
             
         $belongs->save();
         
         }
+        
         // $belongings->fill($belongings_form);
         // $belongings->user_id = \Auth::id();
         // $belongings->belongs_name = Belongs::find($request->id);
