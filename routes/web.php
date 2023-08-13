@@ -51,7 +51,10 @@ Route::controller(PlanController::class)->prefix('user')->middleware('auth')->gr
 Route::controller(BelongingsController::class)->prefix('user')->middleware('auth')->group(function() {
     Route::get('travel/belongings/create','create')->name('belongings.create');
     Route::post('travel/belongings/store','store')->name('belongings.store');
-     Route::post('/travel/belongings/check','check')->name('belongings.check');
+    Route::post('travel/belongings/check','check')->name('belongings.check');
+    Route::get('travel/belongings/{id}/edit','edit')->name('belongings.edit'); 
+    Route::post('travel/belongings/{id}/update','update')->name('belongings.update');
+    Route::get('travel/belongings/{id}/delete','delete')->name('belongings.delete');
     
 });
 

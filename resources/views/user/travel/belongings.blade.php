@@ -43,10 +43,11 @@
         <tbody>
         @foreach($belongings as $belongings)
            <tr class="BlongingsCreate">
-               <td><input type="checkbox" name="belongings[]" @if($belongings->checked) checked @endif value="{{$belongings->id }}" {{ old('checkbox') ? 'checked' : '' }}>
+               <!--name属性にbelongings[]という配列の形式を使うことで、チェックされたアイテムのIDを配列としてサーバーに送信-->
+               <td><input type="checkbox" name="belongings[]" @if($belongings->checked) checked @endif value="{{$belongings->id }}" {{ old('belongings') ? 'checked' : '' }}>
                <td>{{$belongings->belongs_name}}</td>.
-               <td><a href="/user/belongings/edit">編集</a></td>
-               <td><a href="/user/belongings/delete">削除</a></td>
+               <td><a href="/user/travel/belongings/{{$belongings->id}}/edit">編集</a></td>
+               <td><a href="/user/travel/belongings/{{$belongings->id}}/delete">削除</a></td>
             </tr>
         @endforeach    
         
