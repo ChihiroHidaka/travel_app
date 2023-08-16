@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\BelongingsController;
+use App\Http\Controllers\WeatherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::controller(TravelController::class)->prefix('user')->middleware('auth')->group(function() {
     Route::get('travel/create','create')->name('travel.create');//aタグ
     Route::post('travel/store', 'store')->name('travel.store');
-    Route::get('travel/{id}', 'show')->name('travel.show');//aダグ
+    Route::get('travel/{id}', 'show')->name('travel.show')->where('id', '[0-9]+');//aダグ
     Route::get('travel/{id}/edit','edit')->name('travel.edit');
     Route::post('travel/{id}/update','update')->name('travel.update');
     Route::get('travel/{id}/delete','delete')->name('travel.delete');
@@ -57,6 +58,14 @@ Route::controller(BelongingsController::class)->prefix('user')->middleware('auth
     Route::get('travel/belongings/{id}/delete','delete')->name('belongings.delete');
     
 });
+
+Route::controller(WeatherController::class)->prefix('user')->middleware('auth')->group(function() {
+    Route::get('travel/weather','create')->name('weather.create');
+
+});
+
+
+
 
 
 
