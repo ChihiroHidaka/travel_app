@@ -9,21 +9,7 @@
 @section('content')
 <body>
   <form>
-    <table>
-          <thead>
-              <tr>
-                  <th>緯度</th>
-                  <th>経度</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr id="weather_search">
-                  <td><input id="lat"  type="text" placeholder="例）44.34"></td>
-                  <td><input id="ron" type="text" placeholder="例）10.09"></td>
-              </tr>
-          </tbody>
-    </table>
-    </br>
+    <input type=text id="city_name" placeholder="東京">
     <button type="button" id="weather_check" >上記の位置の天気を調べる</button>
   </form>
   <hr>
