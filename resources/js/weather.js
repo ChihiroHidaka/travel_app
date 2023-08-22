@@ -10,7 +10,7 @@ $(function(){
     $.ajax({
       type: 'GET',
       cathe:false,
-      url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=ja&appid=${apiKey}`,
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=ja&appid=${apiKey}&units=metric`,
       dataType:'json',
     })
     
@@ -25,11 +25,11 @@ $(function(){
       
       let html = `
           <div><img src="${iconList+res.weather[0].icon}@2x.png"></div>
-          <div>天気：${res.weather[0].description}</div>
-          <div>湿度：${res.main.humidity}</div>
-          <div>気温：${res.main.temp}</div>
-          <div>最高気温：${res.main.temp_max}</div>
-          <div>最低気温：${res.main.temp_min}</div>
+          <div>天気情報：${res.weather[0].description}</div>
+          <div>湿度：${res.main.humidity}％</div>
+          <div>気温：${res.main.temp}℃</div>
+          <div>最高気温：${res.main.temp_max}℃</div>
+          <div>最低気温：${res.main.temp_min}℃</div>
       `
       //上記で作成したHTMLを読み込む
       $('#weather_response').append(html);
