@@ -4,7 +4,7 @@ $(function(){
 
 　//ボタンを押した時に関数を発生させる
   $('#weather_check').click(function(event){
-    let cityName =$('#city_name').val();
+    let cityName =　$('#city_name').val();
     // console.log(cityName);
 　　// return;
 　　
@@ -18,12 +18,18 @@ $(function(){
     
     //通信が成功したとき
     .done(function (res){
-      // console.log(res);
-    
-      // $('#weather.icon').html('src', weather[0].icon);
+      console.log(res);
+      console.log(res.main.temp);
+      console.log(res.weather[0]);
       
-      $('#weather').html(res.weather[0]);
-      $('#weatherDescription').html(res.main);
+      let html = `
+        <di>${res.}</div>
+      
+      `
+        
+      
+      // $('#weather').html(res.weather[0]);
+      // $('#weatherDescription').html(res.main);
       
       
       })

@@ -15,9 +15,6 @@
   <hr>
   
   <div id="weather_response">
-     <!--<div id="weatherIcon"></div>-->
-    <div id="weather"></div>
-    <div id="weatherDescription">&nbsp;</div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
