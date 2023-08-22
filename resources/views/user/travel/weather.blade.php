@@ -14,8 +14,7 @@
   </form>
   <hr>
   
-  <div id="weather_response">
-  </div>
+  <div id="weather_response"></div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="{{ secure_asset('js/weather.js') }}" charset="UTF-8"></script> 

@@ -1,17 +1,16 @@
 /* global $ */
 $(function(){
   const apiKey = 'a911bc82d075645e97bb5602ed84bbb2'
+  const icon = ''
 
 　//ボタンを押した時に関数を発生させる
   $('#weather_check').click(function(event){
     let cityName =　$('#city_name').val();
-    // console.log(cityName);
-　　// return;
 　　
     $.ajax({
       type: 'GET',
       cathe:false,
-      url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`,
+      url: `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=ja&appid=${apiKey}`,
       dataType:'json',
     })
     
@@ -20,17 +19,20 @@ $(function(){
     .done(function (res){
       console.log(res);
       console.log(res.main.temp);
-      console.log(res.weather[0]);
+      console.log(res.weather[0].main);
+      console.log(res.main.humidity);
+      const iconList = `https://openweathermap.org/img/wn/`
       
       let html = `
-        <di>${res.}</div>
-      
+          <div><img src="${iconList+res.weather[0].icon}@2x.png"></div>
+          <div>天気：${res.weather[0].description}</div>
+          <div>湿度：${res.main.humidity}</div>
+          <div>気温：${res.main.temp}</div>
+          <div>最高気温：${res.main.temp_max}</div>
+          <div>最低気温：${res.main.temp_min}</div>
       `
-        
-      
-      // $('#weather').html(res.weather[0]);
-      // $('#weatherDescription').html(res.main);
-      
+      //上記で作成したHTMLを読み込む
+      $('#weather_response').append(html);
       
       })
       
