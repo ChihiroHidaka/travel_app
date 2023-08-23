@@ -8,7 +8,7 @@
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <body>
-  <div>都市名から3時間ごとのデータで5日間の天気予報を検索できます</div>
+  <div>都市名から現在の天気予報を検索できます</div>
   <form>
     <input type=text id="city_name" placeholder="東京">
     <button type="button" id="weather_check" >上記の位置の天気を調べる</button>
