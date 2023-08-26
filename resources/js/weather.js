@@ -39,8 +39,7 @@ $(function(){
     //失敗した場合
     .fail(function(res){
       $('#weather_response').html('エラーが発生しています。確認してください');
-    }) 
-    
+    })
     
     //5日間の予報
 //     $.ajax({
@@ -88,8 +87,8 @@ $(function(){
     
     
     
-//   })
-// })
+  })
+})
   
   
   

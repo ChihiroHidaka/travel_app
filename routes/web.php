@@ -6,6 +6,7 @@ use App\Http\Controllers\TravelController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\BelongingsController;
 use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,8 @@ use App\Http\Controllers\WeatherController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -65,6 +68,10 @@ Route::controller(WeatherController::class)->prefix('user')->middleware('auth')-
 });
 
 
+Route::controller(SearchController::class)->prefix('user')->middleware('auth')->group(function(){
+    Route::get('travel/search','create')->name('search.create');
+    
+});
 
 
 
