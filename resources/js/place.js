@@ -1,6 +1,6 @@
 /* global $ */
 $(function(){
-  const apiKey = ''
+  const apiKey = 'AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY'
  
 
 　//ボタンを押した時に関数を発生させる
@@ -10,7 +10,11 @@ $(function(){
     $.ajax({
       type: 'GET',
       cathe:false,
-      url: ``,
+      url: `https://maps.googleapis.com/maps/api/place/findplacefromtext/json
+            ?fields=
+            &input=Museum%20of%20Contemporary%20Art%20Australia
+            &inputtype=textquery
+            &key=apikey`,
       dataType:'json',
     })
     
