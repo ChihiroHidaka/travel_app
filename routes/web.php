@@ -7,6 +7,9 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\BelongingsController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SettingController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,6 +76,11 @@ Route::controller(SearchController::class)->prefix('user')->middleware('auth')->
     
 });
 
+Route::controller(SettingController::class)->prefix('user')->middleware('auth')->group(function(){
+    Route::get('travel/setting/show','show')->name('setting.create');
+    Route::get('travel/setting/edit','edit')->name('setting.edit');
+    
+});
 
 
 

@@ -7,7 +7,9 @@
 
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
-
+<div>氏名：</div>
+<div>メールアドレス：</div>
+<div>パスワード：</div>
     
 
 @endsection
