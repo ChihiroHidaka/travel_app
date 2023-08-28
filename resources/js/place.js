@@ -6,15 +6,15 @@ $(function(){
 　//ボタンを押した時に関数を発生させる
   $('#place_search').click(function(event){
     let cityName =　$('place').val();
-　　
+    
     $.ajax({
       type: 'GET',
       cathe:false,
       url: `https://maps.googleapis.com/maps/api/place/findplacefromtext/json
-            ?fields=
-            &input=Museum%20of%20Contemporary%20Art%20Australia
+            ?fields=name,place_id,geometry,formatted_address,photo,url
+            &input=Museum of Contemporary Art Australia
             &inputtype=textquery
-            &key=apikey`,
+            &key=${apiKey}`,
       dataType:'json',
     })
     
@@ -24,11 +24,11 @@ $(function(){
       console.log(res);//データの確認用
       
       
-      let html = `
+      // let html = `
         
-      `
-      //上記で作成したHTMLを読み込む
-      $('#weather_response').append(html);
+      // `
+      // //上記で作成したHTMLを読み込む
+      // $('#weather_response').append(html);
       
       })
       
