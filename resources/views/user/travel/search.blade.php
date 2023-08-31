@@ -10,13 +10,13 @@
 <body>
 
   <form>
-    <input type=text id="place" placeholder="お台場">
-    <button type="button" id="place_search" >検索</button>
+    <input type=text id="placeSerchInput" placeholder="お台場">
+    <button id="searchButton">検索</button>
   </form>
   <hr>
+  <div id="map" style="width: 100%; height: 400px;"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&libraries=places"></script>
   
-  <div id="place_response"></div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="{{ secure_asset('js/place.js') }}" charset="UTF-8"></script> 
 </body>
