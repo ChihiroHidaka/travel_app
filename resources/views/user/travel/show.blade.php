@@ -52,5 +52,36 @@
         </table>
         @endforeach
         
+        <div>
+             @foreach($plans as $plan)
+             <ul class="Plancreate">
+              <li>
+                <span id="fromtime" name="from_time" type="time" value="{{$plan->from_time }}">{{$plan->from_time }}</span>
+                <div class="sch_box">
+                  <p id="plan" name="[plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
+                  <p id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">
+                  {{$plan->remarks}} </p>
+                  <br><a href="/user/plan/{{$plan->id}}/edit">編集</a>
+                  <br><a href="/user/plan/{{$plan->id}}/delete">削除</a>
+                  <br>
+                 
+               </div>
+              </li>
+
+            </ul>
+        </div>
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 </div>
 @endsection
