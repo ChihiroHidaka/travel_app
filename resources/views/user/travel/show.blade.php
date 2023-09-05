@@ -18,14 +18,14 @@
          <li>終了日：{{$travel->end_date}}</li>
          <li> 詳  細 ： {{$travel->description}}</li>
          <li><a href="/user/travel/{{$travel->id}}/edit">旅行概要を編集する</a></li>
+         <li><a href="/user/travel/{{$travel->id}}/plan/create">行程表を作成する</a></li>
      </ul>
 </div>
 
-<p><a href="/user/travel/{{$travel->id}}/plan/create">行程表を作成する</a></p>
+
 <!--下記に行程表を追加すること-->
 <div>
-    <p>行程表</p>
-    
+    <p class = "planShow">行程表</p>
         <div>
             @foreach($plans as $plan)
              <ul class="Plancreate">
@@ -34,11 +34,9 @@
                 <div class="sch_box">
                   <p id="plan" name="[plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
                   <p id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">
-                  {{$plan->remarks}} </p>
+                  メモ：{{$plan->remarks}} </p>
                   <a href="/user/plan/{{$plan->id}}/edit">編集</a>
                   <a href="/user/plan/{{$plan->id}}/delete">削除</a>
-                  <br>
-                 
                </div>
               </li>
             </ul>
