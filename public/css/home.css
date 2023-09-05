@@ -75,15 +75,49 @@ nav h2 {
   color: #432;
 }
 
-.contents h1 {
+.travel h1 {
   font-size: 50px;
 }
 
-.contents li {
-  font-size: 30px;
+.travel {
   list-style: none;
-  line-height: 1.9;
-  font-weight: bold;
-  padding: 10px;
-  display: block;
+  margin: 0 auto 0 6em;
+  padding-left: 20px;
+  border-left: 6px solid #a7be18;
+  box-sizing: border-box;
 }
+
+.Plancreate {
+    list-style: none;
+    margin: 0 auto 0 10em;
+    padding-left: 30px;
+    border-left: 20px solid #a7be18;
+    box-sizing: border-box;
+}
+
+.Plancreate span {
+  width: 10em;
+  display: inline-block;
+  margin-left: -8em;
+  padding: 0 0 5px;
+  margin-top: 15px;
+  vertical-align: top;
+  position: relative;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+.Plancreate .sch_box {
+  display: inline-block;
+  width: 100%;
+  margin-left: 30px;
+  padding: 15px 10px 15px 10px;
+  vertical-align: middle;
+  background: #efefef;
+  box-sizing: border-box;
+  border-radius: 6px;
+  
+}
+  
+
+
