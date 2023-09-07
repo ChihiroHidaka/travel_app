@@ -12,7 +12,7 @@
 
 <div class ="travel">
      <h1>{{$travel->title}}</h1> 
-     <ul>
+     <ul class = "travelContents">
          <!--<li></li>-->
          <li>開始日：{{$travel->start_date}}</li>
          <li>終了日：{{$travel->end_date}}</li>

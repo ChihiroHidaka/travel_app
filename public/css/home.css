@@ -91,23 +91,24 @@ nav h2 {
   margin: 0 auto 5em;
   padding-left: 50px;
   box-sizing: border-box;
+
   
 }
 
 .Plancreate {
     list-style: none;
     margin: 0 auto 0 10em;
-    padding-left: 30px;
+    padding-left: 20px;
     border-left: 20px solid #a7be18;
     box-sizing: border-box;
 }
 
-.Plancreate span {
-  width: 10em;
+.Plancreate span.time {
+  width: 5em;
   display: inline-block;
-  margin-left: -15em;
-  padding: 0 10 10px;
-  margin-top: 2px;
+  margin-left: -8em;
+  padding: 0 0 5px;
+  margin-top: 15px;
   vertical-align: top;
   position: relative;
   text-align: right;
@@ -116,15 +117,26 @@ nav h2 {
 
 .Plancreate .sch_box {
   display: inline-block;
-  width: 80%;
-  margin-left: 80px;
-  padding: 0px 10px 15px 10px;
+  width: 100%;
+  margin-left: 30px;
+  padding: 15px 10px 15px 10px;
   vertical-align: middle;
-  background: #efefef;
+  background: #ffffff;
   box-sizing: border-box;
   border-radius: 6px;
+  margin:8px;
   
-  
+}
+
+.Plancreate span.time::after {
+  content: "";
+  position: absolute;
+  right: -35px;
+  top: 0;
+  background: #a7be18;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
 }
   
 
