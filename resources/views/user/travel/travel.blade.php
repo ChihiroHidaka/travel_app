@@ -28,8 +28,8 @@
     <input type="date" name="end_date" id="end_date"　value="{{ old('end_date') }}"></br>
     <label for="description">詳細</label>
     <input type="textarea" name="description" id="description"value="{{ old('description') }}"></br>
-    <label for="image">画像</label>
-    <input type="file" name="image" id="image"></br>
+    <!--<label for="image">画像</label>-->
+    <!--<input type="file" name="image" id="image"></br>-->
     
 
     <button type="submit">旅行を作成する</button></br>

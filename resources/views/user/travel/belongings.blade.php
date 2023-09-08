@@ -23,7 +23,7 @@
             <input id="belongings_name" name="belongs_name" type="text" placeholder="カメラ"　value="{{ old('belongs_name') }}">
         </label>
         <button type="submit">持ち物を追加する</button></br>
-        
+        <div style="color : #ffcc00;">事前に持ち物を追加して、旅行前に忘れ物チェックしておこう！</div>
     </div>
 
 </form>
@@ -44,8 +44,8 @@
         @foreach($belongings as $belongings)
            <tr class="BlongingsCreate">
                <!--name属性にbelongings[]という配列の形式を使うことで、チェックされたアイテムのIDを配列としてサーバーに送信-->
-               <td><input type="checkbox" name="belongings[]" @if($belongings->checked) checked @endif value="{{$belongings->id }}" {{ old('belongings') ? 'checked' : '' }}>
-               <td>{{$belongings->belongs_name}}</td>.
+               <td class = "checkbox"><input type="checkbox" name="belongings[]" @if($belongings->checked) checked @endif value="{{$belongings->id }}" {{ old('belongings') ? 'checked' : '' }}>
+               <td class = "listName">{{$belongings->belongs_name}}</td>.
                <td><a href="/user/travel/belongings/{{$belongings->id}}/edit">編集</a></td>
                <td><a href="/user/travel/belongings/{{$belongings->id}}/delete">削除</a></td>
             </tr>

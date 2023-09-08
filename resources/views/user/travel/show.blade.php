@@ -27,7 +27,8 @@
              <ul class="Plancreate">
                  @foreach($plans as $plan)
               <li>
-                <span class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time }}">{{$plan->from_time }}</span>
+                <div id="day" name="plan_date" type="date" value="{{$plan->plan_date}}">"{{$plan->plan_date}}</div>
+                <span class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time}}">{{$plan->from_time }}</span>
                 <div class="area">
                 <div class="sch_box">
                   <p id="plan" name="[plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
