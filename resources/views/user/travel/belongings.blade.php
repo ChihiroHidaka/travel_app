@@ -23,7 +23,7 @@
             <input id="belongings_name" name="belongs_name" type="text" placeholder="カメラ"　value="{{ old('belongs_name') }}">
         </label>
         <button type="submit">持ち物を追加する</button></br>
-        <div style="color : #ffcc00;">事前に持ち物を追加して、旅行前に忘れ物チェックしておこう！</div>
+        <div style="color : #ffcc00;">事前に持ち物を追加して、出発前に忘れ物チェックしよう！</div>
     </div>
 
 </form>
