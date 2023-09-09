@@ -3,7 +3,7 @@
     
 $(function() {
   const apiKey = 'a911bc82d075645e97bb5602ed84bbb2';
-// 　const icon = '';
+　const icon = '';
     
     　//ボタンを押した時に関数を発生させる
     $('#weather_check').click(function(event){
@@ -49,7 +49,7 @@ $(function() {
 //5日間の天気
 $(function(){
   const api_Key = 'a911bc82d075645e97bb5602ed84bbb2'
-  // const icon = ''
+  const icon = ''
 
 　//ボタンを押した時に関数を発生させる
   $('#weather_check_forecast').click(function(event){
@@ -59,34 +59,38 @@ $(function(){
     $.ajax({
       type: 'GET',
       cache:false,
-      url: `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${api_Key}`,
+      url: `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&lang=ja&appid=${api_Key}&units=metric`,
       dataType:'json',
     })
     
     //通信が成功したとき
     .done(function (res){
       console.log(res);
-      console.log(res.dt_txt);
-      // console.log(res.main.temp);
-      // console.log(res.weather[0].main);
-      // console.log(res.main.humidity);
-      // const iconList = `https://openweathermap.org/img/wn/`;
+       console.log(res.list[0].dt_txt);
+       console.log(res.list[0].weather[0].description);
+       console.log(res.list[0].main.humidity);
+       console.log(res.list[0].main.temp);
+      console.log(res.list[0].main.temp_max);
+      console.log(res.list[0].main.temp_min);
+      
+      const iconList = `https://openweathermap.org/img/wn/`;
       
       let html= "";
       for (let i=0; i < res.list.length; i++){
-        if(list[i] % 4 == 0){
-         html += `
-            <div><img src="${iconList + res.list[0].weather[0].icon}@2x.png"></div>
-            <div>天気情報：${res.list[0].weather[0].description}</div>
-            <div>湿度：${res.list[0].main.humidity}%</div>
-            <div>気温：${res.list[0].main.temp}℃</div>
-            <div>最高気温：${res.list[0].main.temp_max}℃</div>
-            <div>最低気温：${res.list[0].main.temp_min}℃</div>
+        if(res.list[i] % 4 == 0){
+        html += `
+            <div><img src="${iconList + res.list[i].weather[i].icon}@2x.png"></div>
+            <div>天気情報：${res.list[i].weather[0].description}</div>
+            <div>湿度：${res.list[i].main.humidity}%</div>
+            <div>気温：${res.list[i].main.temp}℃</div>
+            <div>最高気温：${res.list[i].main.temp_max}℃</div>
+            <div>最低気温：${res.list[i].main.temp_min}℃</div>
           `;
           //上記で作成したHTMLを読み込む
           $('#eather_response_forecast').append(html);
       }
       };
+    }) 
       
       
     //失敗した場合
