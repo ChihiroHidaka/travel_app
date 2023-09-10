@@ -66,28 +66,29 @@ $(function(){
     //通信が成功したとき
     .done(function (res){
       console.log(res);
-       console.log(res.list[0].dt_txt);
-       console.log(res.list[0].weather[0].description);
-       console.log(res.list[0].main.humidity);
-       console.log(res.list[0].main.temp);
-      console.log(res.list[0].main.temp_max);
-      console.log(res.list[0].main.temp_min);
+      // console.log(res.list[0].dt_txt);
+      // console.log(res.list[0].weather[0].description);
+      // console.log(res.list[0].main.humidity);
+      // console.log(res.list[0].main.temp);
+      // console.log(res.list[0].main.temp_max);
+      // console.log(res.list[0].main.temp_min);
       
       const iconList = `https://openweathermap.org/img/wn/`;
       
       let html= "";
       for (let i=0; i < res.list.length; i++){
-        if(res.list[i] % 4 == 0){
-        html += `
-            <div><img src="${iconList + res.list[i].weather[i].icon}@2x.png"></div>
+        if(i % 4 == 0){
+        html = `
+            <div><img src="${iconList + res.list[i].weather[0].icon}@2x.png"></div>
+          　 <div>${res.list[i].dt_txt}</div>
             <div>天気情報：${res.list[i].weather[0].description}</div>
             <div>湿度：${res.list[i].main.humidity}%</div>
             <div>気温：${res.list[i].main.temp}℃</div>
             <div>最高気温：${res.list[i].main.temp_max}℃</div>
             <div>最低気温：${res.list[i].main.temp_min}℃</div>
-          `;
+          `
           //上記で作成したHTMLを読み込む
-          $('#eather_response_forecast').append(html);
+          $('#weather_response_forecast').append(html);
       }
       };
     }) 
