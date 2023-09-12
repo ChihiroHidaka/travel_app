@@ -80,7 +80,7 @@ $(function(){
         if(i % 4 == 0){
         html = `
             <div><img src="${iconList + res.list[i].weather[0].icon}@2x.png"></div>
-          　 <div>${res.list[i].dt_txt}</div>
+          　<div>${res.list[i].dt_txt}</div>
             <div>天気：${res.list[i].weather[0].description}</div>
             <div>湿度：${res.list[i].main.humidity}%</div>
             <div>気温：${res.list[i].main.temp}℃</div>
