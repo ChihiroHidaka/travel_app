@@ -135,7 +135,6 @@ nav h2 {
   box-sizing: border-box;
 }
 
-
 .Plancreate li {
   width: 100%;
   display: flex;
@@ -143,15 +142,15 @@ nav h2 {
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
+
 }
 
-.Plancreate .area{
+.Plancreate .area {
   padding: 10px;
   display: block;
-  border-left: 6px solid  #a7be18;
-  
+  width: 500px;
+  border-left: 6px solid #ff0093;
 }
-
 
 .Plancreate li .time {
   display: inline-flex;
@@ -160,15 +159,14 @@ nav h2 {
   max-width: 5em;
   margin-right: 1em;
   margin-top: 30px;
-  /*width:100px;*/
 }
 
 .Plancreate .sch_box {
-  width:500px;
+  margin: 60px;
   position: relative;
   min-height: 1em;
   padding: 1em;
-  background: #ffffff;
+  background: #ffd9e0;
   border-radius: 6px;
 }
 
@@ -177,38 +175,160 @@ nav h2 {
   position: absolute;
   left: -23px;
   top: 20px;
-  background: #a7be18;
+  background: #ff0093;
   width: 20px;
   height: 20px;
   border-radius: 10px;
 }
 
-.Plancreate #Plan {
+.Plancreate .sch_title {
   font-weight: 700;
 }
 
-.Plancreate #remarks {
+.Plancreate .sch_tx {
   font-size: 14px;
   font-weight: normal;
 }
 
-#belongings_list .listName{
-  width: 250px;
-  text-align: center;
-}
 
-#belongings_list .checkbox{
-  text-align: center;
-}
+/*.Plancreate {*/
+/*  min-width: 400px;*/
+/*  max-width: 400px;*/
+/*  list-style: none;*/
+/*  margin: 0 auto 0 0;*/
+/*  box-sizing: border-box;*/
+/*}*/
 
-#belongings_list{
-  font-size: 15px;
-	background-color: #dedede;
-	background-image:
-	 linear-gradient(#ecebeb 50%, transparent 50%, transparent);
-	background-size: 40px 40px;
-  display: block;
-}
+
+/*.Plancreate li {*/
+/*  width: 100%;*/
+/*  display: flex;*/
+/*  flex-wrap: nowrap;*/
+/*  align-items: flex-start;*/
+/*  justify-content: flex-start;*/
+/*  position: relative;*/
+ 
+
+/*.Plancreate #day{*/
+/*  width:10px;*/
+  
+/*}*/
+
+
+/*.Plancreate .area{*/
+/*  display: block;*/
+ 
+/*}*/
+
+/*.Plancreate li .time {*/
+/*  display: inline-flex;*/
+/*  justify-content: flex-end;*/
+/*  flex-basis: 5em;*/
+/*  max-width: 5em;*/
+/*  margin-right: 1em;*/
+/*  margin-top: 30px;*/
+/*}*/
+
+/*.Plancreate .sch_box {*/
+/*  position: relative;*/
+/*  min-height: 1em;*/
+/*  padding: 1em;*/
+/*  background: #ffd9e0;*/
+/*  border-radius: 6px;*/
+/*}*/
+
+/*.Plancreate #Plan {*/
+/*  font-weight: 700;*/
+/*}*/
+
+
+
+
+/*.Plancreate span {*/
+/*  display: inline-flex;*/
+/*  justify-content: flex-end;*/
+/*  flex-basis: 5em;*/
+/*  max-width: 5em;*/
+/*  margin-left: 2em;*/
+/*  margin-top: 30px;*/
+/*}*/
+
+
+
+
+
+/*.Plancreate span.time::after {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  right: -35px;*/
+/*  top: 0;*/
+/*  background: #a7be18;*/
+/*  width: 20px;*/
+/*  height: 20px;*/
+/*  border-radius: 10px;*/
+/*}*/
+
+
+
+
+
+
+
+/*.Plancreate li .time {*/
+/*  display: inline-flex;*/
+/*  justify-content: flex-end;*/
+/*  flex-basis: 5em;*/
+/*  max-width: 5em;*/
+/*  margin-right: 1em;*/
+/*  margin-top: 30px;*/
+  /*width:100px;*/
+/*}*/
+
+/*.Plancreate .sch_box {*/
+/*  display: inline-block;*/
+/*  width: 100%;*/
+/*  margin-left: 30px;*/
+/*  padding: 15px 10px 15px 10px;*/
+/*  vertical-align: middle;*/
+/*  background: #efefef;*/
+/*  box-sizing: border-box;*/
+/*  border-radius: 6px;*/
+/*}*/
+
+/*.Plancreate .sch_box::before {*/
+/*  content: "";*/
+/*  position: absolute;*/
+/*  left: -23px;*/
+/*  top: 20px;*/
+/*  background: #a7be18;*/
+/*  width: 20px;*/
+/*  height: 20px;*/
+/*  border-radius: 10px;*/
+/*}*/
+
+
+/*.Plancreate #remarks {*/
+/*  font-size: 14px;*/
+/*  font-weight: normal;*/
+/*}*/
+
+/*#belongings_list .listName{*/
+/*  width: 250px;*/
+/*  text-align: center;*/
+/*}*/
+
+/*#belongings_list .checkbox{*/
+/*  text-align: center;*/
+/*}*/
+
+/*#belongings_list{*/
+/*  font-size: 15px;*/
+/*	background-color: #dedede;*/
+/*	background-image:*/
+/*	 linear-gradient(#ecebeb 50%, transparent 50%, transparent);*/
+/*	background-size: 40px 40px;*/
+/*  display: block;*/
+/*}*/
 
 
 

@@ -24,20 +24,20 @@
 <div>
     <p class = "planShow">行程表</p>
         <div>
-             <ul class="Plancreate">
+            <ul class="Plancreate">
                  @foreach($plans as $plan)
-              <li>
-                <div id="day" name="plan_date" type="date" value="{{$plan->plan_date}}">"{{$plan->plan_date}}</div>
-                <span class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time}}">{{$plan->from_time }}</span>
-                <div class="area">
-                <div class="sch_box">
-                  <p id="plan" name="[plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
-                  <p id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">
-                  メモ：{{$plan->remarks}} </p>
-                  <a href="/user/plan/{{$plan->id}}/edit">編集</a>
-                  <a href="/user/plan/{{$plan->id}}/delete">削除</a>
-                </div>
-              </li>
+                <li>
+                    <div id="day" name="plan_date" type="date" value="{{$plan->plan_date}}">{{$plan->plan_date}}</div>
+                    <span class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time}}">{{$plan->from_time }}</span>
+                    <div class="area">
+                    <div class="sch_box">
+                      <p id="plan" name="[plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
+                      <p id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">
+                      メモ：{{$plan->remarks}} </p>
+                      <a href="/user/plan/{{$plan->id}}/edit">編集</a>
+                      <a href="/user/plan/{{$plan->id}}/delete">削除</a>
+                    </div>
+                </li>
                @endforeach
             </ul>
            

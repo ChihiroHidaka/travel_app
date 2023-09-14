@@ -28,7 +28,7 @@
                 <p><a href="{{ route('belongings.create')}}">持ち物チェック</a></p>
                 <p><a href="{{ route('weather.create')}}">天気を調べる</a></p>
                 <p><a href="{{ route('search.create')}}">観光地を調べる</a></p>
-                <p><a href="#">設定</a></p>
+                <p><a href="{{ route('setting.show')}}">設定</a></p>
                 <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit">ログアウト</button>
