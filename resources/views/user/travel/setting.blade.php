@@ -1,5 +1,5 @@
 {{-- layouts/home.blade.phpを読み込む --}}
-@extends('layouts.app')
+@extends('layouts.menu')
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
@@ -9,7 +9,8 @@
 @section('content')
 <div>氏名：{{$user->name}}</div>
 <div>メールアドレス：{{$user->email}}</div>
-<!--<a src=#>パスワードを変更する</a>-->
+<div>パスワード：*****</div>
+<p><a href="{{ route('setting.edit',['user_id' => $user->id])}}">設定を変更する</a></p>
     
 
 @endsection

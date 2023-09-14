@@ -21,6 +21,14 @@ class SettingController extends Controller
         return view('user.travel.setting',['travelList' => $travelList,'user' =>$user]);
     }
     
+     public function edit($user_id)
+    {
+       $user = auth()->user(); // 現在認証されているユーザーを取得
+        
+        
+        return view('user.travel.setting_edit',['user' =>$user]);
+    }
+    
     
     
 } 
