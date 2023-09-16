@@ -83,11 +83,10 @@ nav h2 {
 
 
 .contents li {
-  font-size: 20px;
-  list-style: none;
-  line-height: 1.9;
-  font-weight: bold;
-  padding: 10px;
+  font-size: 15px;
+  /*list-style: none;*/
+  /*line-height: 1.9;*/
+  /*font-weight: bold;*/
   display: block;
 }
 
@@ -101,7 +100,6 @@ nav h2 {
 .travel {
   list-style: none;
   font-size: 20px;
-  margin: 0 auto 5em;
   padding-left: 50px;
   box-sizing: border-box;
   
@@ -117,13 +115,13 @@ nav h2 {
   box-sizing: border-box;
   border-radius: 6px;
   list-style: none;
-  margin:8px;
+  /*margin:2px;*/
 }
 
 
 .planShow{
-  font-size:40px;
-  padding-right: 20px;
+  font-size:20px;
+  /*padding-right: 40px;*/
   border-bottom: 1px #ddd solid;
 }
 
@@ -136,20 +134,24 @@ nav h2 {
 }
 
 .Plancreate li {
-  width: 500px;
+  width: 800px;
   display: flex;
   flex-wrap: nowrap;
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
-
 }
 
 .Plancreate .area {
   padding: 10px;
   display: block;
-  width: 800px;
-  border-left: 6px solid #ff0093;
+  width: 500px;
+  border-left: 6px solid #a7be18;
+}
+
+.Plancreate li .day {
+  font-size: 15px;
+  margin-top: 40px;
 }
 
 .Plancreate li .time {
@@ -157,16 +159,15 @@ nav h2 {
   justify-content: flex-end;
   flex-basis: 5em;
   max-width: 5em;
-  margin-right: 3em;
-  margin-top: 30px;
+  margin-right: 1em;
+  margin-top: 40px;
 }
 
 .Plancreate .sch_box {
-  margin: 60px;
   position: relative;
   min-height: 1em;
-  padding: 1em;
-  background: #ffd9e0;
+  /*padding: 1em;*/
+  background: #ffffff;
   border-radius: 6px;
 }
 
@@ -175,142 +176,20 @@ nav h2 {
   position: absolute;
   left: -23px;
   top: 20px;
-  background: #ff0093;
+  background:  #a7be18;
   width: 20px;
   height: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
-.Plancreate .sch_title {
-  font-weight: 700;
+.Plancreate #plan {
+  font-weight: 20px;
 }
-
-.Plancreate .sch_tx {
-  font-size: 14px;
-  font-weight: normal;
-}
-
-
-/*.Plancreate {*/
-/*  min-width: 400px;*/
-/*  max-width: 400px;*/
-/*  list-style: none;*/
-/*  margin: 0 auto 0 0;*/
-/*  box-sizing: border-box;*/
-/*}*/
-
-
-/*.Plancreate li {*/
-/*  width: 100%;*/
-/*  display: flex;*/
-/*  flex-wrap: nowrap;*/
-/*  align-items: flex-start;*/
-/*  justify-content: flex-start;*/
-/*  position: relative;*/
- 
-
-/*.Plancreate #day{*/
-/*  width:10px;*/
-  
-/*}*/
-
-
-/*.Plancreate .area{*/
-/*  display: block;*/
- 
-/*}*/
-
-/*.Plancreate li .time {*/
-/*  display: inline-flex;*/
-/*  justify-content: flex-end;*/
-/*  flex-basis: 5em;*/
-/*  max-width: 5em;*/
-/*  margin-right: 1em;*/
-/*  margin-top: 30px;*/
-/*}*/
-
-/*.Plancreate .sch_box {*/
-/*  position: relative;*/
-/*  min-height: 1em;*/
-/*  padding: 1em;*/
-/*  background: #ffd9e0;*/
-/*  border-radius: 6px;*/
-/*}*/
-
-/*.Plancreate #Plan {*/
-/*  font-weight: 700;*/
-/*}*/
-
-
-
-
-/*.Plancreate span {*/
-/*  display: inline-flex;*/
-/*  justify-content: flex-end;*/
-/*  flex-basis: 5em;*/
-/*  max-width: 5em;*/
-/*  margin-left: 2em;*/
-/*  margin-top: 30px;*/
-/*}*/
-
-
-
-
-
-/*.Plancreate span.time::after {*/
-/*  content: "";*/
-/*  position: absolute;*/
-/*  right: -35px;*/
-/*  top: 0;*/
-/*  background: #a7be18;*/
-/*  width: 20px;*/
-/*  height: 20px;*/
-/*  border-radius: 10px;*/
-/*}*/
-
-
-
-
-
-
-
-/*.Plancreate li .time {*/
-/*  display: inline-flex;*/
-/*  justify-content: flex-end;*/
-/*  flex-basis: 5em;*/
-/*  max-width: 5em;*/
-/*  margin-right: 1em;*/
-/*  margin-top: 30px;*/
-  /*width:100px;*/
-/*}*/
-
-/*.Plancreate .sch_box {*/
-/*  display: inline-block;*/
-/*  width: 100%;*/
-/*  margin-left: 30px;*/
-/*  padding: 15px 10px 15px 10px;*/
-/*  vertical-align: middle;*/
-/*  background: #efefef;*/
-/*  box-sizing: border-box;*/
-/*  border-radius: 6px;*/
-/*}*/
-
-/*.Plancreate .sch_box::before {*/
-/*  content: "";*/
-/*  position: absolute;*/
-/*  left: -23px;*/
-/*  top: 20px;*/
-/*  background: #a7be18;*/
-/*  width: 20px;*/
-/*  height: 20px;*/
-/*  border-radius: 10px;*/
-/*}*/
-
 
 /*.Plancreate #remarks {*/
-/*  font-size: 14px;*/
-/*  font-weight: normal;*/
+/*  font-weight: 10px;*/
 /*}*/
+
 
 #belongings_list .listName{
   width: 250px;

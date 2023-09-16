@@ -71,7 +71,7 @@ const draw_by_address = (input_address) => {
                             // $("#lat").val(glat);
                             // $("#lng").val(glng);
                 })
-                              s        
+                                      
                   //失敗した場合
                 .fail(function(res){
                     $('#weather_response').html('エラーが発生しています。確認してください');
