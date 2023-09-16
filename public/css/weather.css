@@ -66,12 +66,6 @@ nav h2 {
 
 .main_menu a {
   color: #432;
-  
-}
-
-.contents{
-  border-left: 1px #ddd solid ;
- 
 }
 
 .contents h1 {
@@ -85,25 +79,4 @@ nav h2 {
   font-weight: bold;
   padding: 10px;
   display: block;
-}
-
-.weatherForecast{
-   border-bottom: 1px #ddd solid;
-  
-}
-.weatherCurrent{
-  border-bottom: 1px #ddd solid;
-}
-
-#weather_response{
-  height: 250px;
-  width : 600px;
-
-}
-
-
-#weather_response_forecast{
-  height: 300px;
-  width : 600px;
- 
 }

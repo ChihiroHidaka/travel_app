@@ -17,11 +17,11 @@
     @endif
 
     @csrf
-
+    <p>設定情報の変更する</p>
     <label for="name">ユーザーネーム</label>
-    <input type="text" name="name" id="name"　value="{{$user->name}}"></br>
+    <input type="text" name="name" id="name"　value="{{old('name',$user->name)}}"></br>
     <label for="email">メールアドレス</label>
-    <input type="email" name="email" id="email"　value="{{$user->email}}"></br>
+    <input type="email" name="email" id="email"　value="{{old('email',$user->email)}}"></br>
     <label for="password">パスワード</label>
     <input type="text" name="password" id="password"　value="{{$user->password}}"></br>
    

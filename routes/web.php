@@ -79,7 +79,7 @@ Route::controller(SearchController::class)->prefix('user')->middleware('auth')->
 Route::controller(SettingController::class)->prefix('user')->middleware('auth')->group(function(){
     Route::get('setting/show','show')->name('setting.show');
     Route::get('setting/{user_id}/edit','edit')->name('setting.edit');
-    Route::get('setting/{user_id}/update','update')->name('setting.update');
+    Route::post('setting/{user_id}/update','update')->name('setting.update');
     
 });
 
