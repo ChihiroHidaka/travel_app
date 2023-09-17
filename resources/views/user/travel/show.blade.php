@@ -22,7 +22,7 @@
 </div>
 <!--下記に行程表を表示-->
 <div>
-    <div class = "planShow">行程表</div>
+    <h2 class = "planShow">行程表</h2>
         <div>
             <ul class="Plancreate">
                  @foreach($plans as $plan)

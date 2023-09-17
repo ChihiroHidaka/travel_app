@@ -1,87 +1,147 @@
-//* global $ */
-/* global navigator */
-/* global google */
+let map;
+let service;
+let infowindow;
 
-// 初期画面
-const key ='AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY'
-$(function(){//一つでいい
-    navigator.geolocation.getCurrentPosition(
-        function(position) {
-            draw_by_address("東京タワー");
-        }
-    );
-    
-    $('#searchButton').on("click", function(){
-        let input_address = $("#placeSearchInput").val();
-        draw_by_address(input_address);
-    });
-    
-    
-});
+function initMap() {
+  const sydney = new google.maps.LatLng(-33.867, 151.195);
 
-// 地名から地図を表示
-const draw_by_address = (input_address) => { 
-    let geocoder = new google.maps.Geocoder();
-    geocoder.geocode(
-        {
-            'address':  input_address
-        }, 
-        function(results, status) { // 結果
-            if (status === google.maps.GeocoderStatus.OK) { // ステータスがOKの場合
-                let map = new google.maps.Map(document.getElementById('map'), 
-                    {
-                        center: results[0].geometry.location, // 地図の中心を指定
-                        zoom: 15 // 地図のズームを指定
-                    }
-                );
-                let marker = new google.maps.Marker(
-                    {
-                        position: results[0].geometry.location, // マーカーを立てる位置を指定
-                        map: map // マーカーを立てる地図を指定
-                    }
-                );
+  infowindow = new google.maps.InfoWindow();
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: sydney,
+    zoom: 15,
+  });
+
+  const request = {
+    query: "Museum of Contemporary Art Australia",
+    fields: ["name","place_id","geometry","formatted_address"],
+  };
+  
+//   console.log(request);
+  service = new google.maps.places.PlacesService(map);
+  service.findPlaceFromQuery(request, (results, status) => {
+    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+      for (let i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+
+      map.setCenter(results[0].geometry.location);
+    }
+  });
+}
+
+function createMarker(place) {
+  if (!place.geometry || !place.geometry.location) return;
+
+  const marker = new google.maps.Marker({
+    map,
+    position: place.geometry.location,
+  });
+
+  google.maps.event.addListener(marker, "click", () => {
+    infowindow.setContent(place.name || "");
+    infowindow.open(map);
+  });
+}
+
+window.initMap = initMap;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // 初期画面
+// const key ='AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY'
+// $(function(){//一つでいい
+//     navigator.geolocation.getCurrentPosition(
+//         function(position) {
+//             draw_by_address("東京タワー");
+//         }
+//     );
+    
+//     $('#searchButton').on("click", function(){
+//         let input_address = $("#placeSearchInput").val();
+//         draw_by_address(input_address);
+//     });
+    
+    
+// });
+
+// // 地名から地図を表示
+// const draw_by_address = (input_address) => { 
+//     let geocoder = new google.maps.Geocoder();
+//     geocoder.geocode(
+//         {
+//             'address':  input_address
+//         }, 
+//         function(results, status) { // 結果
+//             if (status === google.maps.GeocoderStatus.OK) { // ステータスがOKの場合
+//                 let map = new google.maps.Map(document.getElementById('map'), 
+//                     {
+//                         center: results[0].geometry.location, // 地図の中心を指定
+//                         zoom: 15 // 地図のズームを指定
+//                     }
+//                 );
+//                 let marker = new google.maps.Marker(
+//                     {
+//                         position: results[0].geometry.location, // マーカーを立てる位置を指定
+//                         map: map // マーカーを立てる地図を指定
+//                     }
+//                 );
                 
-                $.ajax({
-                    type: 'GET',
-                    cathe:false,
-                    url: `https://maps.googleapis.com/maps/api/place/findplacefromtext/json
-                        ?fields=name,place_id,geometry,formatted_address,url
-                        &input=${input_address}
-                        &inputtype=textquery
-                        &key=key`,
-                    dataType:'json',
-                    })
+//                 $.ajax({
+//                     type: 'GET',
+//                     cathe:false,
+//                     url: `https://maps.googleapis.com/maps/api/place/findplacefromtext/json
+//                         ?fields=name,place_id,geometry,formatted_address,url
+//                         &input=${input_address}
+//                         &inputtype=textquery
+//                         &key=key`,
+//                     dataType:'json',
+//                     })
                         
-                    //通信が成功したとき
-                    .done(function (res){
-                        console.log(res);//データの確認用
-                        let infoWindow = new google.maps.InfoWindow(
-                            { // 吹き出しの追加
-                            content:"<div class='maker'>" + input_address + "</div>" // 吹き出しに表示する内容
+//                     //通信が成功したとき
+//                     .done(function (res){
+//                         console.log(res);//データの確認用
+//                         let infoWindow = new google.maps.InfoWindow(
+//                             { // 吹き出しの追加
+//                             content:"<div class='maker'>" + input_address + "</div>" // 吹き出しに表示する内容
                                         
-                        });
+//                         });
                 
-                            infoWindow.open(map, marker); // 吹き出しの表示
-                            $("#address").val(input_address);
+//                             infoWindow.open(map, marker); // 吹き出しの表示
+//                             $("#address").val(input_address);
                   
-                            // let latlng = results[0].geometry.location;
-                            // let glat = latlng.lat();
-                            // let glng = latlng.lng();
+//                             // let latlng = results[0].geometry.location;
+//                             // let glat = latlng.lat();
+//                             // let glng = latlng.lng();
             
-                            // $("#lat").val(glat);
-                            // $("#lng").val(glng);
-                })
+//                             // $("#lat").val(glat);
+//                             // $("#lng").val(glng);
+//                 })
                                       
-                  //失敗した場合
-                .fail(function(res){
-                    $('#weather_response').html('エラーが発生しています。確認してください');
-                    })   
-                    } else { // 失敗した場合
-                alert(status);
-            }
-        }
-    );
-};
+//                   //失敗した場合
+//                 .fail(function(res){
+//                     $('#weather_response').html('エラーが発生しています。確認してください');
+//                     })   
+//                     } else { // 失敗した場合
+//                 alert(status);
+//             }
+//         }
+//     );
+// };
 
 
 

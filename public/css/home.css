@@ -92,8 +92,9 @@ nav h2 {
 
 
 .travel h1 {
-  font-size: 50px;
+  font-size: 30px;
   border-bottom: 1px #ddd solid;
+  color: #ffffff
 }
 
 
@@ -121,8 +122,9 @@ nav h2 {
 
 .planShow{
   font-size:20px;
-  /*padding-right: 40px;*/
+  text-indent: 30px;
   border-bottom: 1px #ddd solid;
+  color:#ffffff;
 }
 
 .Plancreate {
@@ -183,7 +185,8 @@ nav h2 {
 }
 
 .Plancreate #plan {
-  font-weight: 20px;
+  /*font-weight: 20px;*/
+  font-weight: bold;
 }
 
 /*.Plancreate #remarks {*/

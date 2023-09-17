@@ -7,14 +7,11 @@
 
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
-
+<input type=text id="placeSearchInput" placeholder="お台場">
+<button id="searchButton">検索</button>
+<hr>
   
-    <input type=text id="placeSearchInput" placeholder="お台場">
-    <button id="searchButton">検索</button>
-  
-  <hr>
-  
-  <div id="map" style="width: 100%; height: 400px;"></div>
+<div id="map" style="width: 90%; height: 90%;"></div>
   
 @endsection
 
