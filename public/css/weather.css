@@ -82,7 +82,9 @@ nav h2 {
   font-weight: bold;
   padding: 10px;
   display: block;
+  justify-content: space-between;
 }
+
 .weatherForecast{
    border-bottom: 1px #ddd solid;
 
@@ -91,14 +93,51 @@ nav h2 {
   border-bottom: 1px #ddd solid;
 }
 
-#weather_response{
+.container{
   height: 250px;
   width : 600px;
-
+  border-style: solid;
+  margin-left: 50px;
+  display: flex;
+  /*flex-wrap: nowrap;*/
 }
+
+#weather_icon{
+  flex:1;
+  width: 30%
+}
+#weather_response{
+  flex:3;
+  width: 70%
+}
+
+
 
 
 #weather_response_forecast{
   height: 300px;
   width : 600px;
+  border-style: solid;
+  margin-left: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  
 }  
+/*.container{*/
+/*  display: flex;*/
+/*  flex-wrap: nowrap;*/
+/*  align-items: flex-start;*/
+/*  justify-content: flex-start;*/
+/*}*/
+
+/*#div{*/
+/*  align-items: flex-start;*/
+/*  justify-content: flex-start;*/
+/*  width: 30%;*/
+/*}*/
+
+/*ul{*/
+/*  width: 70%;*/
+  
+  
+/*}*/

@@ -8,7 +8,6 @@
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <body>
-  
   <div class ="weatherCurrent">
     <form>
       <input type=text id="city_name" placeholder="京都府">
@@ -17,8 +16,11 @@
     <div>  都市名から現在の天気予報を検索できます</div>
   </div>
   
-
-  <div id="weather_response"></div>
+  
+  <div class="container">
+    <div id="weather_icon"></div>
+    <div id="weather_response"></div>
+  </div>
   
  
   <div class = "weatherForecast">

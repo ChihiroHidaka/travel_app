@@ -24,8 +24,10 @@ $(function() {
         console.log(res.main.humidity);
         const iconList = `https://openweathermap.org/img/wn/`
         
-        let html = `
-            <div><img src="${iconList+res.weather[0].icon}@2x.png"></div>
+        let icon = `
+            <img src="${iconList+res.weather[0].icon}@2x.png">
+        `
+        let html =`
             <div>天気：${res.weather[0].description}</div>
             <div>湿度：${res.main.humidity}％</div>
             <div>気温：${res.main.temp}℃</div>
@@ -33,6 +35,7 @@ $(function() {
             <div>最低気温：${res.main.temp_min}℃</div>
         `;
         //上記で作成したHTMLを読み込む（上書き）
+        $('#weather_icon').html(icon);
         $('#weather_response').html(html);
         
         })
@@ -79,16 +82,25 @@ $(function(){
       for (let i=0; i < res.list.length; i++){
         if(i % 4 == 0){
         html = `
-            <div><img src="${iconList + res.list[i].weather[0].icon}@2x.png"></div>
-          　<div>${res.list[i].dt_txt}</div>
-            <div>天気：${res.list[i].weather[0].description}</div>
-            <div>湿度：${res.list[i].main.humidity}%</div>
-            <div>気温：${res.list[i].main.temp}℃</div>
-            <div>最高気温：${res.list[i].main.temp_max}℃</div>
-            <div>最低気温：${res.list[i].main.temp_min}℃</div>
+            <div class="container">
+              <div><img src="${iconList + res.list[i].weather[0].icon}@2x.png"></div>
+              
+              　<li>${res.list[i].dt_txt}</li>
+                <li>天気：${res.list[i].weather[0].description}</li>
+                <li>湿度：${res.list[i].main.humidity}%</li>
+                <li>気温：${res.list[i].main.temp}℃</li>
+                <li>最高気温：${res.list[i].main.temp_max}℃</li>
+                <li>最低気温：${res.list[i].main.temp_min}℃</li>
+            
+            </div>
+
+             
+      
+             
           `
           //上記で作成したHTMLを読み込む
           $('#weather_response_forecast').append(html);
+          
       }
       };
     }) 
