@@ -116,23 +116,49 @@ nav h2 {
   width: 70%;
 }
 
+/*.weekly{*/
+/*  height: 180px;*/
+/*  width : 500px;*/
+/*  border-style: solid;*/
+/*  margin-left: 50px;*/
+/*  display: flex;*/
+/*}*/
+
+/*#weather_icon_forecast{*/
+/*  margin-top: 10px;*/
+/*  flex:1;*/
+/*  width: 30%*/
+/*}*/
+
+/*#weather_response_forecast{*/
+/*  margin-top: 10px;*/
+/*  flex:3;*/
+/*  width: 70%;*/
+/*}*/
 .weekly{
-  height: 180px;
-  width : 500px;
+  height: 200px;
+  width: 500px;
   border-style: solid;
   margin-left: 50px;
-  display: flex;
+  /*display: flex;*/
+  flex-direction: column; /* 追加：子要素を縦に並べる */
+  overflow-y: auto; /* 追加：縦スクロールを可能にする */
 }
 
-#weather_icon_forecast{
+.weekly_item{
+  display: flex; /* 新しいクラス：個々の天気予報項目をフレキシブルボックスとしてレイアウト */
+  margin-bottom: 10px; /* 新しいクラス：下余白を追加 */
+}
+
+.weekly_item_icon{
   margin-top: 10px;
   flex:1;
-  width: 30%
+  width: 30%;
 }
-#weather_response_forecast{
+
+.weekly_item_details{
   margin-top: 10px;
   flex:3;
   width: 70%;
 }
-
 

@@ -64,24 +64,33 @@ $(function(){
       let html_forecast ="";
       for (let i=0; i < res.list.length; i++){
         if(i % 4 == 0){
-        // let containor =`
-        // <div class = "containor">"${icon_forecast}""${html </div>
-        // `  
         let icon_forecast = `
+           <div class="weekly_item_icon">
               <img src="${iconList + res.list[i].weather[0].icon}@2x.png">
-              `
+          </div>    
+         `
         let html_forecast =`
+        　　<div class="weekly_item_details">
               <li>${res.list[i].dt_txt}</li>
               <li>天気：${res.list[i].weather[0].description}</li>
               <li>湿度：${res.list[i].main.humidity}%</li>
               <li>気温：${res.list[i].main.temp}℃</li>
               <li>最高気温：${res.list[i].main.temp_max}℃</li>
               <li>最低気温：${res.list[i].main.temp_min}℃</li>
+            </div>  
         `;
         
-        //上記で作成したHTMLを読み込む（上書き）
-        $('#weather_icon_forecast').html(icon_forecast);
-        $('#weather_response_forecast').html(html_forecast);
+        let weather_forecast =`
+        <div class="weekly_item">
+            <div>${icon_forecast}</div>
+            <div>${html_forecast}</div>
+         </div>
+        `  
+        
+        // //上記で作成したHTMLを読み込む（上書き）
+        // $('#weather_icon_forecast').append(icon_forecast);
+        // $('#weather_response_forecast').append(html_forecast);
+        $('.weekly').append(weather_forecast);
           
       }
       };
