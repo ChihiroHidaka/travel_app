@@ -86,7 +86,6 @@ $(function(){
             <div>${html_forecast}</div>
          </div>
         `  
-        
         // //上記で作成したHTMLを読み込む（上書き）
         // $('#weather_icon_forecast').append(icon_forecast);
         // $('#weather_response_forecast').append(html_forecast);

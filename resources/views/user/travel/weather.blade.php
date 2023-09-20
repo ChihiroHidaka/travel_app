@@ -34,8 +34,8 @@
   </div>
   <!--取得データの表示-->
   <div class="weekly" >
-    <div id="weather_icon_forecast"></div>
-    <div id="weather_response_forecast"></div>
+    <!--<div id="weather_icon_forecast"></div>-->
+    <!--<div id="weather_response_forecast"></div>-->
   </div>
   
   
