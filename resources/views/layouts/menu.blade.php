@@ -13,14 +13,14 @@
         <header id = "trip">
             <h1 class = "page-title">~My trip~</h1>
             <h2>さあ旅の準備をしよう</h2>
-            <p>ユーザー名:</p>
+         
         </header>
            
         <main class="display">
             <nav class="main_menu">
                 <h1>メニュー</h1>
-                <h2>旅行一覧</h2>
                 <a href="{{ route('travel.create') }}" id="create_travel">➕旅行を追加する</a>
+                <!--<h2>旅行一覧</h2>-->
                 <ul>
                    @foreach($travelList as $travel)
                     <li><a href="/user/travel/{{$travel->id}}">{{ $travel->title }}</a></li>
@@ -48,8 +48,10 @@
           <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap"></script>-->
           <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALg70uaMcYjkzto9oPmiXyODIXCvpvAzg"></script>-->
           <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALg70uaMcYjkzto9oPmiXyODIXCvpvAzg&callback=initMap"></script>-->
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap&libraries=places&v=weekly" defer></script>
-          <script src="{{ secure_asset('js/place.js') }}" charset="UTF-8"></script> 
+          
+          
+          <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap&libraries=places&v=weekly" defer></script>-->
+          <!--<script src="{{ secure_asset('js/place.js') }}" charset="UTF-8"></script> -->
           
     </body>
 </html>

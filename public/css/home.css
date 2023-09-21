@@ -76,8 +76,21 @@ nav h2 {
 }
 
 .contents h1 {
-  font-size: 50px;
-   border-bottom: 1px #ddd solid;
+  font-size: 30px;
+  border-bottom: 1px #ffffff solid;
+  margin-left: 30px;
+  color: #ffffff;
+}
+
+.newTravel{
+ margin-top: 30px;
+ margin-left: 30px;
+ font-size: 15px;
+ font-weight: bold;
+ line-height: 1.9;
+ background: #ffffff;
+ width: 400px;
+ height: 150px;
 }
 
 
@@ -125,6 +138,7 @@ nav h2 {
   text-indent: 30px;
   border-bottom: 1px #ddd solid;
   color:#ffffff;
+  margin-left: 30px;
 }
 
 .Plancreate {
@@ -185,14 +199,14 @@ nav h2 {
 }
 
 .Plancreate #plan {
-  /*font-weight: 20px;*/
   font-weight: bold;
 }
 
-/*.Plancreate #remarks {*/
-/*  font-weight: 10px;*/
-/*}*/
 
+
+.belongings_add{
+  margin-left: 30px;
+}
 
 #belongings_list .listName{
   width: 250px;
@@ -210,14 +224,41 @@ nav h2 {
 	linear-gradient(#ecebeb 50%, transparent 50%, transparent);
 	background-size: 40px 40px;
   display: block;
+  margin-left: 30px;
+  width: 400px;
+}
+
+.check{
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.mapSearch{
+  margin-left: 30px;
+  border-bottom: 1px #ddd solid;
+  
 }
 
 #map{
+  margin-top: 30px;
   border-width: medium;
   border-style: double;
   margin-left: 50px;
   width: 1000px;
   height: 600px;
+  
+}
+
+.userInfo{
+  display: inline-block;
+  width: 400px;
+  margin-left: 30px;
+  padding: 15px 10px 15px 10px;
+  vertical-align: middle;
+  background: #ffffff;
+  box-sizing: border-box;
+  border-radius: 6px;
+  list-style: none;
   
 }
 

@@ -18,12 +18,12 @@
     </div>
     @endif
     
-    <div>
-        <label class="belongings add">
+    <div class = "addButtom">
+        <label class="belongings_add">
             <input id="belongings_name" name="belongs_name" type="text" placeholder="カメラ"　value="{{ old('belongs_name') }}">
         </label>
-        <button type="submit">持ち物を追加する</button></br>
-        <div style="color : #ffcc00;">事前に持ち物を追加して、出発前に忘れ物チェックしよう！</div>
+        <button type="submit">この持ち物を追加する</button></br>
+        <div style="color: #ffffff;margin-left:30px;">事前に持ち物を追加して、出発前に忘れ物チェックしよう！</div>
     </div>
 
 </form>
@@ -53,7 +53,7 @@
         
         </tbody>
     </table>
-    <button  type="submit">持ち物チェックを完了する</button>
+    <button  class = "check" type="submit">持ち物チェックを完了する</button>
     </form>
         
 </div>
