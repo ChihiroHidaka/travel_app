@@ -10,7 +10,7 @@
 <div class = "mapSearch">
     <input type=text id="placeSearchInput" placeholder="お台場">
     <button id="searchButton">検索</button>
-    <div style="color: #ffffff;">行きたい場所をマップ検索できます</div>
+    <div style="color: #ffffff;">キーワードを入れてマップ検索できます</div>
 </div>
 
 <div class = "findPlace">
@@ -18,6 +18,9 @@
     <div id="map"></div>
 </div>
 
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap&libraries=places&v=weekly" defer></script>
+  <script src="{{ secure_asset('js/place.js') }}" charset="UTF-8"></script> 
+          
 
   
 @endsection

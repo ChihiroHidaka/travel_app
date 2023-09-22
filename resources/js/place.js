@@ -27,11 +27,11 @@ function initMap() {
         createMarker(results[i]);
          let html =`
         <div class="placeDetails">
-            <div>「観光地情報」</div>
+            <p style="text-decoration:underline;margin-top:5px;">観光地情報</p>
             <div>・名前：${results[i].name}</div>
             <div>・住所：${results[i].formatted_address}</div>
-            <div>※詳細は地図の赤マーカーからGoogle MAPへ</div>
-            <img src="${results[0].photos[0].getUrl()}" height="350" width="250" padding-left="30">
+            <div>※詳細は赤マーカーからGoogle MAPへ</div>
+            <img src="${results[0].photos[0].getUrl()}" style="height:350px; width:250px; padding-left:30px;">
         </div>
       `
       
@@ -82,12 +82,12 @@ service.findPlaceFromQuery(request, (results, status) => {
     for (let i = 0; i < results.length; i++) {
       createMarker(results[i]);
       let html =`
-        <div class="placeDetails">
-        　 <div>「観光地情報」</div>
+         <div class="placeDetails">
+            <p style="text-decoration:underline;margin-top:5px;">観光地情報</p>
             <div>・名前：${results[i].name}</div>
             <div>・住所：${results[i].formatted_address}</div>
-            <div>詳細は地図の赤マーカーからGoogle MAPへ</div>
-            <img src="${results[0].photos[0].getUrl()}" height="350" width="250" padding-left="30">
+            <div>※詳細は赤マーカーからGoogle MAPへ</div>
+            <img src="${results[0].photos[0].getUrl()}" style="height:350px; width:250px; padding-left:30px;">
         </div>
       `
       

@@ -18,7 +18,7 @@
     </div>
     @endif
     
-    <div class = "addButtom">
+    <div class = "addButtom" style="border-bottom:1px #ddd solid;">
         <label class="belongings_add">
             <input id="belongings_name" name="belongs_name" type="text" placeholder="カメラ"　value="{{ old('belongs_name') }}">
         </label>

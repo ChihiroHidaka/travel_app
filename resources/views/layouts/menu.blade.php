@@ -11,7 +11,7 @@
 
     <body>
         <header id = "trip">
-            <h1 class = "page-title">~My trip~</h1>
+            <h1 class = "page-title">-My Trip-</h1>
             <h2>さあ旅の準備をしよう</h2>
          
         </header>
@@ -43,8 +43,8 @@
             </section>      
         </main>
           
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap&libraries=places&v=weekly" defer></script>
-          <script src="{{ secure_asset('js/place.js') }}" charset="UTF-8"></script> 
+          <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap&libraries=places&v=weekly" defer></script>-->
+          <!--<script src="{{ secure_asset('js/place.js') }}" charset="UTF-8"></script> -->
           
     </body>
 </html>
