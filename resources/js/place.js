@@ -25,6 +25,18 @@ function initMap() {
     if (status === google.maps.places.PlacesServiceStatus.OK && results) {
       for (let i = 0; i < results.length; i++) {
         createMarker(results[i]);
+         let html =`
+        <div class="placeDetails">
+            <div>「観光地情報」</div>
+            <div>・名前：${results[i].name}</div>
+            <div>・住所：${results[i].formatted_address}</div>
+            <div>※詳細は地図の赤マーカーからGoogle MAPへ</div>
+            <img src="${results[0].photos[0].getUrl()}" height="350" width="250" padding-left="30">
+        </div>
+      `
+      
+      document.getElementById('placeInfo').innerHTML = html;
+
       }
       map.setCenter(results[0].geometry.location);
     }
@@ -70,9 +82,13 @@ service.findPlaceFromQuery(request, (results, status) => {
     for (let i = 0; i < results.length; i++) {
       createMarker(results[i]);
       let html =`
-        <div>名前：${results[i].name}</div>
-        <div>住所：${results[i].formatted_address}</div>
-        <img src="${results[0].photos[0].getUrl()}" height="300">
+        <div class="placeDetails">
+        　 <div>「観光地情報」</div>
+            <div>・名前：${results[i].name}</div>
+            <div>・住所：${results[i].formatted_address}</div>
+            <div>詳細は地図の赤マーカーからGoogle MAPへ</div>
+            <img src="${results[0].photos[0].getUrl()}" height="350" width="250" padding-left="30">
+        </div>
       `
       
       document.getElementById('placeInfo').innerHTML = html;

@@ -32,6 +32,7 @@ header button {
   font-size: 15px;
 }
 
+
 .section-image {
   width: 80%;
   background-image: url("/image/wallpaper_plan_belongs.jpg");
@@ -73,6 +74,10 @@ nav h2 {
 
 .main_menu a {
   color: #432;
+}
+
+.contents{
+   border-left: 1px #ddd solid ;
 }
 
 .contents h1 {
@@ -240,15 +245,30 @@ nav h2 {
   
 }
 
+.findPlace{
+  display: flex;
+  justify-content:flex-start;
+}
+
+.placeDetails{
+  margin-top: 30px;
+  width:300px;
+  margin-left: 30px;
+  color: #432c02;
+  background-color: #f6f0cc;
+}
+
 #map{
   margin-top: 30px;
+  margin-left: 10px;
   border-width: medium;
   border-style: double;
-  margin-left: 50px;
   width: 1000px;
-  height: 600px;
+  height: 500px;
   
 }
+
+
 
 .userInfo{
   display: inline-block;

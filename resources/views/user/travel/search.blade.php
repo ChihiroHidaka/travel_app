@@ -13,9 +13,12 @@
     <div style="color: #ffffff;">行きたい場所をマップ検索できます</div>
 </div>
 
-  
-<div id="map"></div>
-<div id="placeInfo"></div>
+<div class = "findPlace">
+    <div id="placeInfo"></div>
+    <div id="map"></div>
+</div>
+
+
   
 @endsection
 
