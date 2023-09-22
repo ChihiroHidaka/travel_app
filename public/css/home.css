@@ -32,7 +32,7 @@ header button {
   font-size: 15px;
 }
 
-section {
+.section-image {
   width: 80%;
   background-image: url("/image/wallpaper_plan_belongs.jpg");
   background-repeat: no-repeat;
@@ -167,7 +167,8 @@ nav h2 {
 
 .Plancreate li .day {
   font-size: 15px;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-left: 30px;
 }
 
 .Plancreate li .time {
@@ -191,7 +192,7 @@ nav h2 {
   content: "";
   position: absolute;
   left: -23px;
-  top: 20px;
+  top: 15px;
   background:  #a7be18;
   width: 20px;
   height: 20px;
@@ -261,6 +262,98 @@ nav h2 {
   list-style: none;
   
 }
+
+.weatherCurrent{
+  border-bottom: 1px #ddd solid;
+  margin-top: 10px;
+}
+
+.weatherForecast{
+   border-bottom: 1px #ddd solid;
+   margin-top: 10px;
+
+}
+
+
+.container{
+  height: 150px;
+  width : 500px;
+  border-style: solid;
+  border-width: thin;
+  margin-left: 50px;
+  display: flex;
+  margin-top: 10px;
+  /*flex-wrap: nowrap;*/
+}
+
+/*天気*/
+#weather_icon{
+  margin-top: 10px;
+  flex:1;
+  width: 30%
+}
+
+#weather_response{
+  margin-top: 10px;
+  flex:3;
+  width: 70%;
+}
+
+/*.weekly{*/
+/*  height: 180px;*/
+/*  width : 500px;*/
+/*  border-style: solid;*/
+/*  margin-left: 50px;*/
+/*  display: flex;*/
+/*}*/
+
+/*#weather_icon_forecast{*/
+/*  margin-top: 10px;*/
+/*  flex:1;*/
+/*  width: 30%*/
+/*}*/
+
+/*#weather_response_forecast{*/
+/*  margin-top: 10px;*/
+/*  flex:3;*/
+/*  width: 70%;*/
+/*}*/
+.weekly{
+  /*height: 200px;*/
+  /*width: 500px;*/
+  border-style: solid;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column; /* 追加：子要素を縦に並べる */
+  overflow-y: auto; /* 追加：縦スクロールを可能にする */
+  margin-top: 10px;
+  width: 500px;
+  border-width: thin;
+  
+}
+
+.weekly_item{
+  display: flex; /* 新しいクラス：個々の天気予報項目をフレキシブルボックスとしてレイアウト */
+  margin-bottom: 10px; /* 新しいクラス：下余白を追加 */
+  width:700px;
+  list-style: none;
+  /*margin-left: 30px;*/
+  
+}
+
+.weekly_item_icon{
+  margin-top: 20px;
+  /*flex:1;*/
+  /*width: 30%;*/
+}
+
+.weekly_item_details{
+  margin-top: 10px;
+  margin-left: 30px;
+  /*flex:2;*/
+  /*width: 70%;*/
+}
+
 
 
 

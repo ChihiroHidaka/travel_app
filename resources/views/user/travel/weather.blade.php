@@ -1,5 +1,5 @@
 {{-- layouts/weather.blade.phpを読み込む --}}
-@extends('layouts.weather')
+@extends('layouts.menu')
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}

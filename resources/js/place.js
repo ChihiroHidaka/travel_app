@@ -2,9 +2,10 @@ let map;
 let service;
 let infowindow;
 
-//初期値の表示(URLに記載のコールバック関数）
+//1,初期値の表示(URLに記載のコールバック関数）
 function initMap() {
   const sydney = new google.maps.LatLng(-33.867, 151.195);
+
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("map"), {
     center: sydney,
@@ -14,21 +15,17 @@ function initMap() {
 　//APIで取得したい情報
   const request = {
     query: "Museum of Contemporary Art Australia",
-    fields: ["name","place_id","geometry","formatted_address"]
+    fields: ["name","place_id","geometry","formatted_address","icon","photos"],
   };
-// 　console.log(request);
+　console.log(request);
 　
 　//findPlaceQueryにて,クエリに基づいた検索を行う
   service = new google.maps.places.PlacesService(map);
-  service.getDetails(request, (results, status) => {
-  console.log(status); // ステータスをログとして出力
-  console.log(results); // 結果をログとして出力
-
+  service.findPlaceFromQuery(request, (results, status) => {
     if (status === google.maps.places.PlacesServiceStatus.OK && results) {
       for (let i = 0; i < results.length; i++) {
         createMarker(results[i]);
       }
-
       map.setCenter(results[0].geometry.location);
     }
   });
@@ -38,10 +35,12 @@ function initMap() {
 function createMarker(place) {
 　//該当しないデータは処理を止める
   if (!place.geometry || !place.geometry.location) return;
+
   const marker = new google.maps.Marker({
     map,
     position: place.geometry.location,
   });
+
   google.maps.event.addListener(marker, "click", () => {
     infowindow.setContent(place.name || "");
     infowindow.open(map);
@@ -51,42 +50,39 @@ function createMarker(place) {
 window.initMap = initMap;
 
 
-//検索ボタンから新たな観光地を調べる
+
+//2,検索ボタンから新たな観光地を調べる
 document.getElementById('searchButton').addEventListener('click', () => {
 // 入力フィールドからクエリを取得
 const query = document.getElementById('placeSearchInput').value;
+
 // 新しい検索リクエストオブジェクトを作成
 const request = {
   query,
-  fields: ["name","place_id","geometry","formatted_address"],
+  fields: ["name","place_id","geometry","formatted_address","icon","photos"],
 };
-// console.log(request);
-
+console.log(request);
 
 //findPlaceQueryにて,クエリに基づいた検索を行う
 service.findPlaceFromQuery(request, (results, status) => {
-  console.log("Status: ", status); // ステータスをログとして出力
-  console.log("Results: ", results); // 結果をログとして出力
-
+  console.log(results);
   if (status === google.maps.places.PlacesServiceStatus.OK && results) {
     for (let i = 0; i < results.length; i++) {
       createMarker(results[i]);
-     
       let html =`
         <div>名前：${results[i].name}</div>
-        <div>場所：${results[i].geometry}<?div>
         <div>住所：${results[i].formatted_address}</div>
+        <img src="${results[0].photos[0].getUrl()}" height="300">
       `
-        document.getElementById('map').innerHTML += html;
+      
+      document.getElementById('placeInfo').innerHTML = html;
+
     }
     map.setCenter(results[0].geometry.location);
   }
 })
 
 });
-
-
-
 
 // //マーカー表示
 // function createMarker(place) {

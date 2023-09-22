@@ -36,22 +36,15 @@
                 </form>
             </nav>
                      　 
-            <section class="contents">
+            <section class="contents @if(url()->current() !== url('/user/travel/weather')) section-image @endif">
                 @yield('content')
                
             
             </section>      
         </main>
-        
-          <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>-->
-          <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY" async defer></script>-->
-          <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap"></script>-->
-          <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALg70uaMcYjkzto9oPmiXyODIXCvpvAzg"></script>-->
-          <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALg70uaMcYjkzto9oPmiXyODIXCvpvAzg&callback=initMap"></script>-->
           
-          
-          <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap&libraries=places&v=weekly" defer></script>-->
-          <!--<script src="{{ secure_asset('js/place.js') }}" charset="UTF-8"></script> -->
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9g-sWFwUCDm4xXcBnQU-G2b7qDlObDrY&callback=initMap&libraries=places&v=weekly" defer></script>
+          <script src="{{ secure_asset('js/place.js') }}" charset="UTF-8"></script> 
           
     </body>
 </html>
