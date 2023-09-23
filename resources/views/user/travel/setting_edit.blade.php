@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
 
 {{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
@@ -17,15 +17,17 @@
     @endif
 
     @csrf
-    <p>設定情報の変更する</p>
-    <label for="name">ユーザーネーム</label>
-    <input type="text" name="name" id="name"　value="{{old('name',$user->name)}}"></br>
-    <label for="email">メールアドレス</label>
-    <input type="email" name="email" id="email"　value="{{old('email',$user->email)}}"></br>
-    <label for="password">パスワード</label>
-    <input type="text" name="password" id="password"　value="{{$user->password}}"></br>
+    <h1>ユーザー情報を変更する</h1>
+    <div class = "edit">
+        <label for="name">ユーザーネーム</label>
+        <input type="text" name="name" id="name"　value="{{old('name',$user->name)}}"></br>
+        <label for="email">メールアドレス</label>
+        <input type="email" name="email" id="email"　value="{{old('email',$user->email)}}"></br>
+        <label for="password">パスワード</label>
+        <input type="text" name="password" id="password"　value="{{$user->password}}"></br>
+        <button type="submit">変更する</button></br>
+    </div>
    
-    <button type="submit">設定内容を更新する</button></br>
 </form>
 
 

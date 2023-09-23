@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
 
 @section('title', '持ち物チェックリストの編集')
@@ -17,15 +17,14 @@
         </ul>
     </div>
     @endif
-    
-    <div>
+    <h1>持ち物リストを編集する</h1>
+    <div class = "edit">
         <label class="belongings edit">
-            <input id="belongings_name" name="belongs_name" type="text" value="{{ old('belongs_name') }}">
-        </label>
-        <button type="submit">編集を完了する</button></br>
-        
+        <input id="belongings_name" name="belongs_name" type="text" value="{{ old('belongs_name') }}">
+        <button type="submit">変更する</button></br>
+       </label>
     </div>
-
+  
 </form>
 
 

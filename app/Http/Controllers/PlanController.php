@@ -15,9 +15,10 @@ class PlanController extends Controller
    {
        
     $travel = Travel::find($travel_id);
+    $travelList = Travel::where('user_id', \Auth::id())->get();
     $plans = Plan::where('travel_id', $travel_id)->get();//travel_id= 3の行程表を取り出す
     
-    return view('user.travel.plan',['plans' => $plans,'travel_id' =>$travel_id]);
+    return view('user.travel.plan',['plans' => $plans,'travel_id' =>$travel_id,'travelList'=>$travelList]);
     
    }
   
@@ -45,8 +46,9 @@ class PlanController extends Controller
     public function edit($plan_id)//受け取りたい変数をルーティングのパラメーターで定義
     {
         $plan = Plan::find($plan_id);
+        $travelList = Travel::where('user_id', \Auth::id())->get();
         // dd($plan);
-        return view('user.travel.plan_edit',['plan'=>$plan]);
+        return view('user.travel.plan_edit',['plan'=>$plan,'travelList'=>$travelList]);
     }
     
     

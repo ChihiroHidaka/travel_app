@@ -71,7 +71,9 @@ class TravelController extends Controller
     {
         
         $travel = Travel::find($request->id);
-        return view('user.travel.travel_edit',['travel' => $travel]);
+        $travelList = Travel::where('user_id', \Auth::id())->get();
+        return view('user.travel.travel_edit',['travel' => $travel,'travelList'=>$travelList]);
+        
         
         // if(empty($travel)){
         //     abort(404);

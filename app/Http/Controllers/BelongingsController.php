@@ -72,9 +72,10 @@ class BelongingsController extends Controller
     public function edit($id)
     {
         $belongings= Belongs::find($id);
+        $travelList = Travel::where('user_id', \Auth::id())->get();
         // dd($belongings);
 
-        return view('user.travel.belongings_edit',['belongings'=>$belongings]);
+        return view('user.travel.belongings_edit',['belongings'=>$belongings,'travelList'=>$travelList]);
     }
     
     

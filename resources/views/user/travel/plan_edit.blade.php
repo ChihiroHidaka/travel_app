@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.menu')
 
 
 
@@ -22,31 +22,29 @@
         </ul>
     </div>
     @endif
-   
-   <label>日付</label>
-   <input id="day" name="plan_date" type="date" value="{{$plan->plan_date }}"></input>
-   
-　　<table id="travelPlan">
-        <thead>
-            <tr>
-                <th>開始時間</th>
-                <th>終了時間</th>
-                <th>目的地もしくは移動手段</th>
-                <th>備考</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="PlanCreate">
-                <td><input id="fromtime" name="from_time" type="time" value="{{$plan->fromtime }}"></td>
-                <td><input id="endtime" name="end_time" type="time" value="{{$plan->end_time }}"></td>
-                <td><input id="plan" name="plan" type="text" value="{{ $plan->plan }}"></td>
-                <td><input id="remarks" name="remarks" type="text" value="{{ $plan->remarks }}"></td>
-            </tr>
-        </tbody>
-    </table>
-
-<button type="submit">行程を更新する</button></br>
+   <div class = "edit">
+        <label>日付</label>
+        <input id="day" name="plan_date" type="date" value="{{$plan->plan_date }}"></input>
+        　　<table id="travelPlan">
+            <thead>
+                <tr>
+                    <th>開始時間</th>
+                    <th>終了時間</th>
+                    <th>目的地もしくは移動手段</th>
+                    <th>備考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="PlanCreate">
+                    <td><input id="fromtime" name="from_time" type="time" value="{{$plan->fromtime }}"></td>
+                    <td><input id="endtime" name="end_time" type="time" value="{{$plan->end_time }}"></td>
+                    <td><input id="plan" name="plan" type="text" value="{{ $plan->plan }}"></td>
+                    <td><input id="remarks" name="remarks" type="text" value="{{ $plan->remarks }}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">行程を更新する</button></br>
+    </div>
 </form>
 
 

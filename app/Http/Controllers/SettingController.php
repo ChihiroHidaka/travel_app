@@ -27,8 +27,9 @@ class SettingController extends Controller
        if (empty($user)) {
             abort(404);
         }
+        $travelList = Travel::where('user_id', \Auth::id())->get();
         
-        return view('user.travel.setting_edit',['user' =>$user]);
+        return view('user.travel.setting_edit',['user' =>$user,'travelList'=>$travelList]);
     }
     
     public function update(Request $request)
