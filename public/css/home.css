@@ -87,64 +87,23 @@ nav h2 {
   color: #ffffff;
 }
 
-.newTravel{
- margin-top: 30px;
- margin-left: 30px;
- font-size: 15px;
- font-weight: bold;
- line-height: 1.9;
- background: #ffffff;
- width: 400px;
- height: 150px;
-}
 
-
-
-.contents li {
-  font-size: 15px;
-  /*list-style: none;*/
-  /*line-height: 1.9;*/
-  /*font-weight: bold;*/
-  display: block;
-}
-
-
-.travel h1 {
-  font-size: 30px;
-  border-bottom: 1px #ddd solid;
-  color: #ffffff
-  /*margin-left: 30px;*/
-}
-
-
-.travel {
-  list-style: none;
-  font-size: 20px;
-  padding-left: 50px;
-  box-sizing: border-box;
-  
-}
-
-.travel ul{
-  display: inline-block;
-  width: 400px;
+.inputContents {
+  width: 500px;
+  padding: 10px;
   margin-left: 40px;
-  padding: 15px 10px 15px 10px;
-  vertical-align: middle;
   background: #ffffff;
   box-sizing: border-box;
   border-radius: 6px;
-  list-style: none;
   color: #432c02;
 }
 
 
 .planShow{
   font-size:20px;
-  /*text-indent: 30px;*/
   border-bottom: 1px #ddd solid;
   color:#ffffff;
-  margin-left: 80px;
+  margin-left: 30px;
 }
 
 .Plancreate {
@@ -180,11 +139,11 @@ nav h2 {
 }
 
 .Plancreate li .time {
-  display: inline-flex;
-  justify-content: flex-end;
-  flex-basis: 5em;
+  /*display: inline-flex;*/
+  /*justify-content: flex-end;*/
+  flex-basis: 4em;
   max-width: 5em;
-  margin-right: 1em;
+  /*margin-right: 1em;*/
   margin-top: 40px;
   color: #432c02;
 }
@@ -214,12 +173,6 @@ nav h2 {
   color: #432c02;
 }
 
-.edit{
-  margin-left:30px;
-  margin-top:10px;
-}
-
-
 .belongings_add{
   margin-left: 30px;
  
@@ -234,7 +187,7 @@ nav h2 {
   text-align: center;
 }
 
-#belongings_list{
+#belongings_list {
   font-size: 15px;
 	background-color: #dedede;
 	background-image:
@@ -278,13 +231,9 @@ nav h2 {
   border-style: solid thin;
   width: 1000px;
   height: 496px;
-  
 }
 
-
-
 .userInfo{
-  display: inline-block;
   width: 400px;
   margin-left: 30px;
   padding: 15px 10px 15px 10px;

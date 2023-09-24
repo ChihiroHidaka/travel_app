@@ -25,10 +25,9 @@
         <button type="submit">この持ち物を追加する</button></br>
         <div style="color: #ffffff;margin-left:30px;">事前に持ち物を追加して、出発前に忘れ物チェックしよう！</div>
     </div>
-
 </form>
 
-
+<div><a href=https://www.gov-online.go.jp/useful/article/201412/4.html>参考：機内に持込・受託禁止物</div>
 <div>
     <form method="POST" action="{{route('belongings.check')}}" id="belongingsForm">
     @csrf

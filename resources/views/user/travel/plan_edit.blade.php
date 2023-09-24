@@ -22,7 +22,7 @@
         </ul>
     </div>
     @endif
-   <div class = "edit">
+   <div class = "inputContents">
         <label>日付</label>
         <input id="day" name="plan_date" type="date" value="{{$plan->plan_date }}"></input>
         　　<table id="travelPlan">
@@ -30,8 +30,8 @@
                 <tr>
                     <th>開始時間</th>
                     <th>終了時間</th>
-                    <th>目的地もしくは移動手段</th>
-                    <th>備考</th>
+                    <th>内容</th>
+                    <th>メモ</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,11 +43,10 @@
                 </tr>
             </tbody>
         </table>
-        <button type="submit">行程を更新する</button></br>
     </div>
+    <button style = "margin-top:10px;margin-left:40px;"type="submit">行程を更新する</button></br>
+    
 </form>
-
-
 @endsection
 
 

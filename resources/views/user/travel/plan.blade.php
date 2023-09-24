@@ -22,16 +22,16 @@
         </ul>
     </div>
     @endif
-   <div class = "edit">
+   <div class = "inputContents">
        <label>日付</label>
-           <input id="day" name="plan_date" type="date"></input>
-        　　<table id="travelPlan">
+            <input id="day" name="plan_date" type="date"></input>
+        　  <table id="travelPlan">
                 <thead>
                     <tr>
                         <th>開始時間</th>
                         <th>終了時間</th>
                         <th>内容</th>
-                        <th>備考</th>
+                        <th>メモ</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,11 +43,11 @@
                     </tr>
                 </tbody>
             </table>
-        <button type="submit">行程を追加する</button></br>
-    </div>    
+    </div>
+    <button style = "margin-top:10px;margin-left:40px;"type="submit">行程を追加する</button></br>
 </form>
+<button style = "margin-top:10px;margin-left:40px;"><a href="/user/travel/{{$travel_id}}">ホーム画面に戻る</a></button>
 
-<div><a href="/user/travel/{{$travel_id}}">ホーム画面に戻る</a></div>
 
 <div>
     <h2 class = "planShow">行程表</h2>
@@ -56,7 +56,8 @@
                  @foreach($plans as $plan)
                 <li>
                     <div class="day" id="day" name="plan_date" type="date" value="{{$plan->plan_date}}">{{$plan->plan_date}}</div>
-                    <span class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time}}">{{$plan->from_time }}</span>
+                    <div class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time}}">{{$plan->from_time }} ~</div>
+                    <div class="time" id="endtime" name="end_time" type="time" value="{{$plan->end_time}}">{{$plan->end_time }}</div>
                     <div class="area">
                     <div class="sch_box">
                       <p id="plan" name="plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>

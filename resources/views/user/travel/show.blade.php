@@ -9,16 +9,13 @@
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <!--下記はデータを引っ張って表示させる-->
-
-<div class ="travel">
-     <h1>{{$travel->title}}</h1> 
-     <ul class = "travelContents">
-         <li>開始日：{{$travel->start_date}}</li>
-         <li>終了日：{{$travel->end_date}}</li>
-         <li> 詳  細 ： {{$travel->description}}</li>
-         <li><a href="/user/travel/{{$travel->id}}/edit">旅行概要を編集する</a></li>
-         <li><a href="/user/travel/{{$travel->id}}/plan/create">行程表を作成する</a></li>
-     </ul>
+<h1>{{$travel->title}}</h1> 
+<div class ="inputContents">
+    <div>・開始日：{{$travel->start_date}}</div>
+    <div>・終了日：{{$travel->end_date}}</div>
+    <div>・詳  細 ： {{$travel->description}}</div>
+    <a href="/user/travel/{{$travel->id}}/edit">旅行概要を編集する</a><br>
+    <a href="/user/travel/{{$travel->id}}/plan/create">行程表を作成する</a>
 </div>
 <!--下記に行程表を表示-->
 <div>
@@ -28,11 +25,12 @@
                  @foreach($plans as $plan)
                 <li>
                     <div class="day" id="day" name="plan_date" type="date" value="{{$plan->plan_date}}">{{$plan->plan_date}}</div>
-                    <span class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time}}">{{$plan->from_time }}</span>
+                    <div class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time}}">{{$plan->from_time }}</div>
+                    <div class="time" id="endtime" name="end_time" type="time" value="{{$plan->end_time}}">{{$plan->end_time }}</div>
                     <div class="area">
                     <div class="sch_box">
-                      <p id="plan" name="plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
-                      <div id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">
+                    <p id="plan" name="plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
+                    <div id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">
                       メモ：{{$plan->remarks}} </div>
                       <a href="/user/plan/{{$plan->id}}/edit">編集</a>
                       <a href="/user/plan/{{$plan->id}}/delete">削除</a>
@@ -40,7 +38,6 @@
                 </li>
                @endforeach
             </ul>
-           
         </div>
 </div>
 @endsection

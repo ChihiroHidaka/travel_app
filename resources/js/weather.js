@@ -63,7 +63,7 @@ $(function(){
       let icon_forecast ="";
       let html_forecast ="";
       for (let i=0; i < res.list.length; i++){
-        if(i % 4 == 0){
+        if(i % 2 == 0){
         let icon_forecast = `
            <div class="weekly_item_icon">
               <img src="${iconList + res.list[i].weather[0].icon}@2x.png">
