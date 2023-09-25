@@ -19,11 +19,11 @@
     @csrf
     <h1>ユーザー情報を変更する</h1>
     <div class = "userInfo">
-        <label for="name">ユーザーネーム</label>
+        <label for="name">・ユーザーネーム</label>
         <input type="text" name="name" id="name"　value="{{old('name',$user->name)}}"></br>
-        <label for="email">メールアドレス</label>
+        <label for="email">・メールアドレス</label>
         <input type="email" name="email" id="email"　value="{{old('email',$user->email)}}"></br>
-        <label for="password">パスワード</label>
+        <label for="password">・パスワード</label>
         <input type="text" name="password" id="password"　value="{{$user->password}}"></br>
     </div>
     <button style = "margin-top:10px;margin-left:40px;"type="submit">変更する</button></br>

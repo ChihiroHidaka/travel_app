@@ -9,10 +9,10 @@
 @section('content')
 <h1 style ="color:#ffffff;font-size:30px;">ユーザー情報</h1>
 <div class = "userInfo">
-    <div>氏名：{{$user->name}}</div>
-    <div>メールアドレス：{{$user->email}}</div>
-    <div>パスワード：*****</div>
-    <p><a href="{{ route('setting.edit',['user_id' => $user->id])}}">設定を変更する</a></p>
+    <div>・氏名：{{$user->name}}</div>
+    <div>・メールアドレス：{{$user->email}}</div>
+    <div>・パスワード：*****</div>
+    <p><a href="{{ route('setting.edit',['user_id' => $user->id])}}">ユーザー情報を変更する</a></p>
 </div>
     
 
