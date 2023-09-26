@@ -17,10 +17,11 @@
     
     <h1>持ち物リストを編集する</h1>
     <div>
+        
         <label class="belongings edit">
-        <input id="belongings_name" name="belongs_name" type="text" value="{{ old('belongs_name') }}">
-        <button style= "margin-left:30px;" type="submit">変更する</button></br>
-       </label>
+            <input id="belongings_name" name="belongs_name" type="text" value="{{ old('belongs_name') }}">
+            <button style= "margin-left:30px;" type="submit">変更する</button></br>
+        </label>
     </div>
 </form>
 
