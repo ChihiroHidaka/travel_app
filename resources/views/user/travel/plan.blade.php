@@ -59,11 +59,12 @@
                     <div class="time" id="fromtime" name="from_time" type="time" value="{{$plan->from_time}}">{{$plan->from_time }} ~</div>
                     <div class="time" id="endtime" name="end_time" type="time" value="{{$plan->end_time}}">{{$plan->end_time }}</div>
                     <div class="area">
-                    <div class="sch_box">
-                        <p id="plan" name="plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
-                      　<div id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">メモ：{{$plan->remarks}}</div>
-                      　<a href="/user/plan/{{$plan->id}}/edit">編集</a>
-                      　<a href="/user/plan/{{$plan->id}}/delete">削除</a>
+                        <div class="sch_box">
+                            <p id="plan" name="plan" type="text" value="{{$plan->plan}}">{{$plan->plan}}</p>
+                          　<div id="remarks" name="remarks" type="text" value="{{$plan->remarks}}">メモ：{{$plan->remarks}}</div>
+                          　<a href="/user/plan/{{$plan->id}}/edit">編集</a>
+                          　<a href="/user/plan/{{$plan->id}}/delete">削除</a>
+                        </div>
                     </div>
                 </li>
                @endforeach

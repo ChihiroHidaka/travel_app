@@ -1,25 +1,24 @@
-<!--これは新規登録画面-->
-
-{{-- layouts/home.blade.phpを読み込む --}}
+<!--旅行の新規登録画面-->
+{{-- layouts/menu.blade.phpを読み込む --}}
 @extends('layouts.menu')
 
-
-{{-- home.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
+{{-- menu.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
 @section('title', '新規旅行作成')
 
-{{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
+{{-- menu.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <!--下記はデータを引っ張って表示させる-->
 <h1>新しい旅行を作成する</h1>
 <form method="POST" action="{{ route('travel.store') }}" id="travel_store">
-     @if (count($errors) > 0)
+    @csrf
+    @if (count($errors) > 0)
         <ul>
             @foreach($errors->all() as $e)
                 <li>{{ $e }}</li>
             @endforeach
         </ul>
     @endif
-    @csrf
+   
     <div class = "inputContents">
         <label for="travel_title">・旅行のタイトル</label>
         <input type="text" name="title" id="travel_title"　value="{{ old('travel_title') }}"></br>
@@ -34,7 +33,6 @@
     </div>
     <button style = "margin-top:10px;margin-left:40px;" type="submit">新たな旅行を作成する</button></br>
 </form>
-
 @endsection
 
     
