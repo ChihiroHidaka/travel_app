@@ -1,7 +1,7 @@
 {{-- layouts/menu.blade.phpを読み込む --}}
 @extends('layouts.menu')
 
-{{-- menu.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
+{{-- menu.blade.phpの@yield('title')に埋め込む --}}
 @section('title', '観光地検索')
 
 {{-- menu.blade.phpの@yield('content')に以下のタグを埋め込む --}}

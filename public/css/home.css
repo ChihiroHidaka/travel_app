@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*これは、自身で作ったCSSファイル*/
+
 #trip {
   background-image: url("/image/header_sea.jpeg");
   background-repeat: no-repeat;
@@ -30,14 +30,6 @@ header p {
 header button {
   text-align: right;
   font-size: 15px;
-}
-
-
-.section-image {
-  width: 80%;
-  background-image: url("/image/wallpaper_plan_belongs.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .display {
@@ -76,10 +68,18 @@ nav h2 {
   color: #432;
 }
 
+.section-image {
+  width: 80%;
+  background-image: url("/image/wallpaper_plan_belongs.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .contents{
    border-left: 1px #ddd solid ;
 }
 
+/*各画面の見出し*/
 .contents h1 {
   font-size: 30px;
   border-bottom: 1px #ffffff solid;
@@ -87,7 +87,7 @@ nav h2 {
   color: #ffffff;
 }
 
-
+/*各入力欄・データ表示*/
 .inputContents {
   width: 500px;
   padding: 10px;
@@ -98,7 +98,7 @@ nav h2 {
   color: #432c02;
 }
 
-
+/*行程表*/
 .planShow{
   font-size:20px;
   border-bottom: 1px #ddd solid;
@@ -139,11 +139,8 @@ nav h2 {
 }
 
 .Plancreate li .time {
-  /*display: inline-flex;*/
-  /*justify-content: flex-end;*/
   flex-basis: 4em;
   max-width: 5em;
-  /*margin-right: 1em;*/
   margin-top: 40px;
   color: #432c02;
 }
@@ -151,7 +148,6 @@ nav h2 {
 .Plancreate .sch_box {
   position: relative;
   min-height: 1em;
-  /*padding: 1em;*/
   background: #ffffff;
   border-radius: 6px;
   color: #432c02;
@@ -173,9 +169,9 @@ nav h2 {
   color: #432c02;
 }
 
+/*持ち物チェックリスト*/
 .belongings_add{
   margin-left: 30px;
- 
 }
 
 #belongings_list .listName{
@@ -204,48 +200,7 @@ nav h2 {
   margin-top: 10px;
 }
 
-.mapSearch{
-  margin-left: 30px;
-  border-bottom: 1px #ddd solid;
-  
-}
-
-.findPlace{
-  display: flex;
-  justify-content:flex-start;
-}
-
-.placeDetails{
-  margin-top: 30px;
-  width:300px;
-  height: 500px;
-  margin-left: 30px;
-  color: #432c02;
-  background-color: #f6f0cc;
-}
-
-#map{
-  margin-top: 30px;
-  /*margin-left: 10px;*/
-  border-width: medium;
-  border-style: solid thin;
-  width: 1000px;
-  height: 496px;
-}
-
-.userInfo{
-  width: 400px;
-  margin-left: 30px;
-  padding: 15px 10px 15px 10px;
-  vertical-align: middle;
-  background: #ffffff;
-  box-sizing: border-box;
-  border-radius: 6px;
-  list-style: none;
-  color: #432c02;
-  
-}
-
+/*天気チェック*/
 .weatherCurrent{
   border-bottom: 1px #ddd solid;
   margin-top: 10px;
@@ -259,9 +214,7 @@ nav h2 {
    margin-top: 10px;
    margin-left: 30px;
    color: #432c02;
-
 }
-
 
 .container{
   height: 150px;
@@ -274,7 +227,6 @@ nav h2 {
   background-color: #eaf6fd;
 }
 
-/*天気*/
 #weather_icon{
   margin-top: 10px;
   flex:1;
@@ -314,16 +266,56 @@ nav h2 {
 
 .weekly_item_icon{
   margin-top: 20px;
-  /*flex:1;*/
-  /*width: 30%;*/
 }
 
 .weekly_item_details{
   margin-top: 10px;
   margin-left: 30px;
-  /*flex:2;*/
-  /*width: 70%;*/
 }
+
+/*観光地検索*/
+.mapSearch{
+  margin-left: 30px;
+  border-bottom: 1px #ddd solid;
+}
+
+.findPlace{
+  display: flex;
+  justify-content:flex-start;
+}
+
+.placeDetails{
+  margin-top: 30px;
+  width:300px;
+  height: 500px;
+  margin-left: 30px;
+  color: #432c02;
+  background-color: #f6f0cc;
+}
+
+#map{
+  margin-top: 30px;
+  border-width: medium;
+  border-style: solid thin;
+  width: 1000px;
+  height: 496px;
+}
+
+/*ユーザ設定情報*/
+.userInfo{
+  width: 400px;
+  margin-left: 30px;
+  padding: 15px 10px 15px 10px;
+  vertical-align: middle;
+  background: #ffffff;
+  box-sizing: border-box;
+  border-radius: 6px;
+  list-style: none;
+  color: #432c02;
+  
+}
+
+
 
 
 

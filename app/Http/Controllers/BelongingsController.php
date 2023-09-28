@@ -3,19 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Belongs;
 use App\Models\Travel;
 
 
 class BelongingsController extends Controller
 {
-    
     public function create()
     {
         $belongings = Belongs::where('user_id', \Auth::id())->get();
+        //サイドメニューに表示する旅行データの表示
         $travelList = Travel::where('user_id', \Auth::id())->get();
-        
         
         return view('user.travel.belongings',['belongings'=> $belongings, 'travelList'=>$travelList]);
     }
@@ -26,16 +24,15 @@ class BelongingsController extends Controller
         $this->validate($request, Belongs::$rules);
         $belongings = new Belongs;
         $belongings_form = $request->all();
-       
-        unset($belongings['_token']);
 
+        unset($belongings['_token']);
         $belongings->fill($belongings_form);
         $belongings->user_id = \Auth::id();
         $belongings->checked = 0;
 
         $belongings->save();
-        
-         $travelList = Travel::where('user_id', \Auth::id())->get();
+        //サイドメニューに表示する旅行データの表示
+        $travelList = Travel::where('user_id', \Auth::id())->get();
         
         return redirect()->route('belongings.create');
     }
@@ -43,10 +40,12 @@ class BelongingsController extends Controller
     
     public function check(Request $request)
     {
-        $belongings_form = $request->all(); //送信されたのはcheckedの値。checkedのデータだけを送る
-        $belongings = Belongs::where('user_id',\Auth::id())->get();//ユーザーIDに紐づく持ち物を全て取り出す
-        
-        foreach($belongings as $value){//＄valueはどの変数名でも可能。取得した$belongingsをループして、各オブジェクトのchecked値を更新
+        //送信されたのはcheckedの値。checkedのデータだけを送る
+        $belongings_form = $request->all(); 
+        //ユーザーIDに紐づく持ち物を全て取り出す
+        $belongings = Belongs::where('user_id',\Auth::id())->get();
+        //取得した$belongingsをループして、各オブジェクトのchecked値を更新（＄valueはどの変数名でも可能）
+        foreach($belongings as $value){
             $belongs = Belongs::find($value->id);//$valueから各持ち物IDを代入.現在のループで処理するオブジェクトを取得します。
             if(in_array($value->id, $belongings_form['belongings'])){ //送信されたデータ内のbelongings配列に、現在の$valueのIDが存在するか確認します。
                 $belongs->checked = true; //送信したcheckedの値と同じI Dがあるならチェックをつける
@@ -58,16 +57,6 @@ class BelongingsController extends Controller
         }
         return redirect()->route('belongings.create');
     }
-
-        // $belongings->fill($belongings_form);
-        // $belongings->user_id = \Auth::id();
-        // $belongings->belongs_name = Belongs::find($request->id);
-        
-        // $belongings->checked = $request->has('belongings[]')? 1:0;
-        // // dd($belongings);
-        // $belongings->fill($belongings_form)->save();
-        
-        // $travelList = Travel::where('user_id', \Auth::id())->get();
         
     public function edit($id)
     {
@@ -104,7 +93,7 @@ class BelongingsController extends Controller
         $belongings = Belongs::find($id);
         $belongings->delete();
         
-         return redirect()->route('belongings.create',['id'=>$belongings->id]);
+        return redirect()->route('belongings.create',['id'=>$belongings->id]);
     
     }
     

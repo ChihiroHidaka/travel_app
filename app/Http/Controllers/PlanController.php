@@ -1,22 +1,21 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Plan;
 use App\Models\Travel;
-
 
 
 class PlanController extends Controller
 {
     public function create($travel_id)
    {
-       
+    //各旅行と行程を紐づけるため各旅行IDを取得   
     $travel = Travel::find($travel_id);
+    //travel_id= xの行程表を取り出す
+    $plans = Plan::where('travel_id', $travel_id)->get();
+    //サイドメニューの旅行一覧を取得
     $travelList = Travel::where('user_id', \Auth::id())->get();
-    $plans = Plan::where('travel_id', $travel_id)->get();//travel_id= 3の行程表を取り出す
     
     return view('user.travel.plan',['plans' => $plans,'travel_id' =>$travel_id,'travelList'=>$travelList]);
     
@@ -25,9 +24,7 @@ class PlanController extends Controller
   
    public function store(Request $request)
    {
-        
         $this->validate($request, Plan::$rules);
-        // dd('plan_storeが呼ばれた');//動作の確認用
         $plan = new Plan;
         $plan_form = $request->all();
        
@@ -47,7 +44,7 @@ class PlanController extends Controller
     {
         $plan = Plan::find($plan_id);
         $travelList = Travel::where('user_id', \Auth::id())->get();
-        // dd($plan);
+    
         return view('user.travel.plan_edit',['plan'=>$plan,'travelList'=>$travelList]);
     }
     
@@ -55,14 +52,17 @@ class PlanController extends Controller
     public function update(Request $request )//行程表の編集画面からの更新（保存）
     {
         
-        $this->validate($request,Plan::$rules);//validationで検証
-        $plan = Plan::find($request->plan_id);//Planモデルから元データを取得する
+        $this->validate($request,Plan::$rules);
+        //Planモデルから元データを取得する
+        $plan = Plan::find($request->plan_id);
         // dd($plan->id);
-        $plan_form = $request->all();//送信された新しいデータを全て＄plan_formに格納
-        //  dd($plan_form);
+        ///送信された新しいデータを全て＄plan_formに格納
+        $plan_form = $request->all();
+        // dd($plan_form);
         unset($plan_form['_token']);
         $plan->timestamps = false;
-        $plan->fill($plan_form)->save();//＄planを＄plan_formのデータで上書き保存
+        //＄planを＄plan_formのデータで上書き保存
+        $plan->fill($plan_form)->save();
         
         return redirect()->route('plan.create',['travel_id'=>$plan->travel_id]);
     }
@@ -70,7 +70,6 @@ class PlanController extends Controller
     
     public function delete(Request $request)//各工程の削除
     {
-        // dd($request->all());
         $plan = Plan::find($request->plan_id);
         // dd($plan);
         $plan->delete();
@@ -78,16 +77,7 @@ class PlanController extends Controller
     }
     
     
-    // public function show($travel_id,$plan_id)
-    // {
-    //     $travel = Travel::find($travel_id);
-    //     $travelList = Travel::where('user_id', \Auth::id())->get();
-    //     $plans = Plan::find($plan_id);
-        
-        
-    //     return view('travel.show',['travelList' => $travelList, 'travel' => $travel,'plans' => $plans]);
-        
-    // }
+ 
 }
 
 

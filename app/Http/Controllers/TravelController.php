@@ -14,12 +14,11 @@ class TravelController extends Controller
     
      public function index()//ホーム画面表示
     {
-        //travelistは常時必要なデータのためテンプレートできないか
-        // travelモデルの中からuser_idに紐づくAuthのidと一致するデータを持ってくる。navバーの旅行タイトル用なので
+        // travelモデルの中からuser_idに紐づくAuthのidと一致するデータを持ってくる。
         $travelList = Travel::where('user_id', \Auth::id())->get();
-        return view('user.travel.travelhome', ['travelList' => $travelList]);//連想配列　左がわは文字列で名前、右側は実データ
+        
+        return view('user.travel.travelhome', ['travelList' => $travelList]);//連想配列　左側は文字列で名前、右側は実データ
     }
-    
     
      public function create()//旅行概要の新規作成画面へ
     {
@@ -27,11 +26,8 @@ class TravelController extends Controller
         return view('user.travel.travel',['travelList' => $travelList]);
     }
     
-
-
-    public function store(Request $request)//旅行の保存
+    public function store(Request $request)//各旅行の保存
     {
-        // dd('plan_storeが呼ばれた');//動作の確認用
         $this->validate($request, Travel::$rules);
         $travel = new Travel;
         $form = $request->all();
@@ -51,43 +47,40 @@ class TravelController extends Controller
         $travel->group_id = 1;
         $travel->save();
         
-        
-        return redirect('/home');//user/travel/home'に飛ぶ
+        return redirect('/home');//user/travel/home'に遷移
     }
     
-    
-      
-    public function show(Request $request)//各旅行の概要表示
+    public function show(Request $request)//各旅行の概要と行程表を表示する
     {
         $travelList = Travel::where('user_id', \Auth::id())->get();
         $travel = Travel::find($request->id);
-        $plans = Plan::where('travel_id', $request->id)->get();// Planモデルのデータから、travel_idがリクエストで送られてきたid（$request->id）と一致するレコードを全て取得
+        // Planモデルのデータから、travel_idがリクエストで送られてきたid（$request->id）と一致するレコードを全て取得
+        $plans = Plan::where('travel_id', $request->id)->get();
         
         return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel,'plans' => $plans]);
     }
     
     
-    public function edit(Request $request)//旅行概要の編集画面に飛ぶアクション
+    public function edit(Request $request)//旅行概要の編集画面に遷移する
     {
-        
         $travel = Travel::find($request->id);
+        if (empty($travel)) {
+            abort(404);
+        }
         $travelList = Travel::where('user_id', \Auth::id())->get();
+        
         return view('user.travel.travel_edit',['travel' => $travel,'travelList'=>$travelList]);
-        
-        
-        // if(empty($travel)){
-        //     abort(404);
     }
     
     
     public function update(Request $request)//旅行概要編集画面からの更新（保存）
     {
-        
-        $this->validate($request,Travel::$rules);//validationで検証
-        
-        $travel = Travel::find($request->id);//Travelモデルから元データを取得する
-
-        $form = $request->all();//送信された新しいデータを全て＄formに格納
+        //validationで検証
+        $this->validate($request,Travel::$rules);
+        //Travelモデルから元データを取得する
+        $travel = Travel::find($request->id);
+        //送信された新しいデータを全て＄formに格納
+        $form = $request->all();
         
         if($request->remove =='trure'){
             $form['imgae_path'] = null;
@@ -100,24 +93,18 @@ class TravelController extends Controller
         unset($form['imgae']);
         unset($form['remove']);
         unset($form['_token']);
-        
-        $travel->fill($form)->save();//＄travelを＄formのデータで上書き保存
-        
-        $travelList = Travel::where('user_id', \Auth::id())->get();//ログイン中のユーザ-が所有している旅行のリストをデータベースから取得
+        //＄travelを＄formのデータで上書き保存
+        $travel->fill($form)->save();
+        ///ログイン中のユーザ-が所有している旅行のリストをデータベースから取得
+        $travelList = Travel::where('user_id', \Auth::id())->get();
         
         return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel]);
-        
     }
-    
     
     public function delete(Request $request)//旅行概要の削除
     {
-        // dd('OK');//動作の確認用
         $travel = Travel::find($request->id);
         $travel->delete();
         return redirect('/home');
     }
-    
-    
-    
 }

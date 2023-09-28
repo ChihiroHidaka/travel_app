@@ -12,48 +12,47 @@ use App\Models\User;
 
 class SettingController extends Controller
 {
-     public function show()
+     public function show()// 現在認証されているユーザーを表示させる
     {
-       $user = auth()->user(); // 現在認証されているユーザーを取得
-        $travelList = Travel::where('user_id', \Auth::id())->get();
+     $loginUserData = auth()->user(); 
+     $travelList = Travel::where('user_id', \Auth::id())->get();
         
-        
-        return view('user.travel.setting',['travelList' => $travelList,'user' =>$user]);
+     return view('user.travel.setting',['loginUserData' =>$loginUserData,'travelList' => $travelList]);
     }
     
      public function edit($user_id)
     {
-       $user = auth()->user(); // 現在認証されているユーザーを取得
-       if (empty($user)) {
+       $loginUserData = auth()->user(); 
+       if (empty($loginUserData )) {
             abort(404);
         }
         $travelList = Travel::where('user_id', \Auth::id())->get();
         
-        return view('user.travel.setting_edit',['user' =>$user,'travelList'=>$travelList]);
+        return view('user.travel.setting_edit',['loginUserData' =>$loginUserData,'travelList' => $travelList]);
     }
     
     public function update(Request $request)
      {
-        $this->validate($request,User::$rules);//validationで検証
-        $user = User::find($request->user_id);//userモデルから元データを取得する
+        $this->validate($request,User::$rules);
+        $loginUserData = User::find($request->user_id);
         // dd($user);
-       if (empty($user)) {
+       if (empty($loginUserData )) {
             abort(404);
         }
-        unset($user['_token']);
-        $user->timestamps = false;
-        $user->name = $request->name;
+        unset($loginUserData ['_token']);
+        $loginUserData ->timestamps = false;
+        $loginUserData ->name = $request->name;
         // dd($user);
-        $user->email = $request->email;
+        $loginUserData ->email = $request->email;
         if($request->password){
-         $user->password =bcrypt($request->new_password);
+         $loginUserData ->password =bcrypt($request->new_password);
         }
         
-        // dd($user);
+        // dd($loginUserData );
         
-        $user->save();//＄userを新しいデータで上書き保存
+        $loginUserData ->save();//＄userを新しいデータで上書き保存
         $travelList = Travel::where('user_id', \Auth::id())->get();
         
-        return redirect()->route('setting.show',['travelList' => $travelList,'user' =>$user]);
+        return redirect()->route('setting.show',['loginUserData' =>$loginUserData,'travelList' => $travelList]);
     }
 } 
