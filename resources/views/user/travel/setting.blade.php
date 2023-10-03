@@ -7,7 +7,7 @@
 {{-- menu.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <!--ログイン済みのユーザー情報を表示する-->
-<h1 style ="color:#ffffff;font-size:30px;">ユーザー情報</h1>
+<h1>ユーザー情報</h1>
 <div class = "userInfo">
     <div>・氏名：{{$loginUserData ->name}}</div>
     <div>・メールアドレス：{{$loginUserData ->email}}</div>

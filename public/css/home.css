@@ -4,28 +4,23 @@
   background-image: url("/image/header_sea.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
+  height: 220px;
 }
 
 header h1 {
-  text-align: left;
+ text-align: left;
   color: #ddd;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 header h2 {
   text-align: center;
-  padding: 5px;
-  color: #432;
+  padding: 2px;
+  color: #ffffff;
   font-size: 50px;
   font-weight: 100;
 }
 
-header p {
-  text-align: right;
-  color: #ddd;
-  font-size: 15px;
-}
 
 header button {
   text-align: right;
@@ -39,6 +34,7 @@ header button {
 
 nav {
   width: 20%;
+  background-color: #4d76aa；
 }
 
 section {
@@ -70,9 +66,11 @@ nav h2 {
 
 .section-image {
   width: 80%;
-  background-image: url("/image/wallpaper_plan_belongs.jpg");
+  /*background-image: url("/image/wallpaper_plan_belongs.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
+  /*background-color: #fff7ec;*/
+  /*margin-left: 40px;*/
 }
 
 .contents{
@@ -81,10 +79,10 @@ nav h2 {
 
 /*各画面の見出し*/
 .contents h1 {
-  font-size: 30px;
-  border-bottom: 1px #ffffff solid;
-  margin-left: 30px;
-  color: #ffffff;
+ font-size: 30px;
+ border-bottom: 1px #ddd solid;
+ margin-left: 30px;
+ color: #432;
 }
 
 /*各入力欄・データ表示*/
@@ -92,7 +90,7 @@ nav h2 {
   width: 500px;
   padding: 10px;
   margin-left: 40px;
-  background: #ffffff;
+  background: #fff7ec;
   box-sizing: border-box;
   border-radius: 6px;
   color: #432c02;
@@ -102,8 +100,13 @@ nav h2 {
 .planShow{
   font-size:20px;
   border-bottom: 1px #ddd solid;
-  color:#ffffff;
+  color:#432;
   margin-left: 30px;
+}
+
+.planBackground{
+    background-color: #fff7ec;
+    margin-left: 40px;
 }
 
 .Plancreate {
@@ -169,7 +172,7 @@ nav h2 {
   color: #432c02;
 }
 
-/*持ち物チェックリスト*/
+持ち物チェックリスト
 .belongings_add{
   margin-left: 30px;
 }

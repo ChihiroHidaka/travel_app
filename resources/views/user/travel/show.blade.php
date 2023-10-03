@@ -18,7 +18,7 @@
 <!--下記にplan.blade.phpで入力した行程表を表示-->
 <div>
     <h2 class = "planShow">行程表</h2>
-        <div>
+        <div class = "planBackground">
             <ul class="Plancreate">
                 @foreach($plans as $plan)
                 <li>

@@ -11,6 +11,8 @@ let infowindow;
 function initMap() {
   const sydney = new google.maps.LatLng(-33.867, 151.195);
 
+//Gooogle.maps.InfoWindow クラスの新しいインスタンスを作成
+//InfoWindow クラスは、マップ上の特定の位置に情報ウィンドウを表示するためのクラス
   infowindow = new google.maps.InfoWindow();
   map = new google.maps.Map(document.getElementById("map"), {
     center: sydney,
@@ -86,7 +88,7 @@ document.getElementById('searchButton').addEventListener('click', () => {
       for (let i = 0; i < results.length; i++) {
         createMarker(results[i]);
         let html =`
-           <div class="placeDetails">
+          <div class="placeDetails">
               <p style="text-decoration:underline;margin-top:5px;">観光地情報</p>
               <div>・名前：${results[i].name}</div>
               <div>・住所：${results[i].formatted_address}</div>
@@ -94,9 +96,7 @@ document.getElementById('searchButton').addEventListener('click', () => {
               <img src="${results[0].photos[0].getUrl()}" style="height:350px; width:250px; padding-left:30px;">
           </div>
         `
-        
         document.getElementById('placeInfo').innerHTML = html;
-  
       }
       map.setCenter(results[0].geometry.location);
     }
