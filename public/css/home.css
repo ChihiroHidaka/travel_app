@@ -42,9 +42,11 @@ section {
 }
 
 nav h1 {
+  margin-top: 30px;
   color: #432;
   text-align: left;
-  border-bottom: 1px #ddd solid;
+  border-bottom: 1px #F7CAC9 solid;
+  border-width:thick;
 }
 
 nav h2 {
@@ -83,6 +85,7 @@ nav h2 {
  border-bottom: 1px #F7CAC9 solid;
  margin-left: 30px;
  color: #432;
+ border-width:thick;
 }
 
 /*各入力欄・データ表示*/
@@ -100,6 +103,7 @@ nav h2 {
 .planShow{
   font-size:20px;
   border-bottom: 1px  #F7CAC9 solid;
+  border-width:thick;
   color:#432;
   margin-left: 30px;
 }
@@ -176,9 +180,9 @@ nav h2 {
 .belongings_add{
   margin-left: 30px;
 }
-.belongingsCheckboxPage{
-  background-color: #fff7ec;
-}
+/*.belongingsCheckboxPage{*/
+/*  background-color: #fff7ec;*/
+/*}*/
 
 #belongings_list .listName{
   width: 250px;
@@ -190,6 +194,7 @@ nav h2 {
 }
 
 #belongings_list {
+  margin-top: 10px;
   font-size: 15px;
 	background-color: #dedede;
 	background-image:
@@ -197,7 +202,7 @@ nav h2 {
 	background-size: 40px 40px;
   display: block;
   margin-left: 30px;
-  width: 400px;
+  width: 500px;
   color: #432c02;
 }
 
@@ -230,7 +235,7 @@ nav h2 {
   margin-left: 50px;
   display: flex;
   margin-top: 10px;
-  background-color: #eaf6fd;
+  background-color: #fff7ec;
 }
 
 #weather_icon{
@@ -256,7 +261,7 @@ nav h2 {
   margin-top: 10px;
   width: 500px;
   border-width: thin;
-  background-color: #eaf6fd;
+  background-color: #fff7ec;
   
   
 }

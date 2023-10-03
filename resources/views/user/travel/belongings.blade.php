@@ -5,7 +5,7 @@
 {{-- menu.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <h1>持ち物チェック</h1>
-<div class="belongingsCheckboxPage">
+<div>
     <form method="POST" action="{{route('belongings.store')}}" id="belongingsForm">
         @csrf
        @if ($errors->any())
@@ -23,11 +23,11 @@
                 <input id="belongings_name" name="belongs_name" type="text" placeholder="カメラ"　value="{{ old('belongs_name') }}">
             </label>
             <button type="submit">この持ち物を追加する</button></br>
-            <div style="color: #432;">事前に持ち物を追加して、出発前に忘れ物チェックしよう！</div>
+            <div style="color: #432;margin-top:10px;">事前に持ち物を追加して、出発前に忘れ物チェックしよう！</div>
         </div>
     </form>
     
-    <div>
+    <div class="belongingsCheckboxPage">
         <form method="POST" action="{{route('belongings.check')}}" id="belongingsForm">
         @csrf
               　<table id="belongings_list">
@@ -42,7 +42,7 @@
                     @foreach($belongings as $belongings)
                         <tr class="BlongingsCreate">
                            <td class = "checkbox"><input type="checkbox" name="belongings[]" @if($belongings->checked) checked @endif value="{{$belongings->id }}" {{ old('belongings') ? 'checked' : '' }}>
-                           <td class = "listName">{{$belongings->belongs_name}}</td>.
+                           <td class = "listName">{{$belongings->belongs_name}}</td>
                            <td><a href="/user/travel/belongings/{{$belongings->id}}/edit">編集</a></td>
                            <td><a href="/user/travel/belongings/{{$belongings->id}}/delete">削除</a></td>
                         </tr>

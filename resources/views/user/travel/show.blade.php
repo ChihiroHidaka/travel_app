@@ -13,7 +13,7 @@
     <div>・終了日：{{$travel->end_date}}</div>
     <div>・詳  細 ： {{$travel->description}}</div>
     <a href="/user/travel/{{$travel->id}}/edit">旅行概要を編集する</a><br>
-    <a href="/user/travel/{{$travel->id}}/plan/create">行程表を作成する</a>
+    <a href="/user/travel/{{$travel->id}}/plan/create">行程表を作成する（下に表示されます）</a>
 </div>
 <!--下記にplan.blade.phpで入力した行程表を表示-->
 <div>
