@@ -7,6 +7,7 @@
 {{-- home.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <body>
+  <h1>天気を調べる</h1>
   <!--現在の天気を調べる-->
   <div class ="weatherCurrent">
     <form>

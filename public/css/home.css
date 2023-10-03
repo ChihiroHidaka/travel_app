@@ -80,7 +80,7 @@ nav h2 {
 /*各画面の見出し*/
 .contents h1 {
  font-size: 30px;
- border-bottom: 1px #ddd solid;
+ border-bottom: 1px #F7CAC9 solid;
  margin-left: 30px;
  color: #432;
 }
@@ -99,7 +99,7 @@ nav h2 {
 /*行程表*/
 .planShow{
   font-size:20px;
-  border-bottom: 1px #ddd solid;
+  border-bottom: 1px  #F7CAC9 solid;
   color:#432;
   margin-left: 30px;
 }
@@ -172,9 +172,12 @@ nav h2 {
   color: #432c02;
 }
 
-持ち物チェックリスト
+/*持ち物チェックリスト*/
 .belongings_add{
   margin-left: 30px;
+}
+.belongingsCheckboxPage{
+  background-color: #fff7ec;
 }
 
 #belongings_list .listName{
@@ -279,7 +282,7 @@ nav h2 {
 /*観光地検索*/
 .mapSearch{
   margin-left: 30px;
-  border-bottom: 1px #ddd solid;
+  /*border-bottom: 1px #ddd solid;*/
 }
 
 .findPlace{
@@ -310,7 +313,7 @@ nav h2 {
   margin-left: 30px;
   padding: 15px 10px 15px 10px;
   vertical-align: middle;
-  background: #ffffff;
+  background: #fff7ec;
   box-sizing: border-box;
   border-radius: 6px;
   list-style: none;

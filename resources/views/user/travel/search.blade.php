@@ -7,10 +7,11 @@
 {{-- menu.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
 <!--観光地などキーワードを入れてGoogle Map API Find Placeを使って検索する-->
+<h1>観光地を調べる</h1>
 <div class = "mapSearch">
     <input type=text id="placeSearchInput" placeholder="お台場">
     <button id="searchButton">検索</button>
-    <div style="color: #ffffff;">キーワードを入れてマップ検索できます</div>
+    <div style="color: #432;">キーワードを入れてマップ検索できます</div>
 </div>
 <!--Map及び取得データの表示-->
 <div class = "findPlace">
