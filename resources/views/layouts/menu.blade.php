@@ -19,17 +19,16 @@
         <main class="display">
             <nav class="main_menu">
                 <h1>メニュー</h1>
-                <a href="{{ route('travel.create') }}" id="create_travel">➕旅行を追加する</a>
-                <!--<h2>旅行一覧</h2>-->
+                <a href="{{ route('travel.create') }}" id="create_travel">➕旅行を追加する</a><img src="{{ asset('image/icon_airplane.png') }}" alt="icon_airplane">
                 <ul>
                    @foreach($travelList as $travel)
                     <li><a href="/user/travel/{{$travel->id}}">{{ $travel->title }}</a></li>
                     @endforeach
                 </ul>
-                <p><a href="{{ route('belongings.create')}}">持ち物チェック</a></p>
-                <p><img src="{{ asset('image/sozai_cman_jp_20231004225033.png') }}" alt="Setting Icon"><a href="{{ route('weather.create')}}">天気を調べる</a></p>
-                <p><a href="{{ route('search.create')}}">観光地を調べる</a></p>
-                <p style="vertical-align:center;margin-top:5px;"><img src="{{ asset('image/sozai.png') }}" alt="Setting Icon"><a href="{{ route('setting.show')}}">設定</a></p>
+                <p><a href="{{ route('belongings.create')}}">持ち物チェック</a><img src="{{ asset('image/icon_camera.png') }}" alt="icon_belongings"></p>
+                <p><a href="{{ route('weather.create')}}">天気を調べる</a><img src="{{ asset('image/icon_weather.png') }}" alt="icon_weather"></p>
+                <p><a href="{{ route('search.create')}}">観光地を調べる</a><img src="{{ asset('image/icon_place.png') }}" alt="icon_place"></p>
+                <p><a href="{{ route('setting.show')}}">設定</a><img src="{{ asset('image/icon_setting.png') }}" alt="icon_setting"></p>
                 <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit">ログアウト</button>
