@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 
 Auth::routes();
-Route::get('/home', [TravelController::class, 'index'])->name('home');
+Route::get('/home', [TravelController::class, 'create'])->name('home');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
