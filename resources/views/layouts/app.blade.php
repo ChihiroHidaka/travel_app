@@ -42,13 +42,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('ログインする') }}</a>
+                                    <button><a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a></button>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('新規登録する') }}</a>
+                                    <button><a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a></button>
                                 </li>
                             @endif
                         @else
