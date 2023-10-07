@@ -42,13 +42,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <button><a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a></button>
+                                    <button style="background-color:#0d6efd;color:#ffffff;"><a class="nav-link" href="{{ route('login') }}">{{ __('messages.login') }}</a></button>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <button><a class="nav-link" href="{{ route('register') }}">{{ __('新規登録') }}</a></button>
+                                    <button style="background-color:#0d6efd;color:#ffffff;"><a class="nav-link" href="{{ route('register') }}">{{ __('messages.register')}}</a></button>
                                 </li>
                             @endif
                         @else
@@ -62,7 +62,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('messages.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

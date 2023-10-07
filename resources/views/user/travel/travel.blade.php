@@ -20,7 +20,7 @@
     @endif
    
     <div class = "inputContents">
-        <p>☜新しく作成すると左のメニュー画面に「旅行」が追加されます！</p>
+        <p>☜新しく旅行を作成すると左のメニュー画面に「旅行」が追加されます！</p>
         <label for="travel_title">・旅行のタイトル</label>
         <input type="text" name="title" id="travel_title"　value="{{ old('travel_title') }}"></br>
         <label for="start_date">・出発日</label>

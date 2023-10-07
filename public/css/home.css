@@ -90,7 +90,7 @@ nav h2 {
 
 /*各入力欄・データ表示*/
 .inputContents {
-  width: 500px;
+  width: 600px;
   padding: 10px;
   margin-left: 40px;
   background: #fff7ec;
@@ -111,6 +111,7 @@ nav h2 {
 .planBackground{
     background-color: #fff7ec;
     margin-left: 40px;
+    overflow: scroll; /* 縦スクロールを可能にする */
 }
 
 .Plancreate {
@@ -302,6 +303,7 @@ nav h2 {
   margin-left: 30px;
   color: #432c02;
   background-color: #f6f0cc;
+  overflow: scroll; /* 縦スクロールを可能にする */
 }
 
 #map{
