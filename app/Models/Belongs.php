@@ -11,7 +11,7 @@ class Belongs extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'belongs_name' => 'required',
+        'belongs_name' => 'required|max:15',
         
     );
     

@@ -14,7 +14,8 @@ class Plan extends Model
         'plan_date' => 'required',
         'from_time' => 'required',
         'end_time' => 'required',
-        'plan'=>'required',
+        'plan'=>'required|max:20',
+        'remarks'=>'max:50',
         
         
     );

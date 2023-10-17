@@ -48,7 +48,7 @@ class SettingController extends Controller
          $loginUserData ->password =bcrypt($request->new_password);
         }
         
-        // dd($loginUserData );
+        dd($loginUserData );
         
         $loginUserData ->save();//＄userを新しいデータで上書き保存
         $travelList = Travel::where('user_id', \Auth::id())->get();
