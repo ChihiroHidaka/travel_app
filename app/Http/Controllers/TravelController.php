@@ -97,8 +97,9 @@ class TravelController extends Controller
         $travel->fill($form)->save();
         ///ログイン中のユーザ-が所有している旅行のリストをデータベースから取得
         $travelList = Travel::where('user_id', \Auth::id())->get();
+        $plans = Plan::where('travel_id', $request->id)->get();
         
-        return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel]);
+        return view('user.travel.show',['travelList' => $travelList, 'travel' => $travel , 'plans' => $plans]);
     }
     
     public function delete(Request $request)//旅行概要の削除

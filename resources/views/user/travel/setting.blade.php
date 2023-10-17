@@ -12,7 +12,7 @@
     <div>・氏名：{{$loginUserData ->name}}</div>
     <div>・メールアドレス：{{$loginUserData ->email}}</div>
     <div>・パスワード：*****</div>
-    <p><a href="{{ route('setting.edit',['user_id' => $loginUserData ->id])}}">ユーザー情報を変更する</a></p>
+    <!--<p><a href="{{ route('setting.edit',['user_id' => $loginUserData ->id])}}">ユーザー情報を変更する</a></p>-->
 </div>
     
 @endsection
