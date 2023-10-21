@@ -55,4 +55,4 @@ class SettingController extends Controller
         
         return redirect()->route('setting.show',['loginUserData' =>$loginUserData,'travelList' => $travelList]);
     }
-} 
+}
