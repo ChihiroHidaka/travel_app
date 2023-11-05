@@ -29,5 +29,6 @@
     </div>
     <button style = "margin-top:10px;margin-left:40px;" type="submit">旅行概要を更新する</button></br>
 </form>
+<button style = "margin-top:10px;margin-left:40px;"><a href="/user/travel/{{$travel->id}}">旅行概要に戻る</a></button>
 
 @endsection

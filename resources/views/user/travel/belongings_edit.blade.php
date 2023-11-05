@@ -25,6 +25,7 @@
         </label>
     </div>
 </form>
+<button style = "margin-top:10px;margin-left:40px;"><a href="/user/travel/belongings/create">持ち物チェックに戻る</a></button>
 
 @endsection
 
