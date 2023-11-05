@@ -22,11 +22,11 @@ $(function() {
       `
       //天気の詳細データを格納
       let html =`
-         <div>天気：${res.weather[0].description}</div>
-          <div>気温：${res.main.temp}℃</div>
-          <div>最高気温：${res.main.temp_max}℃</div>
-          <div>最低気温：${res.main.temp_min}℃</div>
-          <div>湿度：${res.main.humidity}％</div>
+        <div>天気：${res.weather[0].description}</div>
+        <div>気温：${res.main.temp}℃</div>
+        <div>最高気温：${res.main.temp_max}℃</div>
+        <div>最低気温：${res.main.temp_min}℃</div>
+        <div>湿度：${res.main.humidity}％</div>
       `;
         //上記で作成した変数を読み込んでVIEWに表示
         $('#weather_icon').html(icon);
@@ -71,10 +71,10 @@ $(function(){
         　　<div class="weekly_item_details">
               <li>${res.list[i].dt_txt}</li>
               <li>天気：${res.list[i].weather[0].description}</li>
-              <li>湿度：${res.list[i].main.humidity}%</li>
               <li>気温：${res.list[i].main.temp}℃</li>
               <li>最高気温：${res.list[i].main.temp_max}℃</li>
               <li>最低気温：${res.list[i].main.temp_min}℃</li>
+              <li>湿度：${res.list[i].main.humidity}%</li>
             </div>  
           `
           //icon_forecastとhtml_forecastを一つに一つにまとめる

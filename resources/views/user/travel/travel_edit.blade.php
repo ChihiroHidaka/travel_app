@@ -1,8 +1,8 @@
-{{-- layouts/menu.blade.phpを読み込む --}}
+<!--layouts/menu.blade.phpを読み込む-->
 @extends('layouts.menu')
-{{-- menu.blade.phpの@yield('title')に埋め込む --}}
+<!--menu.blade.phpの@yield('title')に埋め込む-->
 @section('title', '各旅行概要編集')
-{{-- menu.blade.phpの@yield('content')に以下のタグを埋め込む --}}
+<!--menu.blade.phpの@yield('content')に以下のタグを埋め込む-->
 @section('content')
 
 <h1>旅行概要を編集する</h1>
@@ -25,10 +25,9 @@
         <input type="date" name="end_date" id="end_date"　value="{{$travel->end_date}}"></br>
         <label for="description">メモ</label>
         <input type="textarea" name="description" id="description" value="{{$travel->description}}"></br>
-        <a href="{{route('travel.delete',['id' => $travel->id])}}"style="margin-top:10px;">「{{$travel->title}}」を削除する</a>
+        <a href="{{route('travel.delete',['id' => $travel->id])}}"style="margin-top:10px;">※「{{$travel->title}}」を削除する</a>
     </div>
     <button style = "margin-top:10px;margin-left:40px;" type="submit">旅行概要を更新する</button></br>
 </form>
-
 
 @endsection

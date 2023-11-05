@@ -89,7 +89,7 @@ document.getElementById('searchButton').addEventListener('click', () => {
         createMarker(results[i]);
         let html =`
           <div class="placeDetails">
-              <p style="text-decoration:underline;margin-top:5px;">観光地情報</p>
+              <p style="text-decoration:underline;margin-top:5px;">【観光地情報】</p>
               <div>・名前：${results[i].name}</div>
               <div>・住所：${results[i].formatted_address}</div>
               <div>※詳細は赤マーカーからGoogle MAPへ</div>

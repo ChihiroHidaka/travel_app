@@ -18,7 +18,7 @@
     
     <h1>ユーザー情報を変更する</h1>
     <div class = "userInfo">
-        <label for="name">・ユーザーネーム</label>
+        <label for="name">・ユーザー名</label>
         <input type="text" name="name" id="name"　value="{{old('name',$loginUserData ->name)}}"></br>
         <label for="email">・メールアドレス</label>
         <input type="email" name="email" id="email"　value="{{old('email',$loginUserData ->email)}}"></br>
