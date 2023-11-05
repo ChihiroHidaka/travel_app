@@ -46,6 +46,7 @@ class TravelController extends Controller
         $travel->user_id = \Auth::id();
         $travel->group_id = 1;
         $travel->save();
+      
         
         return redirect('/home');//user/travel/home'に遷移
     }

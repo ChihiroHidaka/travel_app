@@ -15,6 +15,7 @@
       <button type="button" id="weather_check" >の天気を調べる</button>
     </form>
     <div>都市名から現在の天気予報を検索できます</div>
+    <div>※都度更新してご利用ください</div>
   </div>
   
   <!--取得データの表示-->
@@ -30,6 +31,7 @@
       <button type="button" id="weather_check_forecast" >の天気を調べる</button>
     </form>
     <div>都市名から5日間6時間ごとの天気予報を検索できます</div>
+    <div>※都度更新してご利用ください</div>
   </div>
   <!--取得データの表示-->
   <div class="weekly" ></div>

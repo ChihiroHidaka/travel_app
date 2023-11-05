@@ -12,7 +12,7 @@ class Travel extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'title' =>'required|max:20',
+        'title' =>'required',
         'start_date'=>'required',
         'end_date' =>'required',
         

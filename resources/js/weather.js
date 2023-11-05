@@ -15,6 +15,7 @@ $(function() {
     
     //通信が成功したとき
     .done(function (res){
+       console.log(res);
       const iconList = `https://openweathermap.org/img/wn/`
       //天気のアイコンデータを格納
       let icon = `
@@ -56,7 +57,7 @@ $(function(){
     
     //通信が成功したとき
     .done(function (res){
-      // console.log(res);
+      console.log(res);
       const iconList = `https://openweathermap.org/img/wn/`;
       for (let i=0; i < res.list.length; i++){
         if(i % 2 == 0){
@@ -66,6 +67,7 @@ $(function(){
                 <img src="${iconList + res.list[i].weather[0].icon}@2x.png">
             </div>    
            `
+          
           //天気の詳細データを格納
           let html_forecast =`
         　　<div class="weekly_item_details">
@@ -85,7 +87,7 @@ $(function(){
              </div>
           `
           // //上記で一つにまとめた変数を読み込んでVIEWに表示
-          $('.weekly').append(weather_forecast);
+          $('.weekly'). append(weather_forecast);
       　}
       };
     }) 
