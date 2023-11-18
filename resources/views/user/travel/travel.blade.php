@@ -22,9 +22,9 @@
     <div class = "inputContents">
         <p>☜新しく旅行を作成すると左のメニュー画面に「旅行」が追加されます！</p>
         <label for="travel_title">・旅行のタイトル</label>
-        <input type="text" name="title" id="title"　value="{{ old('title') }}"></br>
+        <input type="text" name="title" id="title"　value="{{ old('title',$request->title) }}"></br>
         <label for="start_date">・出発日</label>
-        <input type="date" name="start_date" id="start_date"　value="{{ old('start_date') }}"></br>
+        <input type="date" name="start_date" id="start_date"　value="{{ old('start_date',$request->start_date) }}"></br>
         <label for="start_date">・終了日</label>
         <input type="date" name="end_date" id="end_date"　value="{{ old('end_date') }}"></br>
         <label for="description">・詳細</label>

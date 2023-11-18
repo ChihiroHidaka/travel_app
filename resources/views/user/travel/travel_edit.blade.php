@@ -18,9 +18,9 @@
     
     <div class = "inputContents">
         <label for="travel_title">旅行のタイトル</label>
-        <input type="text" name="title" id="title"　value="{{$travel->title}}"></br>
+        <input type="text" name="title" id="title"　value="{{old('title',$travel->title)}}"></br>
         <label for="start_date">出発日</label>
-        <input type="date" name="start_date" id="start_date"　value="{{$travel->start_date}}"></br>
+        <input type="date" name="start_date" id="start_date"　value="{{old('start_date',$travel->start_date)}}"></br>
         <label for="start_date">終了日</label>
         <input type="date" name="end_date" id="end_date"　value="{{$travel->end_date}}"></br>
         <label for="description">メモ</label>
