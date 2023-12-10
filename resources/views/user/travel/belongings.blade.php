@@ -24,6 +24,7 @@
             </label>
             <button type="submit">この持ち物を追加する</button></br>
             <div style="color: #432;margin-top:10px;">追加すると下記に自分だけのチェックリストが作成できます！<br>出発前に忘れ物チェックしよう！</div>
+            <div><a href="https://www.gov-online.go.jp/useful/article/201412/4.html" target="_blank">機内に持ち込みが禁止されているもの</a></div>
         </div>
     </form>
     
