@@ -28,6 +28,7 @@
                 <p><a href="{{ route('belongings.create')}}">持ち物チェック</a><img src="{{ asset('image/icon_camera.png') }}" alt="icon_belongings"></p>
                 <p><a href="{{ route('weather.create')}}">天気を調べる</a><img src="{{ asset('image/icon_weather.png') }}" alt="icon_weather"></p>
                 <p><a href="{{ route('search.create')}}">観光地を調べる</a><img src="{{ asset('image/icon_place.png') }}" alt="icon_place"></p>
+                <p><a href="#">リンク集</a><img src="{{ asset('image/icon_place.png') }}" alt="icon_place"></p>
                 <p><a href="{{ route('setting.show')}}">設定</a><img src="{{ asset('image/icon_setting.png') }}" alt="icon_setting"></p>
                 <form action="{{ route('logout') }}" method="POST">
                 @csrf
